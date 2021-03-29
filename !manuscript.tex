@@ -1,141 +1,155 @@
-%% This is file `elsarticle-template-1-num.tex',
-%%
-%% Copyright 2009 Elsevier Ltd
-%%
-%% This file is part of the 'Elsarticle Bundle'.
-%% ---------------------------------------------
-%%
-%% It may be distributed under the conditions of the LaTeX Project Public
-%% License, either version 1.2 of this license or (at your option) any
-%% later version. The latest version of this license is in
-%% http://www.latex-project.org/lppl.txt
-%% and version 1.2 or later is part of all distributions of LaTeX
-%% version 1999/12/01 or later.
-%%
-%% Template article for Elsevier's document class `elsarticle'
-%% with numbered style bibliographic references
-%%
-%% $Id: elsarticle-template-1-num.tex 149 2009-10-08 05:01:15Z rishi $
-%% $URL: http://lenova.river-valley.com/svn/elsbst/trunk/elsarticle-template-1-num.tex $
-%%
-\documentclass[final,12pt]{elsarticle}
+%% Copernicus Publications Manuscript Preparation Template for LaTeX Submissions
+%% ---------------------------------
+%% This template should be used for copernicus.cls
+%% The class file and some style files are bundled in the Copernicus Latex Package, which can be downloaded from the different journal webpages.
+%% For further assistance please contact Copernicus Publications at: production@copernicus.org
+%% https://publications.copernicus.org/for_authors/manuscript_preparation.html
 
-%% Use the option review to obtain double line spacing
-%% \documentclass[preprint,review,12pt]{elsarticle}
 
-%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
-%% for a journal layout:
-%% \documentclass[final,1p,times]{elsarticle}
-%% \documentclass[final,1p,times,twocolumn]{elsarticle}
-%% \documentclass[final,3p,times]{elsarticle}
-%% \documentclass[final,3p,times,twocolumn]{elsarticle}
-%% \documentclass[final,5p,times]{elsarticle}
-%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+%% Please use the following documentclass and journal abbreviations for preprints and final revised papers.
 
-%% The graphicx package provides the includegraphics command.
-\usepackage{graphicx}
-%% The amssymb package provides various useful mathematical symbols
-\usepackage{amssymb}
-%% The amsthm package provides extended theorem environments
-%% \usepackage{amsthm}
+%% 2-column papers and preprints
+\documentclass[journal abbreviation, manuscript]{copernicus}
 
-%% The lineno packages adds line numbers. Start line numbering with
-%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
-%% for the whole article with \linenumbers after \end{frontmatter}.
-\usepackage{lineno}
-\usepackage{xcolor}
-\usepackage{textcomp}
-\usepackage{gensymb}
-\usepackage{multirow}
+
+
+%% Journal abbreviations (please use the same for preprints and final revised papers)
+
+
+% Advances in Geosciences (adgeo)
+% Advances in Radio Science (ars)
+% Advances in Science and Research (asr)
+% Advances in Statistical Climatology, Meteorology and Oceanography (ascmo)
+% Annales Geophysicae (angeo)
+% Archives Animal Breeding (aab)
+% ASTRA Proceedings (ap)
+% Atmospheric Chemistry and Physics (acp)
+% Atmospheric Measurement Techniques (amt)
+% Biogeosciences (bg)
+% Climate of the Past (cp)
+% DEUQUA Special Publications (deuquasp)
+% Drinking Water Engineering and Science (dwes)
+% Earth Surface Dynamics (esurf)
+% Earth System Dynamics (esd)
+% Earth System Science Data (essd)
+% E&G Quaternary Science Journal (egqsj)
+% European Journal of Mineralogy (ejm)
+% Fossil Record (fr)
+% Geochronology (gchron)
+% Geographica Helvetica (gh)
+% Geoscience Communication (gc)
+% Geoscientific Instrumentation, Methods and Data Systems (gi)
+% Geoscientific Model Development (gmd)
+% History of Geo- and Space Sciences (hgss)
+% Hydrology and Earth System Sciences (hess)
+% Journal of Bone and Joint Infection (jbji)
+% Journal of Micropalaeontology (jm)
+% Journal of Sensors and Sensor Systems (jsss)
+% Magnetic Resonance (mr)
+% Mechanical Sciences (ms)
+% Natural Hazards and Earth System Sciences (nhess)
+% Nonlinear Processes in Geophysics (npg)
+% Ocean Science (os)
+% Polarforschung - Journal of the German Society for Polar Research (polf)
+% Primate Biology (pb)
+% Proceedings of the International Association of Hydrological Sciences (piahs)
+% Scientific Drilling (sd)
+% SOIL (soil)
+% Solid Earth (se)
+% The Cryosphere (tc)
+% Weather and Climate Dynamics (wcd)
+% Web Ecology (we)
+% Wind Energy Science (wes)
+
+
+%% \usepackage commands included in the copernicus.cls:
+%\usepackage[german, english]{babel}
+%\usepackage{tabularx}
+%\usepackage{cancel}
+%\usepackage{multirow}
+%\usepackage{supertabular}
+%\usepackage{algorithmic}
+%\usepackage{algorithm}
+%\usepackage{amsthm}
+%\usepackage{float}
+%\usepackage{subfig}
+%\usepackage{rotating}
+
+
 \usepackage{makecell}
-\usepackage{float}
 \usepackage{longtable}
 \usepackage{threeparttable}
+\usepackage[official]{eurosym}
+%\usepackage[utf8]{inputenc}
 
-%% natbib.sty is loaded by default. However, natbib options can be
-%% provided with \biboptions{...} command. Following options are
-%% valid:
-
-%% round - round parentheses are used (default)
-%% square - square brackets are used [option]
-%% curly - curly braces are used {option}
-%% angle - angle brackets are used <option>
-%% semicolon - multiple citations separated by semi-colon
-%% colon - same as semicolon, an earlier confusion
-%% comma - separated by comma
-%% numbers- selects numerical citations
-%% super - numerical citations as superscripts
-%% sort - sorts multiple citations according to order in ref. list
-%% sort&compress - like sort, but also compresses numerical citations
-%% compress - compresses without sorting
-%%
-%% \biboptions{comma,round}
-
-% \biboptions{}
-\usepackage[subpreambles=true]{standalone}
-\usepackage{import}
-
-\usepackage[utf8]{inputenc}
-\usepackage[hyphens]{url}
-
-\journal{Energy Strategy Reviews}
 
 \begin{document}
 
-\begin{frontmatter}
-
-%% Title, authors and addresses
-
 \title{TIM: Modelling pathways to meet Ireland's long-term energy system challenges with the TIMES-Ireland Model} 
 
-%% use the tnoteref command within \title for footnotes;
-%% use the tnotetext command for the associated footnote;
-%% use the fnref command within \author or \address for footnotes;
-%% use the fntext command for the associated footnote;
-%% use the corref command within \author for corresponding author footnotes;
-%% use the cortext command for the associated footnote;
-%% use the ead command for the email address,
-%% and the form \ead[url] for the home page:
-%%
-%% \title{Title\tnoteref{label1}}
-%% \tnotetext[label1]{}
-%% \author{Name\corref{cor1}\fnref{label2}}
-%% \ead{email address}
-%% \ead[url]{home page}
-%% \fntext[label2]{}
-%% \cortext[cor1]{}
-%% \address{Address\fnref{label3}}
-%% \fntext[label3]{}
+
+% \Author[affil]{given_name}{surname}
+
+\Author[1]{Olexandr}{Balyk}
+\Author[1]{James}{Glynn}
+\Author[1]{Vahid}{Aryanpur}
+\Author[1]{Ankita}{Gaur}
+\Author[1]{Jason}{McGuire}
+\Author[1]{Xufeng}{Yue}
+\Author[1]{Hannah}{Daly}
+
+%%\footnote{Contact: h.daly@ucc.ie}
+
+\affil[1]{Energy Policy Modelling Group, SFI MaREI Centre for Energy, Climate and Marine, Environmental Research Institute \& School of Engineering, University College Cork, Ireland}
+
+%% The [] brackets identify the author with the corresponding affiliation. 1, 2, 3, etc. should be inserted.
+
+%% If an author is deceased, please mark the respective author name(s) with a dagger, e.g. "\Author[2,$\dag$]{Anton}{Smith}", and add a further "\affil[$\dag$]{deceased, 1 July 2019}".
+
+%% If authors contributed equally, please mark the respective author names with an asterisk, e.g. "\Author[2,*]{Anton}{Smith}" and "\Author[3,*]{Bradley}{Miller}" and add a further affiliation: "\affil[*]{These authors contributed equally to this work.}".
 
 
-%% use optional labels to link authors explicitly to addresses:
-%% \author[label1,label2]{<author name>}
-%% \address[label1]{<address>}
-%% \address[label2]{<address>}
+\correspondence{NAME (EMAIL)}
 
-\author{O. Balyk, J. Glynn, V. Aryanpur, A. Gaur, J. McGuire, X. Yue, \& H. Daly\footnote{Contact: h.daly@ucc.ie}}
-\address{Energy Policy Modelling Group, SFI MaREI Centre for Energy, Climate and Marine, Environmental Research Institute \& School of Engineering, University College Cork, Ireland}
+\runningtitle{TEXT}
+
+\runningauthor{TEXT}
+
+
+
+
+
+\received{}
+\pubdiscuss{} %% only important for two-stage journals
+\revised{}
+\accepted{}
+\published{}
+
+%% These dates will be inserted by Copernicus Publications during the typesetting process.
+
+
+\firstpage{1}
+
+\maketitle
+
+
 
 \begin{abstract}
 Ireland has significantly increased its climate mitigation ambition, with a recent government commitment to reduce greenhouse-gases by an average of 7\% per year in the period to 2030 and a ``net-zero" target for 2050, underpinned by a series of five-year carbon budgets. Energy systems optimisation modelling (ESOM) is a widely-used tool to inform pathways to address long-term energy challenges. This article describes a new ESOM developed to inform Ireland's energy system decarbonisation challenge. The TIMES-Ireland Model (TIM) is an optimisation model of the Irish energy system, which calculates the cost-optimal fuel and technology mix to meet future energy service demands in the transport, buildings, industry and agriculture sectors, while respecting constraints in greenhouse-gas emissions, primary energy resources and feasible deployment rates. TIM is developed to take into account Ireland's unique energy system context, including a very high potential for offshore wind energy and the challenge of integrating this on a relatively isolated grid, a very ambitious decarbonisation target in the period to 2030, the policy need to inform five-year carbon budgets to meet policy targets, and the challenge of decarbonising heat in the context of low building stock thermal efficiency and high reliance on fossil fuels. To that end, model features of note include ``future proofing" with flexible timeslice and spatial definitions, with optional hourly time resolution in electricity generation and demand, unit committment and capacity expansion features in power sector, residential and passenger transport models underpinned by detailed bottom-up sectoral models, cross-model harmonisation and soft-linking with demand and macro models. The paper also outlines a priority list of future model developments to better meet the challenge of deeply decarbonising energy supply and demand, taking into account equity, cost-effectiveness and technical feasibility. To support transparency and openness in decision-making, TIM is available to download under an open-source licence.
 \end{abstract}
 
-\begin{keyword}
-Energy systems optimisation model (ESOM) \sep The integrated MARKAL-EFOM system (TIMES) \sep climate mitigation modelling \sep Ireland \sep Model description
+
+\copyrightstatement{TEXT} %% This section is optional and can be used for copyright transfers.
+
+
+%%Energy systems optimisation model (ESOM) \sep The integrated MARKAL-EFOM system (TIMES) \sep climate mitigation modelling \sep Ireland \sep Model description
 %% keywords here, in the form: keyword \sep keyword
 
-%% MSC codes here, in the form: \MSC code \sep code
-%% or \MSC[2008] code \sep code (2000 is the default)
 
-\end{keyword}
 
-\end{frontmatter}
 
-%%
-%% Start line numbering here if you want
-%%
-\linenumbers
-\section{Introduction}
+
+\introduction   %% \introduction[modified heading if necessary]
 Ireland faces very significant challenges in meeting greater energy needs in the future with a much lower carbon footprint. Ireland has a high per-capita carbon footprint relative to the European average and will fail its 2020 decarbonisation objective as set by the European Union (EU) \cite{DCCAE2019}. Under existing policy measures, overall GHGs are projected to be relatively stable in the period to 2030 and to increase in the period to 2040 \cite{EPA}. In contrast, the EU's Effort Sharing Regulation sets forth a legislated target which increases the Irish decarbonisation objective, to reduce non-emissions traded sector (ETS) emissions by 30\% relative to 2005 levels by 2030 \cite{CCAC2020}. In 2019 the Government presented a Climate Action Plan which set forth sector-by-sector measures to meet this increased ambition from the EU, which includes increasing the renewable electricity share to 70\% by 2030, for electric vehicles to reach full market share later in the decade, and very ambitious targets for retrofitting and electrifying home heating. 
  
 However, additional policy measures are needed to reduce emissions even faster. In 2020, a new government adopted an even more ambitious decarbonisation target, to reduce emissions by 7\% annually in the period to 2030, more than halving emissions, as well as planning for a legislated ``net-zero" emissions target by 2050 \cite{DepartmentoftheTaoiseach2020}. 
@@ -166,7 +180,7 @@ The TIMES-Ireland Model produces energy system pathways for energy supply and de
 \label{ss:times_code}
 TIMES (The Integrated MARKAL-EFOM System) is a bottom-up optimisation model generator for energy-environment systems analysis at various levels of spatial, temporal and sectoral resolutions \cite{IEA-ETSAP2020a}. The TIMES code, written in GAMS and available to download open source\footnote{https://github.com/etsap-TIMES/TIMES\_model} is developed and maintained by the Energy Technology Systems Analysis Programme (ETSAP)\footnote{https://iea-etsap.org/}, a Technology Collaboration Programme (TCP) of the International Energy Agency (IEA), established in 1976. TIMES models can have single or several regions, and typically are rich in technology detail, used for medium- to long- terms energy system analysis and planning at a regional, national or global scale. 
 
-TIMES is a linear optimisation, techno-economic, partial-equilibrium model generator which assumes perfectly competitive markets and perfect foresight. Model variants enable myopic foresight, general equilibrium, stochastic programming and a variety of multi-objective function options. The standard objective function minimises the net producer:consumer surplus which, in a perfect market with perfect foresight, equates to maximising the net-present-value (NPV) of the whole energy system, maximising societal welfare. It calculates the energy system specification which minimises discounted total energy system costs over the model time horizon, which is the sum of investments, fixed and variable costs, fuel import costs and export revenues for all the modelled processes, less potential salvage values of investments whole lifetime goes beyond the model time horizon. 
+TIMES is a linear optimisation, techno-economic, partial-equilibrium model generator which assumes perfectly competitive markets and perfect foresight. Model variants enable myopic foresight, general equilibrium, stochastic programming and a variety of multi-objective function options. The standard objective function maximises the net producer:consumer surplus which, in a perfect market with perfect foresight, equates to maximising the net-present-value (NPV) of the whole energy system, maximising societal welfare. It calculates the energy system specification which minimises discounted total energy system costs over the model time horizon, which is the sum of investments, fixed and variable costs, fuel import costs and export revenues for all the modelled processes, less potential salvage values of investments whole lifetime goes beyond the model time horizon. 
 
 The user inputs a number the following to the model generator:
 \begin{itemize}
@@ -377,7 +391,7 @@ Available agriculture sector commodities both bioenergy, land availability and h
 The Whitegate refinery is calibrated to import crude oil at international prices and converts crude oil to the refineries typical fuel slate based on upper bounds of fuel shares such that the output has flexible upper shares of 22.9\% gasoline, 8.1\% kerosene, 40.9\% diesel with the remaining 34.4\% heavy fuel oil to be exported with an overall conversion efficiency of 99.2\%. The refinery is constrained to stay at current capacity, has a lifespan of 50 years, and the production costs are differentiated by production (flow) costs for each output fuel.
 
 \subsubsection{Electricity Inter-connectors}
-Existing electricity inter-connectors are calibrated such that there is a price differential between annual average price for import or export of electricity to the UK of €4/GJ. The 2018 export quantity of electricity to the UK is calibrated as per historical data, but export activity of electricity is currently a weakness in the model given that TIM does not model the UK electricity market, other than a price signal, and so future imports and exports of electricity is constrained off by default. This constrained can be relaxed but is used to explore domestic needs for system flexibility, security, system services, and storage in terms of hydrogen and battery electricity storage.
+Existing electricity inter-connectors are calibrated such that there is a price differential between annual average price for import or export of electricity to the UK of \euro{4}/GJ. The 2018 export quantity of electricity to the UK is calibrated as per historical data, but export activity of electricity is currently a weakness in the model given that TIM does not model the UK electricity market, other than a price signal, and so future imports and exports of electricity is constrained off by default. This constrained can be relaxed but is used to explore domestic needs for system flexibility, security, system services, and storage in terms of hydrogen and battery electricity storage.
 
 \subsubsection{Biorefineries}
 Future bio-refinery technologies are defined in the supply sector future technology (SubRES) database. Ethanol production from wheat, woody biomass and grass is defined. Bio-diesel options from OSR, woody biomass, industrial food waste, RVO and tallow are defined. Wood pellets from biomass is defined. Biogas production from Grass, woody biomass, Municipal waste, industrial food waste and animal wastes are defined. All bio-refining technologies are defined in terms of potential start year, efficiency, investment costs, their availability factor and the operation and maintenance costs.
@@ -887,7 +901,7 @@ TIM will undergo continuous and iterative improvements and developments. In the 
 \end{itemize}
 
 
-\section{Conclusion}
+\conclusions  %% \conclusions[modified heading if necessary]
 \label{s:conclusion}
 This paper presents the TIMES-Ireland Model (TIM), an energy systems optimisation model which is a significant step forward both in terms of analytical heft, open and best-practice development approach and in its contribution to national evidence-based policy development. TIM has been developed to help inform very ambitious decarbonisation objectives and to inform future carbon budgets, on the path to net-zero GHG emissions by 2050. 
 
@@ -895,76 +909,26 @@ The model was developed from the legacy model, Irish TIMES, which has had a long
 
 Continuous, iterative and open model development is essential to ensure that the model remains fit-for-purpose and state-of-the-art. The model has been built with these future calibrations and improvements in mind, with clear open documentation and development protocol to allow for ongoing improvements and updates, to better enable the Irish energy system to achieve the goal of carbon neutrality. 
 
-\section{Code and data availability}
+%% The following commands are for the statements about the availability of data sets and/or software code corresponding to the manuscript.
+%% It is strongly recommended to make use of these sections in case data sets and/or software code have been part of your research the article is based on.
 
+%%\codeavailability{TEXT} %% use this section when having only software code available
+
+
+\dataavailability{
 TIMES code is available [zenodo doi]...
-Data will be available through github and published in zenodo. 
-
-\section*{Acknowledgements}
-This work is being undertaken as part of a number of research projects undertaken at the SFI MaREI Centre at University College Cork, including CAPACITY, funded by the Department of Environment, Climate and Communications and the SFI-funded CHIMERA project\footnote{CHIMERA is supported by a research grant from Science Foundation Ireland (SFI) and the National Natural Science Foundation of China (NSFC) under the SFI-NSFC Partnership Programme, grant no. 17/NSFC/5181 and supported by MaREI, the SFI Research Centre for Energy, Climate, and Marine [Grant No: 12/RC/2302\_P2], https://www.marei.ie/project/chimera/}.
-
-The authors wish to acknowledge the contribution of the following people: Alessandro Chiodi, Paul Deane, Maurizio Gargiulo, Gerald Lyons, Brian O'Gallachoir, Fionn Rogan, Andrew Smith.
+Data will be available through github and published in zenodo.} %% use this section when having only data sets available
 
 
-% \section{The First Section}
-% \label{S:1}
+%%\codedataavailability{TEXT} %% use this section when having data sets and software code available
 
-% Maecenas \cite{Smith:2012qr} fermentum \cite{Smith:2013jd} urna ac sapien tincidunt lobortis. Nunc feugiat faucibus varius. Ut sed purus nunc. Ut eget eros quis lectus mollis pharetra ut in tellus. Pellentesque ultricies velit sed orci pharetra et fermentum lacus imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse commodo ultrices mauris, condimentum hendrerit lorem condimentum et. Pellentesque urna augue, semper et rutrum ac, consequat id quam. Proin lacinia aliquet justo, ut suscipit massa commodo sit amet. Proin vehicula nibh nec mauris tempor interdum. Donec orci ante, tempor a viverra vel, volutpat sed orci.
 
-% Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque quis interdum velit. Nulla tincidunt sem quis nisi molestie nec hendrerit nulla interdum. Nunc at lectus at neque dapibus dapibus sit amet in massa. Nam ut nisl in diam consectetur dignissim. Sed lacinia diam id nunc suscipit vitae semper lorem semper. In vehicula velit at tortor fringilla elementum aliquam erat blandit. Donec pretium libero et neque vehicula blandit. Curabitur consequat interdum sem at ultrices. Sed at tincidunt metus. Etiam vulputate, lacus eget fermentum posuere, ante mi dignissim augue, et ultrices felis tortor sed nisl.
+%%\sampleavailability{TEXT} %% use this section when having geoscientific samples available
 
-% \begin{itemize}
-% \item Bullet point one
-% \item Bullet point two
-% \end{itemize}
 
-% \begin{enumerate}
-% \item Numbered list item one
-% \item Numbered list item two
-% \end{enumerate}
+%%\videosupplement{TEXT} %% use this section when having video supplements available
 
-% \subsection{Subsection One}
 
-% \begin{table}[h]
-% \centering
-% \begin{tabular}{l l l}
-% \hline
-% \textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-% \hline
-% Treatment 1 & 0.0003262 & 0.562 \\
-% Treatment 2 & 0.0015681 & 0.910 \\
-% Treatment 3 & 0.0009271 & 0.296 \\
-% \hline
-% \end{tabular}
-% \caption{Table caption}
-% \end{table}
-
-% \subsection{Subsection Two}
-
-% Donec eget ligula venenatis est posuere eleifend in sit amet diam. Vestibulum sollicitudin mauris ac augue blandit ultricies. Nulla facilisi. Etiam ut turpis nunc. Praesent leo orci, tincidunt vitae feugiat eu, feugiat a massa. Duis mauris ipsum, tempor vel condimentum nec, suscipit non mi. Fusce quis urna dictum felis posuere sagittis ac sit amet erat. In in ultrices lectus. Nulla vitae ipsum lectus, a gravida erat. Etiam quam nisl, blandit ut porta in, accumsan a nibh. Phasellus sodales euismod dolor sit amet elementum. Phasellus varius placerat erat, nec gravida libero pellentesque id. Fusce nisi ante, euismod nec cursus at, suscipit a enim. Nulla facilisi.
-
-% \begin{figure}[h]
-% \centering\includegraphics[width=0.4\linewidth]{placeholder}
-% \caption{Figure caption}
-% \end{figure}
-
-% Integer risus dui, condimentum et gravida vitae, adipiscing et enim. Aliquam erat volutpat. Pellentesque diam sapien, egestas eget gravida ut, tempor eu nulla. Vestibulum mollis pretium lacus eget venenatis. Fusce gravida nisl quis est molestie eu luctus ipsum pretium. Maecenas non eros lorem, vel adipiscing odio. Etiam dolor risus, mattis in pellentesque id, pellentesque eu nibh. Mauris nec ante at orci ultricies placerat ac non massa. Aenean imperdiet, ante eu sollicitudin vestibulum, dolor felis dapibus arcu, sit amet fermentum urna nibh sit amet mauris. Suspendisse adipiscing mollis dolor quis lobortis.
-
-% \begin{equation}
-% \label{eq:emc}
-% e = mc^2
-% \end{equation}
-
-% \section{The Second Section}
-% \label{S:2}
-
-% Reference to Section \ref{S:1}. Etiam congue sollicitudin diam non porttitor. Etiam turpis nulla, auctor a pretium non, luctus quis ipsum. Fusce pretium gravida libero non accumsan. Donec eget augue ut nulla placerat hendrerit ac ut mi. Phasellus euismod ornare mollis. Proin tempus fringilla ultricies. Donec pretium feugiat libero quis convallis. Nam interdum ante sed magna congue eu semper tellus sagittis. Curabitur eu augue elit.
-
-% Aenean eleifend purus et massa consequat facilisis. Etiam volutpat placerat dignissim. Ut nec nibh nulla. Aliquam erat volutpat. Nam at massa velit, eu malesuada augue. Maecenas sit amet nunc mauris. Maecenas eu ligula quis turpis molestie elementum nec at est. Sed adipiscing neque ac sapien viverra sit amet vestibulum arcu rhoncus.
-
-% Vivamus pharetra nibh in orci euismod congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque lacus diam, congue vel laoreet id, iaculis eu sapien. In id risus ac leo pellentesque pellentesque et in dui. Etiam tincidunt quam ut ante vestibulum ultricies. Nam at rutrum lectus. Aenean non justo tortor, nec mattis justo. Aliquam erat volutpat. Nullam ac viverra augue. In tempus venenatis nibh quis semper. Maecenas ac nisl eu ligula dictum lobortis. Sed lacus ante, tempor eu dictum eu, accumsan in velit. Integer accumsan convallis porttitor. Maecenas pretium tincidunt metus sit amet gravida. Maecenas pretium blandit felis, ac interdum ante semper sed.
-
-% In auctor ultrices elit, vel feugiat ligula aliquam sed. Curabitur aliquam elit sed dui rhoncus consectetur. Cras elit ipsum, lobortis a tempor at, viverra vitae mi. Cras sed urna sed eros bibendum faucibus. Morbi vel leo orci, vel faucibus orci. Vivamus urna nisl, sodales vitae posuere in, tempus vel tellus. Donec magna est, luctus non commodo sit amet, placerat et enim.
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
@@ -1038,9 +1002,6 @@ Import of Wood Chip - Step 4 & 6.38 & 5.40 & 4.99 & 5.04 & & \\ \hline
 \label{import-bio-prices}
 \end{table}	
 
-
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
 
 \begin{table}[!htbp]
 \footnotesize
@@ -1254,43 +1215,221 @@ PWR Storage: Pumped Storage HYD Existing Turlough Hill 4 & 0.75 & 0.16 & 150 & &
 
 \clearpage
 
-%% \section{}
-%% \label{}
+\noappendix    %% use this to mark the end of the appendix section. Otherwise the figures might be numbered incorrectly (e.g. 10 instead of 1).
 
-%% References
+%% Regarding figures and tables in appendices, the following two options are possible depending on your general handling of figures and tables in the manuscript environment:
+
+%% Option 1: If you sorted all figures and tables into the sections of the text, please also sort the appendix figures and appendix tables into the respective appendix sections.
+%% They will be correctly named automatically.
+
+%% Option 2: If you put all figures after the reference list, please insert appendix tables and figures after the normal tables and figures.
+%% To rename them correctly to A1, A2, etc., please add the following commands in front of them:
+
+%%\appendixfigures  %% needs to be added in front of appendix figures
+
+%%\appendixtables   %% needs to be added in front of appendix tables
+
+%% Please add \clearpage between each table and/or figure. Further guidelines on figures and tables can be found below.
+
+\authorcontribution{TEXT} %% this section is mandatory
+
+\competinginterests{TEXT} %% this section is mandatory even if you declare that no competing interests are present
+
+\disclaimer{TEXT} %% optional section
+
+\begin{acknowledgements}
+This work is being undertaken as part of a number of research projects undertaken at the SFI MaREI Centre at University College Cork, including CAPACITY, funded by the Department of Environment, Climate and Communications and the SFI-funded CHIMERA project\footnote{CHIMERA is supported by a research grant from Science Foundation Ireland (SFI) and the National Natural Science Foundation of China (NSFC) under the SFI-NSFC Partnership Programme, grant no. 17/NSFC/5181 and supported by MaREI, the SFI Research Centre for Energy, Climate, and Marine [Grant No: 12/RC/2302\_P2], https://www.marei.ie/project/chimera/}.
+
+The authors wish to acknowledge the contribution of the following people: Alessandro Chiodi, Paul Deane, Maurizio Gargiulo, Gerald Lyons, Brian O'Gallachoir, Fionn Rogan, Andrew Smith.
+\end{acknowledgements}
+
+
+%% REFERENCES
+
+%% The reference list is compiled as follows:
+
+%%\begin{thebibliography}{}
+
+%%\bibitem[AUTHOR(YEAR)]{LABEL1}
+%%REFERENCE 1
+
+%%\bibitem[AUTHOR(YEAR)]{LABEL2}
+%%REFERENCE 2
+
+%\end{thebibliography}
+
+%% Since the Copernicus LaTeX package includes the BibTeX style file copernicus.bst,
+%% authors experienced with BibTeX only have to include the following two lines:
 %%
-%% Following citation commands can be used in the body text:
-%% Usage of \cite is as follows:
-%% \cite{key} ==>> [#]
-%% \cite[chap. 2]{key} ==>> [#, chap. 2]
-%% \citet{key} ==>> Author [#]
-
-%% References with bibTeX database:
-
-% \bibliographystyle{model1-num-names}
-
-%% New version of the num-names style
-\bibliographystyle{elsarticle-num-names}
-\bibliography{!references.bib}
-
-%% Authors are advised to submit their bibtex database files. They are
-%% requested to list a bibtex style file in the manuscript if they do
-%% not want to use model1-num-names.bst.
-
-%% References without bibTeX database:
-
-% \begin{thebibliography}{00}
-
-%% \bibitem must have the following form:
-%% \bibitem{key}...
+\bibliographystyle{copernicus}
+\bibliography{!References.bib}
 %%
+%% URLs and DOIs can be entered in your BibTeX file as:
+%%
+%% URL = {http://www.xyz.org/~jones/idx_g.htm}
+%% DOI = {10.5194/xyz}
 
-% \bibitem{}
 
-% \end{thebibliography}
+%% LITERATURE CITATIONS
+%%
+%% command                        & example result
+%% \citet{jones90}|               & Jones et al. (1990)
+%% \citep{jones90}|               & (Jones et al., 1990)
+%% \citep{jones90,jones93}|       & (Jones et al., 1990, 1993)
+%% \citep[p.~32]{jones90}|        & (Jones et al., 1990, p.~32)
+%% \citep[e.g.,][]{jones90}|      & (e.g., Jones et al., 1990)
+%% \citep[e.g.,][p.~32]{jones90}| & (e.g., Jones et al., 1990, p.~32)
+%% \citeauthor{jones90}|          & Jones et al.
+%% \citeyear{jones90}|            & 1990
+
+
+
+%% FIGURES
+
+%% When figures and tables are placed at the end of the MS (article in one-column style), please add \clearpage
+%% between bibliography and first table and/or figure as well as between each table and/or figure.
+
+% The figure files should be labelled correctly with Arabic numerals (e.g. fig01.jpg, fig02.png).
+
+
+%% ONE-COLUMN FIGURES
+
+%%f
+%\begin{figure}[t]
+%\includegraphics[width=8.3cm]{FILE NAME}
+%\caption{TEXT}
+%\end{figure}
+%
+%%% TWO-COLUMN FIGURES
+%
+%%f
+%\begin{figure*}[t]
+%\includegraphics[width=12cm]{FILE NAME}
+%\caption{TEXT}
+%\end{figure*}
+%
+%
+%%% TABLES
+%%%
+%%% The different columns must be seperated with a & command and should
+%%% end with \\ to identify the column brake.
+%
+%%% ONE-COLUMN TABLE
+%
+%%t
+%\begin{table}[t]
+%\caption{TEXT}
+%\begin{tabular}{column = lcr}
+%\tophline
+%
+%\middlehline
+%
+%\bottomhline
+%\end{tabular}
+%\belowtable{} % Table Footnotes
+%\end{table}
+%
+%%% TWO-COLUMN TABLE
+%
+%%t
+%\begin{table*}[t]
+%\caption{TEXT}
+%\begin{tabular}{column = lcr}
+%\tophline
+%
+%\middlehline
+%
+%\bottomhline
+%\end{tabular}
+%\belowtable{} % Table Footnotes
+%\end{table*}
+%
+%%% LANDSCAPE TABLE
+%
+%%t
+%\begin{sidewaystable*}[t]
+%\caption{TEXT}
+%\begin{tabular}{column = lcr}
+%\tophline
+%
+%\middlehline
+%
+%\bottomhline
+%\end{tabular}
+%\belowtable{} % Table Footnotes
+%\end{sidewaystable*}
+%
+%
+%%% MATHEMATICAL EXPRESSIONS
+%
+%%% All papers typeset by Copernicus Publications follow the math typesetting regulations
+%%% given by the IUPAC Green Book (IUPAC: Quantities, Units and Symbols in Physical Chemistry,
+%%% 2nd Edn., Blackwell Science, available at: http://old.iupac.org/publications/books/gbook/green_book_2ed.pdf, 1993).
+%%%
+%%% Physical quantities/variables are typeset in italic font (t for time, T for Temperature)
+%%% Indices which are not defined are typeset in italic font (x, y, z, a, b, c)
+%%% Items/objects which are defined are typeset in roman font (Car A, Car B)
+%%% Descriptions/specifications which are defined by itself are typeset in roman font (abs, rel, ref, tot, net, ice)
+%%% Abbreviations from 2 letters are typeset in roman font (RH, LAI)
+%%% Vectors are identified in bold italic font using \vec{x}
+%%% Matrices are identified in bold roman font
+%%% Multiplication signs are typeset using the LaTeX commands \times (for vector products, grids, and exponential notations) or \cdot
+%%% The character * should not be applied as mutliplication sign
+%
+%
+%%% EQUATIONS
+%
+%%% Single-row equation
+%
+%\begin{equation}
+%
+%\end{equation}
+%
+%%% Multiline equation
+%
+%\begin{align}
+%& 3 + 5 = 8\\
+%& 3 + 5 = 8\\
+%& 3 + 5 = 8
+%\end{align}
+%
+%
+%%% MATRICES
+%
+%\begin{matrix}
+%x & y & z\\
+%x & y & z\\
+%x & y & z\\
+%\end{matrix}
+%
+%
+%%% ALGORITHM
+%
+%\begin{algorithm}
+%\caption{...}
+%\label{a1}
+%\begin{algorithmic}
+%...
+%\end{algorithmic}
+%\end{algorithm}
+%
+%
+%%% CHEMICAL FORMULAS AND REACTIONS
+%
+%%% For formulas embedded in the text, please use \chem{}
+%
+%%% The reaction environment creates labels including the letter R, i.e. (R1), (R2), etc.
+%
+%\begin{reaction}
+%%% \rightarrow should be used for normal (one-way) chemical reactions
+%%% \rightleftharpoons should be used for equilibria
+%%% \leftrightarrow should be used for resonance structures
+%\end{reaction}
+%
+%
+%%% PHYSICAL UNITS
+%%%
+%%% Please use \unit{} and apply the exponential notation
 
 
 \end{document}
-
-%%
-%% End of file `elsarticle-template-1-num.tex'.
