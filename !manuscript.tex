@@ -85,22 +85,23 @@
 
 \begin{document}
 
-\title{TIM: Modelling pathways to meet Ireland's long-term energy system challenges with the TIMES-Ireland Model} 
+\title{TIM: Modelling pathways to meet Ireland's long-term energy system challenges with the TIMES-Ireland Model (v1.0)} 
 
 
 % \Author[affil]{given_name}{surname}
 
-\Author[1]{Olexandr}{Balyk}
-\Author[1]{James}{Glynn}
-\Author[1]{Vahid}{Aryanpur}
-\Author[1]{Ankita}{Gaur}
-\Author[1]{Jason}{McGuire}
-\Author[1]{Xufeng}{Yue}
-\Author[1]{Hannah}{Daly}
+\Author[1,2]{Olexandr}{Balyk}
+\Author[1,2]{James}{Glynn}
+\Author[1,2]{Vahid}{Aryanpur}
+\Author[1,2]{Ankita}{Gaur}
+\Author[1,2]{Jason}{McGuire}
+\Author[1,2]{Xufeng}{Yue}
+\Author[1,2]{Hannah}{Daly}
 
-%%\footnote{Contact: h.daly@ucc.ie}
 
-\affil[1]{Energy Policy Modelling Group, SFI MaREI Centre for Energy, Climate and Marine, Environmental Research Institute \& School of Engineering, University College Cork, Ireland}
+\affil[1]{Energy Policy and Modelling Group, SFI MaREI Centre for Energy, Climate and Marine, Environmental Research Institute, University College Cork, Ireland}
+
+\affil[2]{School of Engineering, University College Cork, Ireland}
 
 %% The [] brackets identify the author with the corresponding affiliation. 1, 2, 3, etc. should be inserted.
 
@@ -109,7 +110,7 @@
 %% If authors contributed equally, please mark the respective author names with an asterisk, e.g. "\Author[2,*]{Anton}{Smith}" and "\Author[3,*]{Bradley}{Miller}" and add a further affiliation: "\affil[*]{These authors contributed equally to this work.}".
 
 
-\correspondence{NAME (EMAIL)}
+\correspondence{Olexandr Balyk (olexandr.balyk@ucc.ie)}
 
 \runningtitle{TEXT}
 
@@ -135,7 +136,7 @@
 
 
 \begin{abstract}
-Ireland has significantly increased its climate mitigation ambition, with a recent government commitment to reduce greenhouse-gases by an average of 7\% per year in the period to 2030 and a ``net-zero" target for 2050, underpinned by a series of five-year carbon budgets. Energy systems optimisation modelling (ESOM) is a widely-used tool to inform pathways to address long-term energy challenges. This article describes a new ESOM developed to inform Ireland's energy system decarbonisation challenge. The TIMES-Ireland Model (TIM) is an optimisation model of the Irish energy system, which calculates the cost-optimal fuel and technology mix to meet future energy service demands in the transport, buildings, industry and agriculture sectors, while respecting constraints in greenhouse-gas emissions, primary energy resources and feasible deployment rates. TIM is developed to take into account Ireland's unique energy system context, including a very high potential for offshore wind energy and the challenge of integrating this on a relatively isolated grid, a very ambitious decarbonisation target in the period to 2030, the policy need to inform five-year carbon budgets to meet policy targets, and the challenge of decarbonising heat in the context of low building stock thermal efficiency and high reliance on fossil fuels. To that end, model features of note include ``future proofing" with flexible timeslice and spatial definitions, with optional hourly time resolution in electricity generation and demand, unit committment and capacity expansion features in power sector, residential and passenger transport models underpinned by detailed bottom-up sectoral models, cross-model harmonisation and soft-linking with demand and macro models. The paper also outlines a priority list of future model developments to better meet the challenge of deeply decarbonising energy supply and demand, taking into account equity, cost-effectiveness and technical feasibility. To support transparency and openness in decision-making, TIM is available to download under an open-source licence.
+Ireland has significantly increased its climate mitigation ambition, with a recent government commitment to reduce greenhouse-gases by an average of 7\% per year in the period to 2030 and a ``net-zero" target for 2050, underpinned by a series of five-year carbon budgets. Energy systems optimisation modelling (ESOM) is a widely-used tool to inform pathways to address long-term energy challenges. This article describes a new ESOM developed to inform Ireland's energy system decarbonisation challenge. The TIMES-Ireland Model (TIM) is an optimisation model of the Irish energy system, which calculates the cost-optimal fuel and technology mix to meet future energy service demands in the transport, buildings, industry and agriculture sectors, while respecting constraints in greenhouse-gas emissions, primary energy resources and feasible deployment rates. TIM is developed to take into account Ireland's unique energy system context, including a very high potential for offshore wind energy and the challenge of integrating this on a relatively isolated grid, a very ambitious decarbonisation target in the period to 2030, the policy need to inform five-year carbon budgets to meet policy targets, and the challenge of decarbonising heat in the context of low building stock thermal efficiency and high reliance on fossil fuels. To that end, model features of note include ``future proofing" with flexible temporal and spatial definitions, with a possible hourly time resolution, unit commitment and capacity expansion features in power sector, residential and passenger transport underpinned by detailed bottom-up sectoral models, cross-model harmonisation and soft-linking with demand and macro models. The paper also outlines a priority list of future model developments to better meet the challenge of deeply decarbonising energy supply and demand, taking into account equity, cost-effectiveness and technical feasibility. To support transparency and openness in decision-making, TIM is available to download under an open-source licence.
 \end{abstract}
 
 
@@ -154,9 +155,9 @@ Ireland faces very significant challenges in meeting greater energy needs in the
  
 However, additional policy measures are needed to reduce emissions even faster. In 2020, a new government adopted an even more ambitious decarbonisation target, to reduce emissions by 7\% annually in the period to 2030, more than halving emissions, as well as planning for a legislated ``net-zero" emissions target by 2050 \citep{DepartmentoftheTaoiseach2020}. 
  
-Ireland faces a number of challenges in meeting these objectives. Firstly, a very high share of GHG emissions (34\% in 2018 \citep{EPA2019}\footnote{These emissions are mainly non-CO$_2$ emissions, CH$_4$ and N$_2$O, arising from enteric fermentation, fertiliser application and soil management, and does not include emissions from land-use, while grasslands are a net carbon source}) in Ireland arise in the agricultural sector, which is a large and export-led part of the economy, dominated by beef and dairy production, with an emissions profile which is considered more difficult to abate than energy sectors. Slower mitigation in this sector will require energy to decarbonise faster. Secondly, transport and heating are heavily dependent on fossil fuels (with shares of 94\% and 96\% of consumption respectively) \citep{SEAI2019}, while dispersed settlement patterns and an inefficient building stock make improve efficiencies challenging. Thirdly, while Ireland has already been successful in integrating 36.5\% of renewable electricity into power generation, 86\% of which is from wind energy, the relatively isolated nature of the electricity grid and lack of alternative low-carbon electricity sources will make it very challenging to integrate high shares of renewable electricity. The TIMES-Ireland Model has been built to offer mitigation solutions taking these challenges into account.
+Ireland faces a number of challenges in meeting these objectives. Firstly, a very high share of GHG emissions (34\% in 2018 \citep{EPA2019}\footnote{These emissions are mainly non-CO$_2$ emissions, CH$_4$ and N$_2$O, arising from enteric fermentation, fertiliser application and soil management, and does not include emissions from land-use, while grasslands are a net carbon source}) in Ireland arise in the agricultural sector, which is a large and export-led part of the economy, dominated by beef and dairy production, with an emissions profile which is considered more difficult to abate than energy sectors. Slower mitigation in this sector will require energy to decarbonise faster. Secondly, transport and heating are heavily dependent on fossil fuels (with shares of 94\% and 96\% of consumption respectively) \citep{SEAI2019}, while dispersed settlement patterns and an inefficient building stock make improve efficiencies challenging. Thirdly, while Ireland has already been successful in integrating 36.5\% of renewable electricity into power generation, 86\% of which is from wind energy, the relatively isolated nature of the electricity grid and lack of alternative low-carbon electricity sources will make it very challenging to integrate high shares of renewable electricity. The TIMES-Ireland Model (TIM) has been built to offer mitigation solutions taking these challenges into account.
 
-Energy system models have long been been used to inform decarbonisation policies both in Ireland and other countries. Integrated and dynamic energy systems models have a number of advantages over single-sector or static approaches. Current energy systems are the result of complex country-dependent, multi-sector developments. The complex dynamics (incorporating technologies, fuel prices, infrastructures and capacity constraints) of the entire energy system can be analysed through this modelling approach to better inform policy choices. A key strength is to approach energy as a system rather than as a set of discrete non-interactive elements. This has the advantage of providing insights into the most important substitution options that are linked to the system as a whole, which cannot be understood when analysing a single technology, commodity or sector. A single focus on the electricity sector, for example, risks excluding possible unforeseen step changes in electricity demand, because of, perhaps, the electrification of transport or of heating. 
+Energy system models have long been used to inform decarbonisation policies both in Ireland and other countries. Integrated and dynamic energy systems models have a number of advantages over single-sector or static approaches. Current energy systems are the result of complex country-dependent, multi-sector developments. The complex dynamics (incorporating technologies, fuel prices, infrastructures and capacity constraints) of the entire energy system can be analysed through this modelling approach to better inform policy choices. A key strength is to approach energy as a system rather than as a set of discrete non-interactive elements. This has the advantage of providing insights into the most important substitution options that are linked to the system as a whole, which cannot be understood when analysing a single technology, commodity or sector. A single focus on the electricity sector, for example, risks excluding possible unforeseen step changes in electricity demand, because of, perhaps, the electrification of transport or of heating. 
 
 TIM is the successor to the Irish TIMES model \citep{EnvironmentalProtectionAgency2020}, which has a long (more than 10-year) history of providing analytical input to Irish energy policy development, including acting as the basis for Ireland’s first Low-Carbon Roadmap in 2015 \citep{Deane2013} and for developing energy pathways consistent with the Paris Agreement \citep{Glynn2019}. TIM is a new model and has been developed to better inform increased national climate mitigation ambition, to take into account the changing energy technology landscape, and to take advantage of new advances in energy systems optimisation modelling techniques, which are described in the remainder of this paper.
 
@@ -167,7 +168,7 @@ Other energy system models in Ireland which are used to inform long-term pathway
 TIM is a significant step forward in national energy systems modelling capacity. A number of features better enable this model to capture long-term energy systems transitions, enabling it to better inform very ambitious decarbonisation targets. These features are described in detail throughout the paper and are summarised in the Discussion (Section \ref{s:discussion}).
 
 
-The rest of the paper is structured as follows: Section \ref{S:model_desc} gives a general description of the model, including a ``plain English" description of the model (\ref{ss:model_plain}), an outline of the TIMES methodology and model generator (\ref{ss:times_code}), an overview of the system (\ref{ss:system_overview}), the temporal and regional characteristics (\ref{ss:time_geo}), underlying demand drivers (\ref{ss:model_proj}), and the model development approach (\ref{ss:model_dev}). Section \ref{s:sectors} describes the model sectors (Supply, Power, Transport, Residential, Services and Industry. Section \ref{s:discussion} discusses model strengths, weaknesses and priority areas for future development. Finally, \ref{s:Appendix-data} includes additional techno-economic assumptions for future technologies. 
+The rest of the paper is structured as follows: Section \ref{S:model_desc} gives a general description of the model, including a ``plain English" description of the model (\ref{ss:model_plain}), an outline of the TIMES methodology and model generator (\ref{ss:times_code}), an overview of the system (\ref{ss:system_overview}), the temporal and regional characteristics (\ref{ss:time_geo}), underlying demand drivers (\ref{ss:model_proj}), and the model development approach (\ref{ss:model_dev}). Section \ref{s:sectors} describes the model sectors (Supply, Power, Transport, Residential, Services and Industry. Section \ref{s:discussion} discusses model strengths, weaknesses and priority areas for future development. Finally, Appendix~\ref{s:Appendix-data} includes additional techno-economic assumptions for future technologies. 
 
 \section{Model description}
 \label{S:model_desc}
@@ -180,7 +181,7 @@ The TIMES-Ireland Model produces energy system pathways for energy supply and de
 \label{ss:times_code}
 TIMES (The Integrated MARKAL-EFOM System) is a bottom-up optimisation model generator for energy-environment systems analysis at various levels of spatial, temporal and sectoral resolutions \citep{IEA-ETSAP2020a}. The TIMES code, written in GAMS and available to download open source\footnote{https://github.com/etsap-TIMES/TIMES\_model} is developed and maintained by the Energy Technology Systems Analysis Programme (ETSAP)\footnote{https://iea-etsap.org/}, a Technology Collaboration Programme (TCP) of the International Energy Agency (IEA), established in 1976. TIMES models can have single or several regions, and typically are rich in technology detail, used for medium- to long- terms energy system analysis and planning at a regional, national or global scale. 
 
-TIMES is a linear optimisation, techno-economic, partial-equilibrium model generator which assumes perfectly competitive markets and perfect foresight. Model variants enable myopic foresight, general equilibrium, stochastic programming and a variety of multi-objective function options. The standard objective function maximises the net producer:consumer surplus which, in a perfect market with perfect foresight, equates to maximising the net-present-value (NPV) of the whole energy system, maximising societal welfare. It calculates the energy system specification which minimises discounted total energy system costs over the model time horizon, which is the sum of investments, fixed and variable costs, fuel import costs and export revenues for all the modelled processes, less potential salvage values of investments whole lifetime goes beyond the model time horizon. 
+TIMES is a linear optimisation, techno-economic, partial-equilibrium model generator which assumes perfectly competitive markets and perfect foresight. Model variants enable myopic foresight, general equilibrium, stochastic programming and a variety of multi-objective function options. The standard objective function maximises the net producer:consumer surplus which, in a perfect market with perfect foresight, equates to maximising the net present value (NPV) of the whole energy system, maximising societal welfare. It calculates the energy system specification which minimises discounted total energy system costs over the model time horizon, which is the sum of investments, fixed and variable costs, fuel import costs and export revenues for all the modelled processes, less potential salvage values of investments whole lifetime goes beyond the model time horizon. 
 
 The user inputs a number the following to the model generator:
 \begin{itemize}
@@ -200,14 +201,14 @@ Fig. \ref{fig:TIM-RES} shows a simplified Reference Energy System (RES) in TIM. 
 
 \begin{figure}[h!]
  \centering
- \includegraphics[scale=0.48]{TIM_RES.jpg} 
+ \includegraphics[scale=0.62]{TIM_RES.jpg} 
  \caption{Simplified representation of reference energy system in TIM}
  \label{fig:TIM-RES}
 \end{figure}
 
 The model's base year is 2018 and all energy flows, emissions and energy technology stocks are calibrated to SEAI's 2018 energy balance \citep{SEAI2019}.
 
-The discount rate, the degree to which future values are discounted to the present, is a key parameter variable in the TIMES objective function. A social discount rate reflects how society views present costs and benefits against future ones and is lower than a financial discount rate, which is how firms make investment decisions. In appraising potential projects or investments, the Government applies a social discount rate. Broadly speaking, in an ESOM scenario with a carbon budget constraint, a higher discount rate would promote later decarbonisation and less capital-intensive technology choices. In this model, a discount rate of 4\% is applied, which is based on a Social Rate of Time Preference methodology as set forth in the Public Spending Code \citep{OCallaghan2018}. This rate is consistent with Garcia-Gustano et. al. \citep{Garcia-Gusano2016}, which recommends using a maximum value of 4-5\% for the social discount rate in ESOMs. 
+The discount rate, the degree to which future values are discounted to the present, is a key parameter variable in the TIMES objective function. A social discount rate reflects how society views present costs and benefits against future ones and is lower than a financial discount rate, which is how firms make investment decisions. In appraising potential projects or investments, the Government applies a social discount rate. Broadly speaking, in an ESOM scenario with a carbon budget constraint, a higher discount rate would promote later decarbonisation and less capital-intensive technology choices. In this model, a discount rate of 4\% is applied, which is based on a Social Rate of Time Preference methodology as set forth in the Public Spending Code \citep{OCallaghan2018}. This rate is consistent with \citet{Garcia-Gusano2016} who recommend using a maximum value of 4-5\% for the social discount rate in ESOMs. 
 
 Technology-specific discount rates (also known as hurdle rates) are typically used in ESOMs to capture investment decision-making from the individual user or industry perspective, to capture market imperfections, limited finance and behavioural heuristics which limit the uptake of novel or capital-intensive investments, even when they are cost-optimal. These parameters are not used in the core version of TIM given its use for modelling long-term energy system pathways from a societal perspective. However, future variants of the model can be developed to simulate real-world impacts of policies and behaviour which can include hurdle rates. 
 
@@ -219,9 +220,8 @@ TIM has been developed with a deep knowledge of the geography of the Irish energ
 \label{ss:model_proj}
 Energy service demands in end-use sectors are driven by growth in the population and in the economy. The model is set up to allow for alternative scenarios for these drivers to feed into energy service demand projections in the end-use sectors. This section describes baseline driver projections; detailed descriptions of energy service demand projections are in the respective sectoral sections. 
 \subsubsection{Population}
-Historical population estimates and future projections up to 2040 are obtained from the Central Statistics Office (CSO), Ireland \citep{CentralStatisticsOffice2020}. We use the M2F1 scenario since it represents medium growth in population and is in line with population projections used in other national sources \citep{Yakut2020}. 
+Historical population estimates and future projections are obtained from the Central Statistics Office (CSO), Ireland \citep{CentralStatisticsOffice2020}. We use the M2F1 scenario since it represents medium growth in population and is in line with population projections used in other national sources \citep{Yakut2020}.
 
-The population growth rate beyond 2040 is taken from the United Nations Population Prospects, 2019 for the high variant scenario \citep{UnitedNations2019}.
 % Table generated by Excel2LaTeX from sheet 'Population'
 \begin{table}[htbp]
  \centering
@@ -232,10 +232,10 @@ The population growth rate beyond 2040 is taken from the United Nations Populati
  Year & Population (millions) \\
  \hline
  2018 & 4.85 \\
- 2020 & 4.95 \\
- 2030 & 5.35 \\
- 2040 & 5.76 \\
- 2050 & 6.13 \\
+ 2020 & 4.98 \\
+ 2030 & 5.40 \\
+ 2040 & 5.82 \\
+ 2050 & 6.19 \\
  \hline
  \end{tabular}%
  \label{tab:pop}%
@@ -247,7 +247,8 @@ The population growth rate beyond 2040 is taken from the United Nations Populati
  \item Historical Gross Value Added (GVA) for the required NACE categories in the Services and Industry sectors is obtained from EUROSTAT database. Projections for GVA are outputs of the Ireland Environment, Energy and Economy (I3E) model \citep{Yakut2020}.
  \item Gross Domestic Product (GDP) - Historical and future projections for GDP is obtained from Organisation for Economic Co-operation and Development (OECD) \citep{OECD2018}. 
  \item Income - Historical values of total incomes are taken from CSO's database \citep{CSOincome}. Assumption about income growth in the future are that from the National Transport Model \citep{AECOMIrelandLimited2019}. 
- \item Employment - The number of people employed in each of the NACE categories is obtained from EUROTSTAT database. Future projections are based on average levels of employment in the last decade with respect to the total population. 
+ %\item Employment - The number of people employed in each of the NACE categories is obtained from EUROTSTAT database. Future projections are based on average levels of employment in the last decade with respect to the total population. 
+ \item Modified Gross National Income (GNI*)- Derived from CSO's labour force scenario combined with a forecast for output per person \citep{cso_lf}. 
 \end{itemize}
 
 \subsubsection{Energy service demands}
@@ -258,53 +259,44 @@ Table \ref{tab:ESD_list} lists the energy service demands in TIM along with thei
 \footnotesize
  \centering
  \caption{Energy service demands in TIM}
- \scalebox{0.84}{
+ \scalebox{0.9}{
  \begin{tabular}{p{18em}lccc}
  \hline
- \multirow{2}[0]{*}{Energy Service Demand} & \multirow{2}[0]{*}{Driver} & \multicolumn{2}{c}{Value} & \multicolumn{1}{c}{\multirow{2}[0]{*}{Unit}} \\
- & & 2018 & 2050 & \\ \hline
- Non-Energy Mining & GVA & 2.1 & 2.5 & PJ \\
- Food and beverages & GVA & 22.2 & 30.9 & PJ \\
- Textiles and textile products & GVA & 1.2 & 2.7 & PJ \\
- Wood and wood products & GVA & 6.7 & 8.6 & PJ \\
- Pulp, paper, publishing and printing & GVA & 0.7 & 2.0 & PJ \\
- Chemicals and man-made fibres & GVA & 10.6 & 15.7 & PJ \\
- Rubber and plastic products & GVA & 1.1 & 2.8 & PJ \\
- Other non-metallic mineral products & GVA & 17.8 & 26.5 & PJ \\
- Basic metals and fabricated metal products & GVA & 19.5 & 21.1 & PJ \\
- Machinery and equipment n.e.c. & GVA & 1.3 & 1.0 & PJ \\
- Electrical and optical equipment demand & GVA & 4.3 & 29.0 & PJ \\
- Transport equipment manufacture & GVA & 0.2 & 0.1 & PJ \\
- Other manufacturing & GVA & 4.3 & 8.0 & PJ \\
- Construction & GVA & 4.0 & 7.7 & PJ \\
- Transport Demand: Short-range passenger travels & Income, population & 14.6 & 21.8 & BPKMS \\
- Transport Demand: Medium-range passenger travels & Income, population & 31.3 & 46.9 & BPKMS \\
- Transport Demand: Long-range passenger travels & Income, population & 27.1 & 40.4 & BPKMS \\
- Transport Demand: Goods vehicle for freight & Growth rate from \citep{yan2020freight} & 11.6 & 27.4 & BTKMS \\
- Transport Demand: Turism fuel & & 7.7 & 10.9 & PJ \\
- Transport Demand: Navigation fuel & GDP & 3.5 & 3.1 & PJ \\
- Transport Demand: Unspecified fuel & & 21.8 & 0.0 & PJ \\
- Transport Demand: Aviation domestic & & 0.2 & 0.2 & PJ \\
- Transport Demand: Aviation international & International Aviation Passengers & 45.9 & 62.6 & PJ \\
- Residential Apartment Demand & Population, Occupancy rate & 206.8 & 740.7 & 000' \\
- Residential Attached Demand & Population, Occupancy rate & 766.4 & 1244.3 & 000' \\
- Residential Detached Demand & Population, Occupancy rate & 724.4 & 1047.9 & 000' \\
- Commercial space heat demand - Commercial Services & GVA, employment, population & 12.7 & 23.6 & PJ \\
- Commercial space heat demand - Public Services & GVA, employment, population & 11.5 & 21.3 & PJ \\
- Commercial space cooling demand - Commercial Services & GVA, employment, population & 8.8 & 16.4 & PJ \\
- Commercial space cooling demand - Public Services & GVA, employment, population & 4.3 & 8.0 & PJ \\
- Commercial water heating demand - Commercial Services & GVA, employment, population & 1.3 & 2.4 & PJ \\
- Commercial water heating demand - Public Services & GVA, employment, population & 1.2 & 2.3 & PJ \\
- Commercial Lighting Demand & GVA, employment, population & 36.0 & 66.8 & PJ \\
- Commercial Cooking Demand & GVA, employment, population & 0.8 & 1.6 & PJ \\
- Commercial Refrigeration Demand & GVA, employment, population & 2.6 & 4.8 & PJ \\
- Commercial Public Lighting Demand & GVA, employment, population & 1.1 & 2.1 & PJ \\
- Commercial Other Electric Demand & GVA, employment, population & 8.1 & 15.0 & PJ \\
- Commercial Other Energy Demand & GVA, employment, population & 0.0 & 0.0 & PJ \\
- Commercial Data Centres Energy Demand & GVA, employment, population & 7.8 & 32.9 & PJ \\ \hline
- \end{tabular}%
- }
- \label{tab:ESD_list}%
+    \multirow{2}[0]{*}{Energy Service Demand} & \multirow{2}[0]{*}{Driver} & \multicolumn{2}{c}{Value} & \multirow{2}[0]{*}{Unit} \\
+          &       & \multicolumn{1}{c}{2018} & \multicolumn{1}{c}{2050} &  \\ \hline
+    Non-Energy Mining  & GVA per capita, Population & 2.07  & 0.13  & PJ \\
+    Food and beverages  & GVA per capita, Population & 22.25 & 34.00 & PJ \\
+    Textiles and textile products  & GVA per capita, Population & 1.20  & 4.97  & PJ \\
+    Wood and wood products  & GVA per capita, Population & 6.69  & 7.65  & PJ \\
+    Pulp, paper, publishing and printing  & GVA per capita, Population & 0.67  & 2.31  & PJ \\
+    Chemicals and man-made fibres  & GVA per capita, Population & 10.60 & 13.11 & PJ \\
+    Rubber and plastic products  & GVA per capita, Population & 1.14  & 0.89  & PJ \\
+    Other non-metallic mineral products  & Modified investment, GNI* & 17.77 & 24.82 & PJ \\
+    Basic metals and fabricated metal products  & GVA per capita, Population & 19.54 & 21.73 & PJ \\
+    Machinery and equipment n.e.c.  & GVA per capita, Population & 1.29  & 1.69  & PJ \\
+    Electrical and optical equipment demand & GVA per capita, Population & 4.27  & 16.37 & PJ \\
+    Transport equipment manufacture  & GVA per capita, Population & 0.17  & 0.04  & PJ \\
+    Other manufacturing  & GVA per capita, Population & 4.25  & 6.12  & PJ \\
+    Construction & GVA per capita, Population & 4.02  & 5.90  & PJ \\
+    Transport Demand: Short-range passenger travels & Income, population & 14.56 & 21.07 & BPKMS \\
+    Transport Demand: Medium-range passenger travels & Income, population & 31.28 & 45.29 & BPKMS \\
+    Transport Demand: Long-range passenger travels & Income, population & 27.13 & 38.97 & BPKMS \\
+    Transport Demand: Goods vehicle for freight & Growth rate from \citep{AECOMIrelandLimited2019} & 11.54 & 25.14 & BTKMS \\
+    Transport Demand: Turism fuel  &       & 7.72  & 0.00  & PJ \\
+    Transport Demand: Navigation fuel  & GDP   & 3.51  & 10.04 & PJ \\
+    Transport Demand: Unspecified fuel &       & 21.78 & 0.00  & PJ \\
+    Transport Demand: Aviation domestic &       & 0.23  & 0.23  & PJ \\
+    Transport Demand: Aviation international & International Aviation Passengers & 45.94 & 62.63 & PJ \\
+    Residential Apartment Demand & Population & 206.80 & 628.93 & 000' \\
+    Residential Attached Demand & Population & 766.35 & 1056.50 & 000' \\
+    Residential Detached Demand & Population & 724.43 & 889.76 & 000' \\
+    Services - Commercial Services & GNI*  & 28.90 & 47.39 & Mm\textsuperscript{2} \\
+    Services - Public Services & GNI*  & 58.15 & 95.35 & Mm\textsuperscript{2} \\
+    SRV-Commercial Services: Data centers & From EirGrid & 5.63  & 40.30 & PJ \\
+    SRV-Public Services: Public lighting & From \citep{GovernmentofIreland2018} & 0.48  & 0.58  & Mlamps \\ \hline
+    \end{tabular}%
+    }
+  \label{tab:ESD_list}%
 \end{table}%
 
 
@@ -455,7 +447,7 @@ User constraints applied to the Power sector in TIM largely pertain to the calib
 \subsubsection{Overview}
 The transport sector comprehensively describes the end-use transport technologies, and freight and mobility demands on a regional basis. This sector is divided into 26 counties across Ireland. To represent region-specific transport characteristics, some main parameters (vehicle fleet, transport infrastructure, fuel consumption, mileage, occupancy rate, load factor) are differentiated on a county level. Transport demand is split to three main categories: passenger, freight, and others. The passenger and freight demands are expressed as activity demands, and others are defined as a final energy demand (PJ). These final energy demands further split into aviation (international and domestic), navigation, fuel tourism and unspecified, aligned with the SEAI Energy Balance \citep{SEAI2019}. ``Fuel tourism" refers to cross-border consumers and a portion of demand is used by unspecified modes. 
 
-The passenger transport demands are expressed in billion-passenger kilometres (Bpkm). As shown in Table \ref{passenger transport demand}, the total passenger demand is divided into three classes of distance range including short-range (less than 5km), medium-range (5-30 km), and long-range (more than 30km) \citep{NTA2018}. Moreover, four transport modes satisfy travel demands including 1. public services (bus, train, taxi), 2. private cars, 3. two-wheelers, and 4. active modes (walk and bike). Non-motorised transport is only used for short-range trips, 2-wheeler are used for short- and medium-range travels, urban bus and school bus are used for short- and medium range travels, Intercity bus are used for long-range trips, and light rail can only use for the short- and medium-range trips in Dublin county. As shown in Fig. \ref{fig:TRA-TIM}, demand for each mode can be met with a different set of technologies based on cost-optimisation and user constraints. The base year is calibrated based on the actual number of vehicles and the corresponding vehicle activities. Table \ref{vehicle stock} shows the characteristics on a national basis. 
+The passenger transport demands are expressed in billion-passenger kilometres (Bpkm). As shown in Table \ref{passenger transport demand}, the total passenger demand is divided into three classes of distance range including short-range (less than 5km), medium-range (5-30 km), and long-range (more than 30km) \citep{NTA2018}. Moreover, four transport modes satisfy travel demands including 1. public services (bus, train, taxi), 2. private cars, 3. two-wheelers, and 4. active modes (walk and bike). For simplification, non-motorised transport is only used for short-range trips, 2-wheeler are used for short- and medium-range travels, urban bus and school bus are used for short- and medium range travels, Intercity bus and heavy train are used for long-range trips, and light rail can only use for the short- and medium-range trips in Dublin county. As shown in Fig. \ref{fig:TRA-TIM}, demand for each mode can be met with a different set of technologies based on cost-optimisation and user constraints. The base year is calibrated based on the actual number of vehicles and the corresponding vehicle activities. Table \ref{vehicle stock} shows the characteristics on a national basis. 
 
 \begin{table}[h!]
  \centering
@@ -566,13 +558,13 @@ here $y$ is the car per adult, $\alpha$ is saturation level of car ownership, $x
 Projection of future car ownership levels is based on change in income levels. The saturation level of car ownership in this study is 875 per 1000 adults \citep{AECOMIrelandLimited2019}. Car ownership (car per adult) is projected to rise from 0.56 in 2018 to 0.69 in 2050, an increase of 23\%. Passenger kilometres are then derived using car ownership as a proxy and assuming an occupancy level of 1.492 and kilometres per car to remain constant at about 17300 per year. Total passenger kilometres from private cars is projected to increase by 42\% in 2050 from 2018 levels with a Compound Annual Growth Rate (CAGR) of 1.1\%. The growth rate of passenger kilometres from private cars was 1.35\% between 2008 and 2018. 
 
 \subparagraph{Passenger kilometres: Other modes of transport}
-Other modes of transport represent a much smaller share of mobility demand than that of private cars. Passenger kilometres of large public service vehicles (PSVs) are projected using population as a driver in a log function and assuming average occupancy of 27.5. Large PSV passenger kilometres are expected to increase by 31.5\% by 2050 relative to 2018 with a CAGR of 0.9\%. Passenger kilometres of other modes such as the LUAS, light rail, small PSVs, motorcycles and active modes such as walking, cycling are projected using population and year as the drivers. The passenger kilometres are expected to increase by 1.9 times with a CAGR of 2\%. 
+Other modes of transport represent a much smaller share of mobility demand than that of private cars. Passenger kilometres of large public service vehicles (PSVs) are projected using population as a driver in a log function and assuming average occupancy of 27.5. Large PSV passenger kilometres are expected to increase by 24.2\% in 2050 as compared to that in 2018 with a CAGR of 0.7\%. Passenger kilometres of other modes such as luas, train, small PSVs, motorcycles and active modes such as walking, cycling are projected using population and year as the drivers. The passenger kilometres are expected to increase by 60\% with a CAGR of 1.5\%. 
 
 \subparagraph{International Aviation fuel demand}
 International aviation fuel demand is projected using number of passengers as the driver. The number of aviation passengers is forecast using damped Holt Winters function based on historical time-series data that is obtained from CSO \citep{Dantas2017,Grubb2001}. The number of passengers is expected to increase by 45.5\% in 2050 as compared to 2018. The historical fuel demand for aviation and number of aviation passengers are then used as an input for a linear regression model to project the future demand for aviation fuel. The fuel demand increases by 37\% in 2050 relative to 2018 with a CAGR of 1\%. 
 
 \subparagraph{Other transport fuel demand}
-Demand for freight is projected using growth rates available in \citep{yan2020freight}. The growth in tonne kilometres of freight is expected to increase by 25\% in 2050 from the 2018 level. Navigation fuel demand is projected using GDP as the explanatory variable. Fuel demand for navigation is expected to increase 2.85 times in 2050 as compared to 2018 with a CAGR of 3.3\%. Fuel tourism is assumed to be constant at 11 PJ. 
+Demand for freight is projected using growth rates available in \citep{AECOMIrelandLimited2019}. The growth in tonne kilometres of freight is expected to increase by 1.18 times in 2050 from 2018 level with a CAGR of 2.5\%. Navigation fuel demand is projected using GDP as the explanatory variable. Fuel demand for navigation is expected to increase 2.85 times in 2050 as compared to 2018 with a CAGR of 3.3\%. Fuel tourism is assumed to be constant at 11 PJ. 
 
 \subsubsection{Future technology options}
 
@@ -610,29 +602,45 @@ A set of constraints limits fuel and modal shares in transport sector as follows
 \subsection{Residential sector}
 \label{ss:residential}
 \subsubsection{Energy service demands and projections}
-Energy service demands in the residential sector are driven by the size of the housing stock by type (apartment, attached or detached), which in turn is driven by population growth and the occupancy rate, the average number of people per dwelling. The occupancy rate is expected to fall to 2.12 in 2051 \citep{PropertyIndustryIreland2019}, from 2.75 in 2016 (CSO). Intermediate values are estimated using Equation \ref{eq:OR}.
-\begin{equation}
-\label{eq:OR}
- OR= a+b*log(\Delta t)
-\end{equation}
-here, $OR$ is the occupancy rate, $\Delta t$ is difference between years, parameters $a$ \& $b$ are estimated using historical values. 
+% Energy service demands in the residential sector are driven by the size of the housing stock by type (apartment, attached or detached), which in turn is driven by population growth and the occupancy rate, the average number of people per dwelling. The occupancy rate is expected to fall to 2.12 in 2051 \citep{PropertyIndustryIreland2019}, from 2.75 in 2016 (CSO). Intermediate values are estimated using Equation \ref{eq:OR}.
+% \begin{equation}
+% \label{eq:OR}
+%  OR= a+b*log(\Delta t)
+% \end{equation}
+% here, $OR$ is the occupancy rate, $\Delta t$ is difference between years, parameters $a$ \& $b$ are estimated using historical values. 
 
-The growth rate of the housing stock in the period to 2030 is obtained from the ESRI's macroeconomic estimates \citep{Yakut2020}. 
-A multiple linear regression is calculated to project future housing stock based on population size and occupancy rate beyond 2030. The total housing stock is expected to increase by 79\% in 2050 relative to 2018 to accommodate the growing population and declining occupancy rates. The share of apartments changes from 12\% in 2018 to 24\% in 2050, while the shares of attached and detached dwellings decline by 4\% and 8\% respectively.
+% The growth rate of the housing stock in the period to 2030 is obtained from the ESRI's macroeconomic estimates \citep{Yakut2020}. 
+% A multiple linear regression is calculated to project future housing stock based on population size and occupancy rate beyond 2030. The total housing stock is expected to increase by 79\% in 2050 relative to 2018 to accommodate the growing population and declining occupancy rates. The share of apartments changes from 12\% in 2018 to 24\% in 2050, while the shares of attached and detached dwellings decline by 4\% and 8\% respectively.
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
+% \begin{table}[htbp]
+%  \centering
+%  \footnotesize
+%  \caption{Number of dwellings by type ('000)}
+%  \begin{tabular}{rrrr}
+%  \hline
+%  \multicolumn{1}{l}{Year} & \multicolumn{1}{l}{Apartment} & \multicolumn{1}{l}{Attached} & \multicolumn{1}{l}{Detached} \\ \hline
+%  2018 & 207 & 766 & 724 \\
+%  2030 & 359 & 928 & 842 \\
+%  2050 & 741 & 1244 & 1048 \\ \hline
+%  \end{tabular}%
+%  \label{tab:house}%
+% \end{table}%
+The residential stock projections upto 2040 are taken from ESRI's housing demand estimates \citep{Bergin2020}. The stock is expected to increase by 40\% from 2018 level with a CAGR of 2\%. This results in an average of 27,600 new houses per annum between between 2021-2040. Beyond 2040, population is used as a driver to project housing stock. The total housing stock obtained in 2050 is 2.57 million which implies 8\% increase from 2040. 
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
- \centering
- \footnotesize
- \caption{Number of dwellings by type ('000)}
- \begin{tabular}{rrrr}
- \hline
- \multicolumn{1}{l}{Year} & \multicolumn{1}{l}{Apartment} & \multicolumn{1}{l}{Attached} & \multicolumn{1}{l}{Detached} \\ \hline
- 2018 & 207 & 766 & 724 \\
- 2030 & 359 & 928 & 842 \\
- 2050 & 741 & 1244 & 1048 \\ \hline
- \end{tabular}%
- \label{tab:house}%
+  \centering
+  \footnotesize
+  \caption{Number of dwellings by type ('000)}
+    \begin{tabular}{rrrr}
+    \hline
+    \multicolumn{1}{l}{Year} & \multicolumn{1}{l}{Apartment} & \multicolumn{1}{l}{Attached } & \multicolumn{1}{l}{Detached} \\ \hline
+    2018  & 207   & 766   & 724 \\
+    2030  & 355   & 918   & 833 \\
+    2040  & 493   & 1003  & 878 \\
+    2050  & 629   & 1057  & 890 \\ \hline
+    \end{tabular}%
+  \label{tab:addlabel}%
 \end{table}%
 
 
@@ -768,7 +776,9 @@ The cost and efficiencies of new space heating and water heating technologies av
 \label{ss:industry}
 The industrial sector is modelled using a ``top-down" methodology where energy demand is projected based on an assumed future economic growth. Fourteen subsectors are represented and are based on the SEAI's energy balance \citep{SEAI2019}. Baseline shares of energy carriers in the final energy consumption by subsector are assumed constant into the future and are based on the 2018 values \citep{SEAI2019}. 
 
-Energy demand for each industrial subsector is projected using Gross Value Added (GVA) for each corresponding NACE category \citep{Yakut2020}. Historical energy consumption is obtained from SEAI's energy balance \citep{SEAI2019}. The total energy demand from industry is projected to increase by 65\% in 2050 from 2018 level. The energy intensity of the industrial sector is expected to decline by 40\% between 2018 and 2050 with a CAGR of -2\%, reflecting historical trends. 
+%Energy demand for each industrial subsector is projected using Gross Value Added (GVA) for each corresponding NACE category \citep{Yakut2020}. Historical energy consumption is obtained from SEAI's energy balance \citep{SEAI2019}. The total energy demand from industry is projected to increase by 65\% in 2050 from 2018 level. The energy intensity of the industrial sector is expected to decline by 40\% between 2018 and 2050 with a CAGR of -2\%, reflecting historical trends. 
+
+Energy demand for the industrial sector is predicted using Gross Value Added (GVA) per capita for each NACE category and population \citep{Yakut2020}. Historical energy consumption is obtained from SEAI's energy balance \citep{SEAI2019}. The total energy demand from industry is projected to increase by 47\% in 2050 from 2018 level. Cement demand upto 2025 is projected using the Department of finance's stability program update which provides forecasts for the growth in modified investment \cite{April2020}. In 2019, 65\% of the modified investment was in building and construction. A linear regression of the log of the index for output of the cement sector on the log of investment in building and construction at constant price is calculated. This results in an 18.6\% increase in cement demand in 2025 from 2018 level. Beyond 2025, growth in cement demand is assumed to be the same as the growth in GNI*. This leads to a further increase by 17.8\% between 2025 and 2050 at a CAGR of 0.7\%.   The energy intensity of the industrial sector is expected to decline by 46.5\% between 2018 and 2050 with a CAGR of -2\%, reflecting historical trends. 
 
 Fuel switching is the only mitigation option available for combustion emissions from industry in the model. It is controlled through maximum predefined shares which are defined per year and subsector. Table \ref{Maximum fuel switching share in Industry} illustrates assumed maximum fuel switching shares which are possible across all the subsectors. 
 
@@ -815,11 +825,15 @@ Among the industrial processes, the cement industry has the largest share of pro
 \label{ss:services}
 The service sector in TIM comprises public and private services. The structure of the sector mostly comes from the Irish TIMES model with an addition of the data centre electricity demand. It includes a representation of the following energy service demands: space heating, space cooling, water heating, cooking, refrigeration, lighting, data centres electricity demand, as well as other energy and electric demand.
 
-A combination of GVA, population and employment levels is used to project energy demand in the service sector according to the NACE categories (except for data centres) available in the SEAI's energy balance \citep{SEAI2019}. Energy demand from commercial and public services is expected to increase by 86\% in 2050. 
+%A combination of GVA, population and employment levels is used to project energy demand in the service sector according to the NACE categories (except for data centres) available in the SEAI's energy balance \citep{SEAI2019}. Energy demand from commercial and public services is expected to increase by 86\% in 2050. 
 
 Future fuel switching and efficiency options in the Services sector are modelled in a top-down fashion given a lack of sufficient building-level data to enable a bottom-up analysis. This is an area identified as a priority area for future model development. 
 
-Electricity demand for data centres is obtained from EirGrid, i.e. their ``steady evolution" scenario. \citep{EirGridT57:online}. According to the scenario, the demand for data centres is projected to increase by 3.2 times from 2018 level in 2040. We assume no growth in data centre demand after 2040 since permission requests for new/expanding existing capacities beyond 2040 are not available yet. 
+The end-use demand services in the service sector include million meter square of area for public and private sector buildings, data centre demand and public lighting units. The area is projected assuming the same growth as in GNI*. The total area is projected to increase by 61.8\% by 2050 from 2018 level with a CAGR of 1.5\%. 
+
+Electricity demand for data centres is obtained from EirGrid, i.e. their ``steady evolution" scenario. \citep{EirGridT57:online}. The electricity demand for data centres is expected to increase by 6 times in 2030 from 2018 level. We assume no growth in data centre demand after 2030 since permission requests for new/expanding existing capacities are not available yet. Further, post-2030 demand is even more uncertain given (i) the potential for exponential data usage growth and further data centres applications vs (ii) technology improvements and whether data centres fully utilise their contracted import capacity.  
+
+Public lighting units are projected based on the Project Ireland 2040, whereby five major cities of Ireland, Dublin, Cork, Limerick, Galway and Waterford are expected to grow by 50\% in 2040 \citep{GovernmentofIreland2018}. This results in a 12.5\% increase in public lighting units in Ireland by 2040 from 2018 level, with a CAGR of 1\%. Beyond 2040, the units are projected to increase by 1\% per annum until 2050.
 
 \subsection{Agriculture}
 \label{ss:agriculture}
