@@ -9,7 +9,7 @@
 %% Please use the following documentclass and journal abbreviations for preprints and final revised papers.
 
 %% 2-column papers and preprints
-\documentclass[journal abbreviation, manuscript]{copernicus}
+\documentclass[gmd,manuscript]{copernicus}
 
 
 
@@ -199,7 +199,7 @@ TIMES outputs the optimal investment and operation level of all energy technolog
 
 Fig. \ref{fig:TIM-RES} shows a simplified Reference Energy System (RES) in TIM. It describes the structure and energy flows including two major parts: 1. Supply-side modules, and 2. Demand-side modules. The former comprises energy resources, fuel production and conversion technologies (e.g. biorefineries, hydrogen production and different power plants), transmission and distribution infrastructure (e.g. gas pipelines and power grid). The latter covers end-use sectors (e.g. transport, residential) and the corresponding energy service demands (i.e. passenger, freight, hot water). Energy resources incorporate both domestic fossil-based fuels and renewables potentials. These fuels are processed and then distributed across country. End-use technologies consume energy commodities to meet energy service demands. GHG emissions from fossil fuels combustion and process-related emissions in industry are tracked at the fuel supply module, electricity generation technologies and sectoral-consumption levels. 
 
-\begin{figure}[h!]
+\begin{figure}[ht]
  \centering
  \includegraphics[scale=0.6]{figures/TIM_RES.jpg} 
  \caption{Simplified representation of reference energy system in TIM}
@@ -394,7 +394,7 @@ Future onshore wind energy potential has been assessed at high spatial resolutio
 
 Losses from electricity transmission and distribution are assumed to be 7\%, with no grid expansion costs currently represented in the model. The maximum share of variable renewable energy including wind, solar and wave energy is constrained at 75\% by 2030 and 100\% is allowed by 2050. 
 
-\begin{table}[h]
+\begin{table}[ht]
  \centering
  \footnotesize
  \caption{Onshore wind connection cost }
@@ -478,7 +478,7 @@ The passenger transport demands are expressed in billion-passenger kilometres (B
 
 The inland freight demands are expressed in billion-tonne kilometres (Btkm). It comprises two main modes: goods trucks and train. The definition of light and heavy goods vehicles varies in different studies. In this model, they are disaggregated by three unladen weight bands: light-duty trucks (below 5 tonnes), medium-duty trucks (5-10 tonnes) and heavy-duty trucks (over 10 tonnes) \citep{CentralStatisticsOffice2020d,CentralStatisticsOffice2020e,CentralStatisticsOffice2020f}. Table \ref{ton-km} shows the freight demand in the base year. 
 
-\begin{table}[h]
+\begin{table}[ht]
  \centering
  \footnotesize
  \caption{Freight demand in 2018 \citep{ CentralStatisticsOffice2020d, CentralStatisticsOffice2020e, CentralStatisticsOffice2020f}}
@@ -500,14 +500,14 @@ The inland freight demands are expressed in billion-tonne kilometres (Btkm). It 
  \label{ton-km}
 \end{table}
 
-\begin{figure}[h!]
+\begin{figure}[ht]
  \centering
  \includegraphics[scale=0.60]{figures/Transport in TIM.jpg} 
  \caption{Transport structure in TIM}
  \label{fig:TRA-TIM}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}[ht]
  \centering
  \footnotesize
  \caption{Existing vehicles and the corresponding characteristics in the base year \citep{CentralStatisticsOffice2020g, CentralStatisticsOffice2020h, CentralStatisticsOffice2020i, IrishRail2018, TransportInfrastructureIreland2016}}
@@ -660,7 +660,7 @@ The Archetype energy service demand data are sourced from the SEAI Building Ener
 
 The filtered BER database is then projected onto the total dwelling stock, using CSO data \citep{CSO2020E1008, CSO2020E1055} to calculate the total number BER ratings per archetype in the dwelling stock, as shown in Table \ref{Residential Dwelling Stock}. 
 
-\begin{table}[h!]
+\begin{table}[ht]
  \centering
  \footnotesize
  \caption{Residential Dwelling Stock in 2018}
@@ -686,7 +686,7 @@ The BER assumes all buildings are heated to between 18\textdegree C (non-living 
 
 The alternative internal temperatures assumptions in TIM are outlined in Table \ref{Internal Temperature Assumptions}. 
 
-\begin{table}[h!]
+\begin{table}[ht]
  \centering
  \footnotesize
  \caption{Internal Temperature Assumptions}
@@ -722,7 +722,7 @@ While Ireland has ambitious retrofitting targets for 2030, data on the cost and 
 
 The cost and expected heat energy savings per archetype by BER improvement is outlined in Table \ref{Retrofit Expected Savings}. The model currently implements the weighted average value; fully disaggregated retrofit is planned for implementation in the next model version.
 
-\begin{table}[h!]
+\begin{table}[ht]
  \centering
  \footnotesize
  \caption{Retrofit Cost \& Expected Savings}
