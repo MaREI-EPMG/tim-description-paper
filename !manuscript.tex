@@ -181,18 +181,18 @@ The TIMES-Ireland Model produces energy system pathways for energy supply and de
 \label{ss:times_code}
 TIMES (The Integrated MARKAL-EFOM System) is a bottom-up optimisation model generator for energy-environment systems analysis at various levels of spatial, temporal and sectoral resolutions \citep{Loulou2016a,Loulou2016}. The TIMES code, written in GAMS and available under an open source licence \citep{IEA-ETSAP2020a} is developed and maintained by the Energy Technology Systems Analysis Programme (ETSAP)\footnote{https://iea-etsap.org/}, a Technology Collaboration Programme (TCP) of the International Energy Agency (IEA), established in 1976. TIMES models can have single or several regions, and typically are rich in technology detail, used for medium- to long- terms energy system analysis and planning at a regional, national or global scale. 
 
-TIMES is a linear optimisation, techno-economic, partial-equilibrium model generator which assumes perfectly competitive markets and perfect foresight. Model variants enable myopic foresight, general equilibrium, stochastic programming and a variety of multi-objective function options. The standard objective function maximises the net producer:consumer surplus which, in a perfect market with perfect foresight, equates to maximising the net present value (NPV) of the whole energy system, maximising societal welfare. It calculates the energy system specification which minimises discounted total energy system costs over the model time horizon, which is the sum of investments, fixed and variable costs, fuel import costs and export revenues for all the modelled processes, less potential salvage values of investments whole lifetime goes beyond the model time horizon. 
+TIMES is a linear optimisation, techno-economic, partial-equilibrium model generator which assumes perfectly competitive markets and perfect foresight. Model variants enable myopic foresight, general equilibrium, stochastic programming and a variety of multi-objective function options. The standard objective function maximises the net total surplus (the sum of producers’ and consumers’ surpluses) which, in a perfect market with perfect foresight, equates to maximising the net present value (NPV) of the whole energy system, maximising societal welfare. It calculates the energy system specification which minimises discounted total energy system costs over the model time horizon, which is the sum of investments, fixed and variable costs, fuel import costs and export revenues for all the modelled processes, less potential salvage values of investments whole lifetime goes beyond the model time horizon. 
 
-The user inputs a number the following to the model generator:
+The user inputs the following to the model generator:
 \begin{itemize}
  \item Reference Energy System (RES), is the process-flow architecture of economic sectors and energy flows (commodity) between processes (technology), which consume and produce energy, energy service demands and/or other commodities such as environmental emissions (including greenhouse-gases) and other materials. The base-year energy flows are calibrated to national energy balances.
  \item Energy service demands, are the physical services required by the economy and society for mobility, heat, communications, food etc., which drive energy demand. 
- \item Energy supply curves, the quantities of primary energy resources (e.g. wind power) or imported commodities (e.g. oil, gas, bio-energy) available at a specific costs points for differing quality and quantity of energy commodities.
- \item Techno-economic parameters of existing and potential future energy technologies: Economic parameters including current and projected future investment and fixed/variable costs and efficiencies of technologies for energy supply (e.g., solar PV panels, transmissions and distribution infrastructure, biorefineries, hydrogen production) and energy demand (e.g., electric vehicles, natural gas boilers, carbon capture and storage). Technological parameters include transformation efficiency, availability factor, capacity factor and emissions factor. 
- \item User constraints, which can be any combination of linear constraints (including fixes, maximum or minimum bounds on growth, investment or shares) on technologies or fuels. These are typically used to simulate real-world technology constraints or to simulate policy scenarios. A typical user constraint for decarbonisation analysis is limiting total annual or cumulative CO$_2$ emissions to model energy system pathways to meeting a national decarbonisation target.
+ \item Energy supply curves, the quantities of primary energy resources (e.g. wind power) or imported commodities (e.g. oil, gas, bio-energy) available at specific costs points for differing quality and quantity of energy commodities.
+ \item Techno-economic parameters of existing and potential future energy technologies: economic parameters including current and projected future investment and fixed/variable costs and efficiencies of technologies for energy supply (e.g., solar PV panels, transmission and distribution infrastructure, biorefineries, hydrogen production) and energy demand (e.g., electric vehicles, natural gas boilers, carbon capture and storage); technological parameters including transformation efficiency, availability factor, capacity factor and emissions factor. 
+ \item User constraints, which can be any combination of linear constraints (including fixed, maximum or minimum bounds on growth, investment or shares) on technologies or fuels. These are typically used to simulate real-world technology constraints or to simulate policy scenarios. A typical user constraint for decarbonisation analysis is limiting total annual or cumulative CO$_2$ emissions to model energy system pathways to meeting a national decarbonisation target.
 \end{itemize} 
 
-The TIMES model outputs the optimal investment and operation level of all energy technologies which meet future energy service demands at least cost, while respecting user constraints. The model also produces corresponding energy flows, emissions and marginal prices of energy and emissions flows. 
+TIMES outputs the optimal investment and operation level of all energy technologies which meet future energy service demands at least cost, while respecting user constraints. The model also produces corresponding energy flows, emissions and marginal prices of energy and emissions flows. 
 
 \subsection{Model architecture}
 \label{ss:system_overview}
@@ -201,20 +201,20 @@ Fig. \ref{fig:TIM-RES} shows a simplified Reference Energy System (RES) in TIM. 
 
 \begin{figure}[h!]
  \centering
- \includegraphics[scale=0.62]{TIM_RES.jpg} 
+ \includegraphics[scale=0.6]{TIM_RES.jpg} 
  \caption{Simplified representation of reference energy system in TIM}
  \label{fig:TIM-RES}
 \end{figure}
 
 The model's base year is 2018 and all energy flows, emissions and energy technology stocks are calibrated to SEAI's 2018 energy balance \citep{SEAI2019}.
 
-The discount rate, the degree to which future values are discounted to the present, is a key parameter variable in the TIMES objective function. A social discount rate reflects how society views present costs and benefits against future ones and is lower than a financial discount rate, which is how firms make investment decisions. In appraising potential projects or investments, the Government applies a social discount rate. Broadly speaking, in an ESOM scenario with a carbon budget constraint, a higher discount rate would promote later decarbonisation and less capital-intensive technology choices. In this model, a discount rate of 4\% is applied, which is based on a Social Rate of Time Preference methodology as set forth in the Public Spending Code \citep{OCallaghan2018}. This rate is consistent with \citet{Garcia-Gusano2016} who recommend using a maximum value of 4-5\% for the social discount rate in ESOMs. 
+The discount rate, the degree to which future values are discounted to the present, is a key parameter in the TIMES objective function. A social discount rate reflects how society views present costs and benefits against future ones and is lower than a financial discount rate, which is how firms make investment decisions. In appraising potential projects or investments, the Government applies a social discount rate. Broadly speaking, in an ESOM scenario with a carbon budget constraint, a higher discount rate would promote later decarbonisation and less capital-intensive technology choices. In this model, a discount rate of 4\% is applied, which is based on a Social Rate of Time Preference methodology as set forth in the Public Spending Code \citep{OCallaghan2018}. This rate is consistent with \citet{Garcia-Gusano2016} who recommend using a maximum value of 4-5\% for the social discount rate in ESOMs. 
 
 Technology-specific discount rates (also known as hurdle rates) are typically used in ESOMs to capture investment decision-making from the individual user or industry perspective, to capture market imperfections, limited finance and behavioural heuristics which limit the uptake of novel or capital-intensive investments, even when they are cost-optimal. These parameters are not used in the core version of TIM given its use for modelling long-term energy system pathways from a societal perspective. However, future variants of the model can be developed to simulate real-world impacts of policies and behaviour which can include hurdle rates. 
 
 \subsection{Time \& Geography}
 \label{ss:time_geo}
-TIM has been developed with a deep knowledge of the geography of the Irish energy system. A parametric spatio-temporal approach has been take in the RES base year specification and scenario file data structures to allow flexible regional definitions and temporal resolution within TIM. TIM can run in multiple modes with multiple configurations of regional and temporal resolution ranging from a single region national model at one annual time slice, all the way to 26 counties at hourly resolution where supply-demand data is available at that spatio-temporal granularity (Electricity, Gas \& Transport). Furthermore within the power sector each existing individual power plant turbine is modelled individually with unit commitment. High techno-temporal granularity is needed to appropriately model energy futures with high variable renewable energy systems integration, especially in scenarios with high levels of electrification of end use demands. High spatial granularity is required to give greater policy clarity on optimal investment needs based on regions and counties specific characteristics to enable counteracting socio-economic challenges such as energy poverty and infrastructure development within an optimisation framework. We have decided to focus on this data-driven spatio-temporal model setup to future-proof TIM and enable future Irish energy policy research needs as data-availability improves during TIM's lifespan. This trend has already begun with Gas Network data becoming available at hourly resolution at high spatial granularity.
+TIM has been developed with a deep knowledge of the geography of the Irish energy system. A parametric spatio-temporal approach was taken in the RES base year specification and scenario file data structures to allow flexible regional definitions and temporal resolution in TIM. TIM can run in multiple modes with multiple configurations of regional and temporal resolution ranging from a single region national model at one annual time slice, all the way to 26 counties at hourly resolution where supply-demand data is available at that spatio-temporal granularity (Electricity, Gas \& Transport). Furthermore within the power sector each existing individual power plant turbine is modelled individually with unit commitment. High techno-temporal granularity is needed to appropriately model energy futures with high variable renewable energy systems integration, especially in scenarios with high levels of electrification of end use demands. High spatial granularity is required to give greater policy clarity on optimal investment needs based on regions and counties specific characteristics to enable counteracting socio-economic challenges such as energy poverty and infrastructure development within an optimisation framework. We have decided to focus on this data-driven spatio-temporal model setup to future-proof TIM and enable future Irish energy policy research needs as data-availability improves during TIM's lifespan. This trend has already begun with Gas Network data becoming available at hourly resolution at high spatial granularity.
 
 \subsection{Demands: Drivers \& projections}
 \label{ss:model_proj}
@@ -259,8 +259,7 @@ Table \ref{tab:ESD_list} lists the energy service demands in TIM along with thei
 \footnotesize
  \centering
  \caption{Energy service demands in TIM}
- \scalebox{0.9}{
- \begin{tabular}{p{18em}lccc}
+ \begin{tabular}{llccc}
  \hline
     \multirow{2}[0]{*}{Energy Service Demand} & \multirow{2}[0]{*}{Driver} & \multicolumn{2}{c}{Value} & \multirow{2}[0]{*}{Unit} \\
           &       & \multicolumn{1}{c}{2018} & \multicolumn{1}{c}{2050} &  \\ \hline
@@ -295,7 +294,6 @@ Table \ref{tab:ESD_list} lists the energy service demands in TIM along with thei
     SRV-Commercial Services: Data centers & From EirGrid & 5.63  & 40.30 & PJ \\
     SRV-Public Services: Public lighting & From \citep{GovernmentofIreland2018} & 0.48  & 0.58  & Mlamps \\ \hline
     \end{tabular}%
-    }
   \label{tab:ESD_list}%
 \end{table}%
 
@@ -392,7 +390,7 @@ New generation capacity investment costs, fixed and variable operation and maint
 
 Renewable energy potentials are based on a number of sources: Total energy resource availability of solar and wind are from \citet{Pfenninger2016} and \citet{Staffell2016} respectively with availability factors from \citet{Ruiz2019}. Ocean energy, tidal energy potential is from \citet{ORourke2010} and wave energy power matrix is derived from \citet{Nambiar2016}. Hourly availability factors for ocean energy technologies are derived from the marine institute and OPW's data buoy services.
 
-Future onshore wind energy potential has been assessed at high spatial resolution using GIS techniques. Wind farm expansion is constrained by both technology costs and a supply curve for grid connections based on a GIS analysis of existing houses, special areas of heritage and conservation, existing grid lines by voltage specification, wind energy potential, existing substation locations, and the costs per kilometre of standard ESB grid line specifications to connect wind resource potential to the existing grid. The wind energy potential is defined as a cost curve aggregated from the original 1938 suitable land parcels from the GIS analysis. (Fig. \ref{fig:wind-onshore-potential}). Due to the fact that increasing both technical details and temporal resolution causes exponential increase in model size, the spatial resolution is simplified and is represented in a 4 step cost curve (Fig. \ref{fig:wind-conn}). this can be dissaggregated on a spatial resolution down to each individual parcel of land, or on a county by county basis. Future hourly wind energy generation can generate at the same hourly capacity factor that occurred in 2018, however with capacity expansion.
+Future onshore wind energy potential has been assessed at high spatial resolution using GIS techniques. Wind farm expansion is constrained by both technology costs and a supply curve for grid connections based on a GIS analysis of existing houses, special areas of heritage and conservation, existing grid lines by voltage specification, wind energy potential, existing substation locations, and the costs per kilometre of standard ESB grid line specifications to connect wind resource potential to the existing grid. The wind energy potential is defined as a cost curve aggregated from the original 1938 suitable land parcels from the GIS analysis (Fig. \ref{fig:wind-onshore-potential}). Due to the fact that increasing both technical details and temporal resolution causes exponential increase in model size, the spatial resolution is simplified and is represented in a 4 step cost curve (Table \ref{onshore-wind-connection-cost}). This can be dissaggregated on a spatial resolution down to each individual parcel of land, or on a county by county basis. Future hourly wind energy generation can generate at the same hourly capacity factor that occurred in 2018, however with capacity expansion.
 
 Losses from electricity transmission and distribution are assumed to be 7\%, with no grid expansion costs currently represented in the model. The maximum share of variable renewable energy including wind, solar and wave energy is constrained at 75\% by 2030 and 100\% is allowed by 2050. 
 
@@ -402,17 +400,17 @@ Losses from electricity transmission and distribution are assumed to be 7\%, wit
  \caption{Onshore wind connection cost }
  \begin{tabular}{cc}
  \hline 
- Capacity(GW) & Connection Cost (Euro/kw)\\ 
+ Capacity (GW) & Connection Cost (Euro/kw)\\ 
  \hline
- 0-8.1 & €25 \\
+ 0-8.1 & 25 \\
  
- 8.1-16.8 & €39 \\
+ 8.1-16.8 & 39 \\
  
- 16.8-22.6 & €69 \\
+ 16.8-22.6 & 69 \\
  
- 22.6-26.6 & €153 \\
+ 22.6-26.6 & 153 \\
  
- 26.6-30.6 & €358 \\
+ 26.6-30.6 & 358 \\
  
  \hline
  \end{tabular}
@@ -626,8 +624,9 @@ A set of constraints limits fuel and modal shares in transport sector as follows
 %  \end{tabular}%
 %  \label{tab:house}%
 % \end{table}%
-The residential stock projections upto 2040 are taken from ESRI's housing demand estimates \citep{Bergin2020}. The stock is expected to increase by 40\% from 2018 level with a CAGR of 2\%. This results in an average of 27,600 new houses per annum between between 2021-2040. Beyond 2040, population is used as a driver to project housing stock. The total housing stock obtained in 2050 is 2.57 million which implies 8\% increase from 2040. 
-% Table generated by Excel2LaTeX from sheet 'Sheet1'
+The residential stock projections up to 2040 are taken from ESRI's housing demand estimates \citep{Bergin2020}. The stock is expected to increase by 40\% from 2018 level with a CAGR of 2\%. This results in an average of 27,600 new houses per annum between between 2021-2040. Beyond 2040, population is used as a driver to project housing stock. The total housing stock obtained in 2050 is 2.57 million which implies 8\% increase from 2040. 
+
+% Table generated by Excel2LaTeX'
 \begin{table}[htbp]
   \centering
   \footnotesize
@@ -640,11 +639,11 @@ The residential stock projections upto 2040 are taken from ESRI's housing demand
     2040  & 493   & 1003  & 878 \\
     2050  & 629   & 1057  & 890 \\ \hline
     \end{tabular}%
-  \label{tab:addlabel}%
+  \label{table: number of dwellings by type}%
 \end{table}%
 
 
-Fig.\ref{fig:TIM_RES} shows the Reference Energy System (RES) diagram for the residential sector. Energy service demands are disaggregated between archetype and non-archetype demands. ``Archetype demands" are energy service demands which depend on the house type, namely the dwelling type and BER rating. 
+Fig. \ref{fig:TIM_RES} shows the Reference Energy System (RES) diagram for the residential sector. Energy service demands are disaggregated between archetype and non-archetype demands. ``Archetype demands" are energy service demands which depend on the house type, namely the dwelling type and BER rating. 
  
 \begin{figure}[hb!]
  \centering
@@ -802,11 +801,7 @@ Fuel switching is the only mitigation option available for combustion emissions 
 \subsubsection{Process emissions}
 Among the industrial processes, the cement industry has the largest share of process emissions, which is accounted for in the model. Historical data of cement production and emissions is obtained from the National Inventory Submissions \citep{NIR2020E91:online}. Process emissions increased by 87\% between 1990 and 2018 with a CAGR of 2.3\%. The kilotonnes of cement required is projected using number of new dwellings and the energy consumption of the corresponding industrial sector in a linear model. The amount of cement needed in 2050 is projected to double relative to 2018 with a CAGR of 2.2\%. The demand for cement is then used to project process emission, which is expected to increase by 96\% between 2018 and 2050 with a CAGR of 2.1\%. 
 
-% Table generated by Excel2LaTeX from sheet 'Sheet1'
-
-
-%include something on CCS in process emissions
-% Table generated by Excel2LaTeX from sheet 'Sheet1'
+% Table generated by Excel2LaTeX
 \begin{table}[htbp]
 \footnotesize
  \centering
@@ -817,7 +812,7 @@ Among the industrial processes, the cement industry has the largest share of pro
  & 2018 & 2050 & 2018 & 2050 \\ \hline
  \makecell{Other non-metallic mineral \\ products demand process} & 117 & 155 & 109 & 144 \\ \hline
  \end{tabular}%
- \label{tab:addlabel}%
+ \label{table: process emissions}%
 \end{table}%
 
 
@@ -1048,7 +1043,7 @@ Import of Wood Chip - Step 4 & 0.0 & 34.7 & 34.7 & 34.7 & 34.7 & 34.7 & 34.7 & 3
 
 \begin{center}
 \footnotesize
-\begin{longtable}{p{15em}lllll}
+\begin{longtable}{p{22em}lllll}
 \caption{Base year generation units} \\
 \hline
 Technology description & Efficiency & Availability & Life & Start & Capacity \\
@@ -1194,9 +1189,9 @@ PWR Storage: Pumped Storage HYD Existing Turlough Hill 4 & 0.75 & 0.16 & 150 & &
  \begin{tablenotes}
  \item[a] The values exclude taxes and subsidies
  \end{tablenotes}
- \end{threeparttable}
  \label{vehicle-purchase}
- \end{table}
+ \end{threeparttable}
+\end{table}
 
 
 \clearpage
