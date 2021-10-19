@@ -95,6 +95,7 @@
 \Author[1,2]{Vahid}{Aryanpur}
 \Author[1,2]{Ankita}{Gaur}
 \Author[1,2]{Jason}{McGuire}
+\Author[1,2]{Andrew}{Smith}
 \Author[1,2]{Xufeng}{Yue}
 \Author[1,2]{Hannah}{Daly}
 
@@ -110,7 +111,7 @@
 %% If authors contributed equally, please mark the respective author names with an asterisk, e.g. "\Author[2,*]{Anton}{Smith}" and "\Author[3,*]{Bradley}{Miller}" and add a further affiliation: "\affil[*]{These authors contributed equally to this work.}".
 
 
-\correspondence{Olexandr Balyk (olexandr.balyk@ucc.ie)}
+\correspondence{Olexandr Balyk (olexandr.balyk@ucc.ie) or Hannah Daly (h.daly@ucc.ie)}
 
 \runningtitle{TEXT}
 
@@ -197,7 +198,7 @@ TIMES outputs the optimal investment and operation level of all energy technolog
 \subsection{Model architecture}
 \label{ss:system_overview}
 
-Fig. \ref{fig:TIM-RES} shows a simplified Reference Energy System (RES) in TIM. It describes the structure and energy flows including two major parts: 1. Supply-side modules, and 2. Demand-side modules. The former comprises energy resources, fuel production and conversion technologies (e.g. biorefineries, hydrogen production and different power plants), transmission and distribution infrastructure (e.g. gas pipelines and power grid). The latter covers end-use sectors (e.g. transport, residential) and the corresponding energy service demands (i.e. passenger, freight, hot water). Energy resources incorporate both domestic fossil-based fuels and renewables potentials. These fuels are processed and then distributed across country. End-use technologies consume energy commodities to meet energy service demands. GHG emissions from fossil fuels combustion and process-related emissions in industry are tracked at the fuel supply module, electricity generation technologies and sectoral-consumption levels. 
+Fig. \ref{fig:TIM-RES} shows a simplified Reference Energy System (RES) in TIM. It describes the structure and energy flows including two major parts: supply-side and demand-side. The former comprises energy resources, fuel production and conversion technologies (e.g. biorefineries, hydrogen production and different power plants), transmission and distribution infrastructure (e.g. gas pipelines and power grid). The latter covers end-use sectors (e.g. transport, residential) and the corresponding energy service demands (i.e. passenger, freight, hot water). Energy resources incorporate both domestic fossil-based fuels and renewables potentials. These fuels are processed and then distributed across country. End-use technologies consume energy commodities to meet energy service demands. GHG emissions from fossil fuels combustion and process-related emissions in industry are tracked at the fuel supply module, electricity generation technologies and sectoral-consumption levels. 
 
 \begin{figure}[ht]
  \centering
@@ -206,7 +207,7 @@ Fig. \ref{fig:TIM-RES} shows a simplified Reference Energy System (RES) in TIM. 
  \label{fig:TIM-RES}
 \end{figure}
 
-The model's base year is 2018 and all energy flows, emissions and energy technology stocks are calibrated to SEAI's 2018 energy balance \citep{SEAI2019}.
+The model's base year is 2018 and all energy flows, emissions and energy technology stocks are calibrated to the 2018 energy balance \citep{SEAI2019}.
 
 The discount rate, the degree to which future values are discounted to the present, is a key parameter in the TIMES objective function. A social discount rate reflects how society views present costs and benefits against future ones and is lower than a financial discount rate, which is how firms make investment decisions. In appraising potential projects or investments, the Government applies a social discount rate. Broadly speaking, in an ESOM scenario with a carbon budget constraint, a higher discount rate would promote later decarbonisation and less capital-intensive technology choices. In this model, a discount rate of 4\% is applied, which is based on a Social Rate of Time Preference methodology as set forth in the Public Spending Code \citep{OCallaghan2018}. This rate is consistent with \citet{Garcia-Gusano2016} who recommend using a maximum value of 4-5\% for the social discount rate in ESOMs. 
 
@@ -214,13 +215,14 @@ Technology-specific discount rates (also known as hurdle rates) are typically us
 
 \subsection{Time \& Geography}
 \label{ss:time_geo}
-TIM has been developed with a deep knowledge of the geography of the Irish energy system. A parametric spatio-temporal approach was taken in the RES base year specification and scenario file data structures to allow flexible regional definitions and temporal resolution in TIM. TIM can run in multiple modes with multiple configurations of regional and temporal resolution ranging from a single region national model at one annual time slice, all the way to 26 counties at hourly resolution where supply-demand data is available at that spatio-temporal granularity (Electricity, Gas \& Transport). Furthermore within the power sector each existing individual power plant turbine is modelled individually with unit commitment. High techno-temporal granularity is needed to appropriately model energy futures with high variable renewable energy systems integration, especially in scenarios with high levels of electrification of end use demands. High spatial granularity is required to give greater policy clarity on optimal investment needs based on regions and counties specific characteristics to enable counteracting socio-economic challenges such as energy poverty and infrastructure development within an optimisation framework. We have decided to focus on this data-driven spatio-temporal model setup to future-proof TIM and enable future Irish energy policy research needs as data-availability improves during TIM's lifespan. This trend has already begun with Gas Network data becoming available at hourly resolution at high spatial granularity.
+TIM has been developed with a deep knowledge of the geography of the Irish energy system. A spacial spatio-temporal approach was taken in the RES base year specification and scenario file data structures to allow flexible regional definitions and temporal resolution in TIM. The model can run in multiple modes with multiple configurations of regional and temporal resolution ranging from a single region national model at one annual time slice, all the way to 26 counties at hourly resolution where supply-demand data is available at that spatio-temporal granularity (Electricity, Gas \& Transport). Furthermore within the power sector each existing individual power plant turbine is represented individually with a possibility to use unit commitment. High techno-temporal granularity is needed to appropriately model energy futures with high variable renewable energy systems integration, especially in scenarios with high levels of electrification of end use demands. High spatial granularity is required to give greater policy clarity on optimal investment needs based on regions and counties specific characteristics to enable counteracting socio-economic challenges such as energy poverty and infrastructure development within an optimisation framework. We have decided to focus on this data-driven spatio-temporal model setup to future-proof TIM and enable future Irish energy policy research needs as data-availability improves during TIM's lifespan.
 
 \subsection{Demands: Drivers \& projections}
 \label{ss:model_proj}
-Energy service demands in end-use sectors are driven by growth in the population and in the economy. The model is set up to allow for alternative scenarios for these drivers to feed into energy service demand projections in the end-use sectors. This section describes baseline driver projections; detailed descriptions of energy service demand projections are in the respective sectoral sections. 
+Energy service demands in end-use sectors are driven by growth in the population and in the economy. The model is set up to allow for alternative scenarios for these drivers resulting in different energy service demand projections in the end-use sectors. This section describes baseline driver projections with a detailed description of energy service demand projections included in the respective sector sections. 
+
 \subsubsection{Population}
-Historical population estimates and future projections are obtained from the Central Statistics Office (CSO), Ireland \citep{CentralStatisticsOffice2020}. We use the M2F1 scenario since it represents medium growth in population and is in line with population projections used in other national sources \citep{Yakut2020}.
+Historical population estimates and future projections are obtained from \citet{CentralStatisticsOffice2020}. We use the M2F1 scenario since it represents a medium growth in population and is in line with population projections used in other national sources \citep{Yakut2020}.
 
 % Table generated by Excel2LaTeX from sheet 'Population'
 \begin{table}[htbp]
@@ -244,11 +246,15 @@ Historical population estimates and future projections are obtained from the Cen
 
 \subsubsection{Economic growth}
 \begin{itemize}
+
  \item Historical Gross Value Added (GVA) for the required NACE categories in the Services and Industry sectors is obtained from EUROSTAT database. Projections for GVA are outputs of the Ireland Environment, Energy and Economy (I3E) model \citep{Yakut2020}.
- \item Gross Domestic Product (GDP) - Historical and future projections for GDP is obtained from Organisation for Economic Co-operation and Development (OECD) \citep{OECD2018}. 
- \item Income - Historical values of total incomes are taken from CSO's database \citep{CSOincome}. Assumption about income growth in the future are that from the National Transport Model \citep{AECOMIrelandLimited2019}. 
- %\item Employment - The number of people employed in each of the NACE categories is obtained from EUROTSTAT database. Future projections are based on average levels of employment in the last decade with respect to the total population. 
- \item Modified Gross National Income (GNI*)- Derived from CSO's labour force scenario combined with a forecast for output per person \citep{cso_lf}. 
+ 
+ \item Gross Domestic Product (GDP), both historical and future projections, is obtained from \citet{OECD2018}. 
+ 
+ \item Income, historical values of total incomes, are taken from \citet{CSOincome}. Assumption about income growth in the future are from the National Transport Model \citep{AECOMIrelandLimited2019}. 
+ 
+ \item Modified Gross National Income (GNI*) is derived from CSO's labour force scenario combined with a forecast for output per person \citep{cso_lf}. 
+
 \end{itemize}
 
 \subsubsection{Energy service demands}
@@ -261,7 +267,7 @@ Table \ref{tab:ESD_list} lists the energy service demands in TIM along with thei
  \caption{Energy service demands in TIM}
  \begin{tabular}{llccc}
  \hline
-    \multirow{2}[0]{*}{Energy Service Demand} & \multirow{2}[0]{*}{Driver} & \multicolumn{2}{c}{Value} & \multirow{2}[0]{*}{Unit} \\
+    \multirow{2}[0]{*}{Energy Service Demand} & \multirow{2}[0]{*}{Driver / Projection source} & \multicolumn{2}{c}{Value} & \multirow{2}[0]{*}{Unit} \\
           &       & \multicolumn{1}{c}{2018} & \multicolumn{1}{c}{2050} &  \\ \hline
     Non-Energy Mining  & GVA per capita, Population & 2.07  & 0.13  & PJ \\
     Food and beverages  & GVA per capita, Population & 22.25 & 34.00 & PJ \\
@@ -280,7 +286,7 @@ Table \ref{tab:ESD_list} lists the energy service demands in TIM along with thei
     Transport Demand: Short-range passenger travels & Income, population & 14.56 & 21.07 & BPKMS \\
     Transport Demand: Medium-range passenger travels & Income, population & 31.28 & 45.29 & BPKMS \\
     Transport Demand: Long-range passenger travels & Income, population & 27.13 & 38.97 & BPKMS \\
-    Transport Demand: Goods vehicle for freight & Growth rate from \citep{AECOMIrelandLimited2019} & 11.54 & 25.14 & BTKMS \\
+    Transport Demand: Goods vehicle for freight & Growth rate \citep{AECOMIrelandLimited2019} & 11.54 & 25.14 & BTKMS \\
     Transport Demand: Turism fuel  &       & 7.72  & 0.00  & PJ \\
     Transport Demand: Navigation fuel  & GDP   & 3.51  & 10.04 & PJ \\
     Transport Demand: Unspecified fuel &       & 21.78 & 0.00  & PJ \\
@@ -291,8 +297,8 @@ Table \ref{tab:ESD_list} lists the energy service demands in TIM along with thei
     Residential Detached Demand & Population & 724.43 & 889.76 & 000' \\
     Services - Commercial Services & GNI*  & 28.90 & 47.39 & Mm\textsuperscript{2} \\
     Services - Public Services & GNI*  & 58.15 & 95.35 & Mm\textsuperscript{2} \\
-    SRV-Commercial Services: Data centers & From EirGrid & 5.63  & 40.30 & PJ \\
-    SRV-Public Services: Public lighting & From \citep{GovernmentofIreland2018} & 0.48  & 0.58  & Mlamps \\ \hline
+    Services - Commercial Services - Data centers & \citet{EirGridT57:online} & 5.63  & 40.30 & PJ \\
+    Services - Public Services - Public lighting & \citet{GovernmentofIreland2018} & 0.48  & 0.58  & Mlamps \\ \hline
     \end{tabular}%
   \label{tab:ESD_list}%
 \end{table}%
@@ -314,7 +320,7 @@ Web-based dashboards\footnote{https://tim-review1.netlify.app/results/} have bee
 
 TIM has been co-developed with the LEAP-Ireland model \citep{MacUidhir2020}, which is a bottom-up simulation model of the Irish energy system which simulates the impact of different policy measures and targets on overall GHG emissions in Ireland, with a particularly granular representation of transport and residential heat demand. Underlying data for the relevant sectors are shared between TIM and LEAP using a Data Repository and shared coding convention dictionary to improve the consistency between the models, give more robust analytical insights for policy and to share and exchange expertise between the modelling teams. This also facilitates multi-model approaches to energy systems modelling, which can make use of harmonised hybrid frameworks coupling simulation and optimisation simultaneously \citep{rogan2014leaps}.
 
-TIM has also been developed to enable soft-linking with the Ireland Environment, Energy and Economy (I3E) macroeconomic model developed at the Economic and Social Research Institute (ESRI) \citep{Yakut2020}. I3E is a single-country, multi-sector (NACE) inter-temporal computable general equilibrium (CGE) model focusing on environmental and energy accounts in Ireland. While COre Structural MOdel for Ireland (COSMO) focuses on the influence of monetary and fiscal policy on economic activity in Ireland, I3E supplements the macroeconomic outlook from COSMO with environmental and energy disaggregation. I3E retrieves economic growth rates and population estimates from COSMO. TIM derives macroeconomic drivers coupled to the output variables of I3E, enabling scenario variants based on alternative monetary, fiscal and macroeconomic futures. The coding conventions, datahub, and linking to original raw data approach, enables rapid energy system outlook updates aligned with the update cycle of the macroeconomic outlooks from the ESRI, Central Bank and OECD.
+TIM has also been developed to enable soft-linking with the Ireland Environment, Energy and Economy (I3E) macroeconomic model developed at the Economic and Social Research Institute (ESRI) \citep{Yakut2020}. I3E is a single-country, multi-sector (NACE) inter-temporal computable general equilibrium (CGE) model focusing on environmental and energy accounts in Ireland. While COre Structural MOdel for Ireland (COSMO) focuses on the influence of monetary and fiscal policy on economic activity in Ireland, I3E supplements the macroeconomic outlook from COSMO with environmental and energy disaggregation. I3E retrieves economic growth rates and population estimates from COSMO. TIM derives macroeconomic drivers coupled to the output variables of I3E, enabling scenario variants based on alternative monetary, fiscal and macroeconomic futures, as well as rapid energy system outlook updates aligned with the update cycle of the macroeconomic outlooks from the ESRI.
 
 %TIM has also been developed to enable wide stakeholder review, feedback and iterative policy insight. %Will write this for the paper - after the review process. 
 
@@ -327,16 +333,16 @@ TIM has also been developed to enable soft-linking with the Ireland Environment,
 The supply sector (SUP) in TIM represents the primary and secondary energy commodities and the processes by which those same commodities are imported, exported, domestically produced through mining or capture of renewable energy potentials and transformed or refined for end-use consumption within the energy system both in the base year (2018) and into the future. The supply sector declares the future available routes for commodity trade for import and export of energy commodities in terms of quantity of energy, and in terms of import capacity through ports, pipelines and inter-connectors at any given time in the model horizon. 
 
 \subsubsection{Energy Balance and Commodity Declarations}
-Building the supply sector begins with declaring the energy commodities as per the SEAI energy balance as reported to the international energy agency \citep{SEAI2019}. Attention is taken to ensure best practice coding conventions are followed for each commodity - coal, oil, gas, first- and second-generation bioenergy (biogas, bioliquids and solid biomass), liquid and gaseous hydrogen, wind, solar, geothermal, wave, tidal, municipal wastes, agriculture wastes, industrial food waste. Active transport time for walking and cycling is also declared. Setting out predefined and intuitive commodity naming convention and a dictionary that is shared across TIM and LEAP-Ireland has multiple benefits for multi-model coupling, diagnostics and results reporting that is discussed. All base year commodities are declared in the Supply sector to maintain clear, tidy and transparent data structures within TIM.
+Building the supply sector begins with declaring the energy commodities as per the \citet{SEAI2019} energy balance, as reported to the International Energy Agency. Attention is taken to ensure best practice coding conventions are followed for each commodity - coal, oil, gas, first- and second-generation bioenergy (biogas, bioliquids and solid biomass), liquid and gaseous hydrogen, wind, solar, geothermal, wave, tidal, municipal wastes, agriculture wastes, industrial food waste. Active transport time for walking and cycling is also declared. Setting out predefined and intuitive commodity naming convention and a dictionary that is shared across TIM and LEAP-Ireland has multiple benefits for multi-model coupling, diagnostics and results reporting that is discussed. All base year commodities are declared in the Supply sector to maintain clear, tidy and transparent data structures within TIM.
 
 \subsubsection{Emissions Tracking}
-The environmental emissions from each primary energy commodity is tracked on the basis of energy and processed based emissions via combustion and activity based emissions intensity factors, calibrated on an sector-by-sector basis. Within the Supply sector, methane, nitrogen dioxide, sulfur dioxide, carbon dioxide, nitrogen oxide, and particulate matter (PM2.5, PM10) are tracked in the sector's emissions accounting balance.
+The environmental emissions from each primary energy commodity are tracked on the basis of energy and processes-based emissions via combustion and activity-based emissions intensity factors, calibrated on an sector-by-sector basis. Within the Supply sector, methane, nitrogen dioxide, sulfur dioxide, carbon dioxide, nitrogen oxide, and particulate matter can be tracked in the sector's emissions accounting balance.
 
 \subsubsection{Import/Export}
-Primary and secondary energy commodities, both fossil energy and bioenergy, are imported from international markets at international prices. There are no constraints on the import quantity of oil and coal as it is assumed that international markets can supply domestic demand and that there is sufficient on island storage aligned with IEA-OECD energy security protocols. Imported gas via pipeline and LPG are modelled on a seasonal basis and are constrained to reflect seasonal peak import capacity constraints in pipelines. Bidirectional electricity inter-connectors to the UK are also declared in the upstream supply sector.
+Primary and secondary energy commodities, both fossil energy and bioenergy, are imported from international markets at international prices. There are no constraints on the import quantity of oil and coal as it is assumed that international markets can supply domestic demand and that there is sufficient on island storage aligned with IEA-OECD energy security protocols. Imported gas via pipeline and LPG are modelled on an annual basis. Bidirectional electricity inter-connectors to the UK are also represented.
 
 \subsubsection{Fuel prices}
-Fuel prices for each imported energy commodity are sourced from the International Energy Agency's World Energy Outlook (WEO) from 2019 and 2020 \citep{InternationalEnergyAgency2020}. Secondary commodity import prices are index linked to the primary commodity by a price ratio on the basis of the current ratio between primary and secondary prices. For example, imported gasoline is assumed to be 1.65 times the price of crude oil per unit energy.
+Fuel prices for each imported energy commodity are sourced from \citet{IEA2019,InternationalEnergyAgency2020} World Energy Outlook. Secondary commodity import prices are index linked to the primary commodities by a price ratio on the basis of the current ratio between primary and secondary commodity prices. For example, imported gasoline is assumed to be 1.65 times the price of crude oil per unit energy.
 
 
 \subsubsection{Domestic Energy Resources}
@@ -818,11 +824,11 @@ Among the industrial processes, the cement industry has the largest share of pro
 
 \subsection{Services}
 \label{ss:services}
-The service sector in TIM comprises public and private services. The structure of the sector mostly comes from the Irish TIMES model with an addition of the data centre electricity demand. It includes a representation of the following energy service demands: space heating, space cooling, water heating, cooking, refrigeration, lighting, data centres electricity demand, as well as other energy and electric demand.
+The service sector in TIM comprises public and private services. It includes a representation of the following energy services: space heating, space cooling, water heating, cooking, refrigeration, building lighting and other appliances. Data centres electricity demand and public lighting are also represented.
 
 %A combination of GVA, population and employment levels is used to project energy demand in the service sector according to the NACE categories (except for data centres) available in the SEAI's energy balance \citep{SEAI2019}. Energy demand from commercial and public services is expected to increase by 86\% in 2050. 
 
-Future fuel switching and efficiency options in the Services sector are modelled in a top-down fashion given a lack of sufficient building-level data to enable a bottom-up analysis. This is an area identified as a priority area for future model development. 
+Future fuel switching and technology-based efficiency options in the Services sector are represented explicitly. However given a lack of sufficient building-level data to enable a detailed analysis, public and private services are modelled in an aggregated fashion (i.e. the building stock is not divided in categories). This is an area identified as a priority area for future model development. 
 
 The end-use demand services in the service sector include million meter square of area for public and private sector buildings, data centre demand and public lighting units. The area is projected assuming the same growth as in GNI*. The total area is projected to increase by 61.8\% by 2050 from 2018 level with a CAGR of 1.5\%. 
 
