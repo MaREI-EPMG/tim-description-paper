@@ -11,10 +11,7 @@
 %% 2-column papers and preprints
 \documentclass[gmd,manuscript]{copernicus}
 
-
-
-%% Journal abbreviations (please use the same for preprints and final revised papers)
-
+%% Journal abbreviations (please use the same for preprints and final revised paper
 
 % Advances in Geosciences (adgeo)
 % Advances in Radio Science (ars)
@@ -135,21 +132,15 @@
 \maketitle
 
 
-
 \begin{abstract}
-Ireland has significantly increased its climate mitigation ambition, with a recent government commitment to reduce greenhouse-gases by an average of 7\% per year in the period to 2030 and a ``net-zero" target for 2050, underpinned by a series of five-year carbon budgets. Energy systems optimisation modelling (ESOM) is a widely-used tool to inform pathways to address long-term energy challenges. This article describes a new ESOM developed to inform Ireland's energy system decarbonisation challenge. The TIMES-Ireland Model (TIM) is an optimisation model of the Irish energy system, which calculates the cost-optimal fuel and technology mix to meet future energy service demands in the transport, buildings, industry and agriculture sectors, while respecting constraints in greenhouse-gas emissions, primary energy resources and feasible deployment rates. TIM is developed to take into account Ireland's unique energy system context, including a very high potential for offshore wind energy and the challenge of integrating this on a relatively isolated grid, a very ambitious decarbonisation target in the period to 2030, the policy need to inform five-year carbon budgets to meet policy targets, and the challenge of decarbonising heat in the context of low building stock thermal efficiency and high reliance on fossil fuels. To that end, model features of note include ``future proofing" with flexible temporal and spatial definitions, with a possible hourly time resolution, unit commitment and capacity expansion features in power sector, residential and passenger transport underpinned by detailed bottom-up sectoral models, cross-model harmonisation and soft-linking with demand and macro models. The paper also outlines a priority list of future model developments to better meet the challenge of deeply decarbonising energy supply and demand, taking into account equity, cost-effectiveness and technical feasibility. To support transparency and openness in decision-making, TIM is available to download under an open-source licence.
+Ireland has significantly increased its climate mitigation ambition, with a recent government commitment to reduce greenhouse-gases by an average of 7\% per year in the period to 2030 and a ``net-zero" target for 2050, underpinned by a series of five-year carbon budgets. Energy systems optimisation modelling (ESOM) is a widely-used tool to inform pathways to address long-term energy challenges. This article describes a new ESOM developed to inform Ireland's energy system decarbonisation challenge. The TIMES-Ireland Model (TIM) is an optimisation model of the Irish energy system, which calculates the cost-optimal fuel and technology mix to meet future energy service demands in the transport, buildings, industry and agriculture sectors, while respecting constraints in greenhouse-gas emissions, primary energy resources and feasible deployment rates. TIM is developed to take into account Ireland's unique energy system context, including a very high potential for offshore wind energy and the challenge of integrating this on a relatively isolated grid, a very ambitious decarbonisation target in the period to 2030, the policy need to inform five-year carbon budgets to meet policy targets, and the challenge of decarbonising heat in the context of low building stock thermal efficiency and high reliance on fossil fuels. To that end, model features of note include ``future proofing" with flexible temporal and spatial definitions, with a possible hourly time resolution, unit commitment and capacity expansion features in power sector, residential and passenger transport underpinned by detailed bottom-up sectoral models, cross-model harmonisation and soft-linking with demand and macro models. The paper also outlines a priority list of future model developments to better meet the challenge of deeply decarbonising energy supply and demand, taking into account equity, cost-effectiveness and technical feasibility. To support transparency and openness in decision-making, TIM is available to download under a Creative Commons licence.
 \end{abstract}
 
 
 \copyrightstatement{TEXT} %% This section is optional and can be used for copyright transfers.
 
-
-%%Energy systems optimisation model (ESOM) \sep The integrated MARKAL-EFOM system (TIMES) \sep climate mitigation modelling \sep Ireland \sep Model description
 %% keywords here, in the form: keyword \sep keyword
-
-
-
-
+%Energy systems optimisation model (ESOM) \sep The integrated MARKAL-EFOM system (TIMES) \sep climate mitigation modelling \sep Ireland \sep Model description
 
 \introduction   %% \introduction[modified heading if necessary]
 Ireland faces very significant challenges in meeting greater energy needs in the future with a much lower carbon footprint. Ireland has a high per-capita carbon footprint relative to the European average and will fail its 2020 decarbonisation objective as set by the European Union (EU) \citep{DCCAE2019}. Under existing policy measures, overall GHGs are projected to be relatively stable in the period to 2030 and to increase in the period to 2040 \citep{EPA}. In contrast, the EU's Effort Sharing Regulation sets forth a legislated target which increases the Irish decarbonisation objective, to reduce non-emissions traded sector (ETS) emissions by 30\% relative to 2005 levels by 2030 \citep{CCAC2020}. In 2019 the Government presented a Climate Action Plan which set forth sector-by-sector measures to meet this increased ambition from the EU, which includes increasing the renewable electricity share to 70\% by 2030, for electric vehicles to reach full market share later in the decade, and very ambitious targets for retrofitting and electrifying home heating. 
@@ -198,7 +189,7 @@ TIMES outputs the optimal investment and operation level of all energy technolog
 \subsection{Model architecture}
 \label{ss:system_overview}
 
-Fig. \ref{fig:TIM-RES} shows a simplified Reference Energy System (RES) in TIM. It describes the structure and energy flows including two major parts: supply-side and demand-side. The former comprises energy resources, fuel production and conversion technologies (e.g. biorefineries, hydrogen production and different power plants), transmission and distribution infrastructure (e.g. gas pipelines and power grid). The latter covers end-use sectors (e.g. transport, residential) and the corresponding energy service demands (i.e. passenger, freight, hot water). Energy resources incorporate both domestic fossil-based fuels and renewables potentials. These fuels are processed and then distributed across country. End-use technologies consume energy commodities to meet energy service demands. GHG emissions from fossil fuels combustion and process-related emissions in industry are tracked at the fuel supply module, electricity generation technologies and sectoral-consumption levels. 
+Fig. \ref{fig:TIM-RES} shows a simplified RES in TIM. It describes the structure and energy flows including two major parts: supply-side and demand-side. The former comprises energy resources, fuel production and conversion technologies (e.g. biorefineries, hydrogen production and different power plants), transmission and distribution infrastructure (e.g. gas pipelines and power grid). The latter covers end-use sectors (e.g. transport, residential) and the corresponding energy service demands (i.e. passenger, freight, hot water). Energy resources incorporate both domestic fossil-based fuels and renewables potentials. These fuels are processed and then distributed across country. End-use technologies consume energy commodities to meet energy service demands. GHG emissions from fossil fuels combustion and process-related emissions in industry are tracked at the fuel supply module, electricity generation technologies and sectoral-consumption levels. 
 
 \begin{figure}[ht]
  \centering
@@ -314,7 +305,7 @@ Table \ref{tab:ESD_list} lists the energy service demands in TIM along with thei
 
 TIM has been developed with the goal of achieving ``best practice" standards in software development and open modelling convention. A git-centred model development process has been an integral part of the model development approach to enable version control and model management. Along with improvements in management, quality assurance and transparency this brings, it also allows developers and researchers from different projects to branch research versions of the model, to explore innovations and new developments, while keeping a secure and stable main version of the model for policy application. At the same time, individual projects and researchers can input their improvements and developments to the core model, to enable continuous improvements. 
 
-TIM is openly available, which is a prerequisite for transparency, repeatable research, model maintenance and enhancement and verification of results \citep{Pfenninger2018}. 
+TIM is freely available, which is a prerequisite for transparency, repeatable research, model maintenance and enhancement and verification of results \citep{Pfenninger2018}. 
 
 Web-based dashboards\footnote{https://tim-review1.netlify.app/results/} have been extensively used in the model development process, both for internal model diagnostics and for external engagement and review. 
 
@@ -348,24 +339,24 @@ Fuel prices for each imported energy commodity are sourced from \citet{IEA2019,I
 \subsubsection{Domestic Energy Resources}
 Domestic fossil fuel reserves for production of natural gas from both the Corrib and Kinsale gas fields, and the production of peat, are calibrated with two-step supply curves. These supply curves are constrained in terms of cumulative energy reserves, annual production costs, and annual production output in energy terms to account for typical production profiles from each field.
 
-Renewable energy potentials (hydro, wind, solar, waste, ocean, geothermal, and ambient heat) are declared in the upstream sector but are calibrated and constrained in their relevant sectors, such as power generation and transport.
+Renewable energy potentials (hydro, wind, solar, waste, ocean, geothermal, and ambient heat) are declared in the supply sector but are calibrated and constrained in their relevant sectors, such as power generation and transport.
 
 \subsubsection{Bioenergy potentials}
-Bioenergy potentials are calibrated to the SEAI's ``Bioenergy Supply in Ireland: 2015-2035" report \citep{SEAI2015} both in terms of sustainable import volume availability and domestic production potentials. Domestic bioenergy potentials such as sawmill residues, post-consumer recycled wood, municipal waste, tallow, recovered vegetable oil, straw, animal waste and industrial food wastes are modelled with three-step supply curves in terms of price and quantities available. Crop-based bioenergy feedstocks are modelled within the agriculture sector. Domestic bioenergy supply potentials and costs are sensitive to scenarios narrative and as such are modelled within scenario files to account for uncertainty.
+Bioenergy potentials are calibrated to \citet{SEAI2015} both in terms of sustainable import volume availability and domestic production potentials. Domestic bioenergy potentials such as sawmill residues, post-consumer recycled wood, municipal waste, tallow, recovered vegetable oil, straw, animal waste and industrial food wastes are modelled with three-step supply curves in terms of price and quantities available. Crop-based bioenergy feedstocks are modelled within the agriculture sector. Domestic bioenergy supply potentials and costs are sensitive to scenarios narrative and as such are modelled within scenario files to account for uncertainty.
 
-Available agriculture sector commodities both bioenergy, land availability and herd types are declared in the supply sector.
+Some agriculture sector commodities (i.e. bioenergy, land availability and herd types) are declared in the supply sector.
 
 \subsubsection{Refineries}
-The Whitegate refinery is calibrated to import crude oil at international prices and converts crude oil to the refineries typical fuel slate based on upper bounds of fuel shares such that the output has flexible upper shares of 22.9\% gasoline, 8.1\% kerosene, 40.9\% diesel with the remaining 34.4\% heavy fuel oil to be exported with an overall conversion efficiency of 99.2\%. The refinery is constrained to stay at current capacity, has a lifespan of 50 years, and the production costs are differentiated by production (flow) costs for each output fuel.
+The Whitegate refinery is calibrated to import crude oil at international prices and converts crude oil to refined products limited by upper bounds of output shares such that the output has flexible upper shares of 22.9\% gasoline, 8.1\% kerosene, 40.9\% diesel and 34.4\% heavy fuel oil. The refinery is constrained to stay at current capacity, has a lifespan of 50 years, and the production costs are differentiated by production (flow) costs for each output fuel.
 
 \subsubsection{Electricity Inter-connectors}
-Existing electricity inter-connectors are calibrated such that there is a price differential between annual average price for import or export of electricity to the UK of \euro{4}/GJ. The 2018 export quantity of electricity to the UK is calibrated as per historical data, but export activity of electricity is currently a weakness in the model given that TIM does not model the UK electricity market, other than a price signal, and so future imports and exports of electricity is constrained off by default. This constrained can be relaxed but is used to explore domestic needs for system flexibility, security, system services, and storage in terms of hydrogen and battery electricity storage.
+Existing electricity inter-connectors are calibrated such that there is a price differential between annual average price for import and export of electricity to the UK of 30\%. The 2018 export and import quantities of electricity are calibrated as per historical data. The future activity is constrained using upper bounds, given that TIM does not model the UK electricity market, other than through predefined price signal. This constrain can be relaxed, but is used to explore domestic needs for system flexibility, security, system services and storage.
 
 \subsubsection{Biorefineries}
-Future bio-refinery technologies are defined in the supply sector future technology (SubRES) database. Ethanol production from wheat, woody biomass and grass is defined. Bio-diesel options from OSR, woody biomass, industrial food waste, RVO and tallow are defined. Wood pellets from biomass is defined. Biogas production from Grass, woody biomass, Municipal waste, industrial food waste and animal wastes are defined. All bio-refining technologies are defined in terms of potential start year, efficiency, investment costs, their availability factor and the operation and maintenance costs.
+Future bio-refinery technologies are defined in the supply sector future technology (SubRES) database. The following technologies are defined: 1) ethanol production from wheat, woody biomass and grass; 2) bio-diesel production from OSR, woody biomass, industrial food waste, RVO and tallow; 3) wood pellets production from biomass; and 4) biogas production from grass, woody biomass, municipal waste, industrial food waste and animal wastes. All bio-refining technologies are defined in terms of start year, efficiency, investment costs, availability factor, and the operation and maintenance costs.
 
 \subsubsection{Hydrogen}
-Hydrogen production is modelled in the future, disaggregating centralised and decentralised electrolysis options. Delivery options are disaggregated and costed at high pressure for both transmission and distribution pipelines as well as a road tanker option for distribution. Hydrogen storage is also modelled within TIM at the DAYNITE timeslice level allowing hourly production and consumption of hydrogen to be modelled. This is particularly useful for modelling electricity grid balancing with unit commitment, dispatch and capacity expansion while capture variable renewable energy system dynamics. We will discuss this further in the power sector description. 
+Hydrogen production is modelled in the future, disaggregating centralised and decentralised electrolysis options. Delivery options are disaggregated and costed at high pressure for both transmission and distribution pipelines as well as a road tanker option for distribution. Hydrogen storage is also modelled within TIM at the DAYNITE timeslice level allowing hourly production and consumption of hydrogen to be represented. This is particularly useful for modelling electricity grid balancing with unit commitment, dispatch and capacity expansion while capturing variable renewable energy system dynamics.
 
 \subsection{Electricity}
 \label{ss:power}
@@ -373,14 +364,8 @@ Hydrogen production is modelled in the future, disaggregating centralised and de
 \subsubsection{Overview}
 Ireland has a high share of variable renewable electricity for a relatively isolated grid, with 32.5\% of electricity generation in 2019 coming from onshore wind energy. Achieving the 2020 RES-E target has encouraged strong growth in onshore wind, while increasing the non-synchronous penetration of renewables to 70\% by 2030 including offshore wind development is a key policy objective over the next decade as Ireland moves towards a net zero carbon electricity system. 
 
-Due to computational burden, existing long-term ESOMs mainly apply stylised temporal resolution and split each model year into 10 to 20 time-slices. This level of temporal resolution is insufficient in capturing implications from variable renewable energy sources with high intermittency, causing inaccuracy in modelling results, including generation capacity, energy storage, and additional cost related to requirements in flexibility options. Previous analysis has applied new methodologies to address the weakness of energy systems modelling in treating short-term constraints \citep{Collins2017}. For example, a soft-linking methodology has been applied to link Irish-TIMES model with a unit commitment and economic dispatch models such as PLEXOS \citep{Deane2012}. With high technical and temporal details, the PLEXOS model better simulates the operation of the power system and provides additional insights into the power system. However, soft-linking methods do not assure convergence and optimality of such incoherent modelling framework. Some analysis has improved temporal resolution and demonstrated that increasing the number of time slices has impacts on modelling results \citep{Pina2011,Kannan2013,Gaur2019}. However, it is pointed out that only increasing time slices may not be enough and there are other impacting factors \citep{Poncelet2016}. The TIM power sector provides an integrated modelling framework with high temporal, spatial and technical resolution that better model the operation of the power system hard coupled into the overall energy system to capture implications from variable renewable energy sources under deep decarbonisation pathways. 
-
-The TIM power sector has been developed with state-of-the-art TIMES modelling methods including several novelties, such as flexible regional definitions, flexible time-slice definition (up to an hourly resolution with 8760 time-slices), ability to model dispatch, unit commitment of individual generation units, capacity expansion, and spatially explicit grid connection supply curves cost of future onshore wind potential. Modelling with TIM in hourly unit commitment mode further enables intra-day and inter-day energy storage options to be modelled appropriately leveraging pumped hydro, hydrogen production and consumption and battery electric technology options in the future technology (SubRES) database. This enables TIM to be able to appropriately model the challenges of integrating high levels of variable renewable electricity onto a relatively isolated grid, while balancing supply, curtailment, and energy storage with demand growth in historical sectors as well as new demands for power such as data centres.
-
 \subsubsection{Existing Dispatchable Grid}
-It is well documented in the literature that ESOMs that do not include reasonably high temporal resolution and unit commitment details typically over estimate the potential for VRES in future zero carbon energy systems and under-estimate the requirement for energy storage and system flexibility on the grid.
-
-The existing 61 generation unit fleet is calibrated to the base year of 2018 from the Commission for Energy Regulation (CRU) I-SEM validated PLEXOS model \citep{Geffert2018}. Each existing generation unit can be explicitly modelled with unit commitment. This model configuration includes the generation unit capacity, the fuel type of each generation unit, the start up costs (from cold, warm and hot), the efficiency curve of the generation unit to include startup and shutdown phases, startup and shutdown times (cold, warm and hot), the ramp rates, minimum load, efficiency at minimum load, minimum up-time and minimum down-time, the unit lifespan, the unit annual availability, and the start year of the unit \citep{Geffert2018}. The near-term generation unit pipeline is calibrated to the 2020 Eirgrid Generation Capacity Statement (GCS) to account for early closures of units before their economic lifespan, which largely takes into account coal and peat based plants during the next decade \citep{EirGridadSONI2019}. We have not forced on new capacity of future planned power plants from the GCS in TIM, which includes recent battery storage installations. These recent and planned units can be forced on via a scenario file. 
+The existing 61 generation unit fleet is calibrated to the base year of 2018 from the Commission for Energy Regulation (CRU) I-SEM validated PLEXOS model \citep{Geffert2018}. Each existing generation unit can be explicitly modelled with unit commitment. This model configuration includes the generation unit capacity, the fuel type of each generation unit, the start up costs (from cold, warm and hot), the efficiency curve of the generation unit to include startup and shutdown phases, startup and shutdown times (cold, warm and hot), the ramp rates, minimum load, efficiency at minimum load, minimum up-time and minimum down-time, the unit lifespan, the unit annual availability, and the start year of the unit \citep{Geffert2018}. The near-term generation unit pipeline is calibrated to \citet{EirGridadSONI2019,EirGrid&SONI2020} to account for early closures of units before their economic lifespan, which largely takes into account coal and peat based plants during the next decade. We have not forced on new capacity of future planned power plants from \citet{EirGrid&SONI2020} in TIM, which includes recent battery storage installations. These recent and planned units can be forced on via a scenario file. 
 
 The existing 302 Onshore and 1 Offshore Wind farms within the Irish Wind Energy Association database currently operate as a single aggregated generation pool governed by historical hourly availability factors for wind generation from 2018.
 
@@ -392,11 +377,11 @@ The existing 302 Onshore and 1 Offshore Wind farms within the Irish Wind Energy 
 \end{figure}
 
 \subsubsection{Future Electricity system}
-New generation capacity investment costs, fixed and variable operation and maintenance costs and technical efficiencies are derived from the European Commission's Joint Research Centre (JRC) Energy Technology Reference Indicator projections for 2010-2050 \citep{Carlsson2014}. The future unit commitment dispatch operational constraints and cycling costs are generalised for each technology type based on fuel and vintage \citep{Kumar2012}. 
+New generation capacity investment costs, fixed and variable operation and maintenance costs and technical efficiencies for 2010-2050 are derived from \citet{Carlsson2014}. The future unit commitment dispatch operational constraints and cycling costs are generalised for each technology type based on fuel and vintage \citep{Kumar2012}. 
 
-Renewable energy potentials are based on a number of sources: Total energy resource availability of solar and wind are from \citet{Pfenninger2016} and \citet{Staffell2016} respectively with availability factors from \citet{Ruiz2019}. Ocean energy, tidal energy potential is from \citet{ORourke2010} and wave energy power matrix is derived from \citet{Nambiar2016}. Hourly availability factors for ocean energy technologies are derived from the marine institute and OPW's data buoy services.
+Renewable energy potentials are based on a number of sources. Total energy resource availability of solar and wind are from \citet{Pfenninger2016} and \citet{Staffell2016} respectively with availability factors from \citet{Ruiz2019}. Ocean and tidal energy potentials are from \citet{ORourke2010}, and wave energy power matrix is derived from \citet{Nambiar2016}. Hourly availability factors for ocean energy technologies are derived from the marine institute and OPW's data buoy services.
 
-Future onshore wind energy potential has been assessed at high spatial resolution using GIS techniques. Wind farm expansion is constrained by both technology costs and a supply curve for grid connections based on a GIS analysis of existing houses, special areas of heritage and conservation, existing grid lines by voltage specification, wind energy potential, existing substation locations, and the costs per kilometre of standard ESB grid line specifications to connect wind resource potential to the existing grid. The wind energy potential is defined as a cost curve aggregated from the original 1938 suitable land parcels from the GIS analysis (Fig. \ref{fig:wind-onshore-potential}). Due to the fact that increasing both technical details and temporal resolution causes exponential increase in model size, the spatial resolution is simplified and is represented in a 4 step cost curve (Table \ref{onshore-wind-connection-cost}). This can be dissaggregated on a spatial resolution down to each individual parcel of land, or on a county by county basis. Future hourly wind energy generation can generate at the same hourly capacity factor that occurred in 2018, however with capacity expansion.
+Future onshore wind energy potential has been assessed at high spatial resolution using GIS techniques. Wind farm expansion is constrained by both technology costs and a supply curve for grid connections based on a GIS analysis of existing houses, special areas of heritage and conservation, existing grid lines by voltage specification, wind energy potential, existing substation locations, and the costs per kilometre of standard ESB grid line specifications to connect wind resource potential to the existing grid. The wind energy potential is defined as a cost curve aggregated from 1938 suitable land parcels from a GIS analysis (Fig. \ref{fig:wind-onshore-potential}). Due to the fact that increasing both technical details and temporal resolution causes exponential increase in model size, the spatial resolution is simplified and is represented in a 4 step cost curve (Table \ref{onshore-wind-connection-cost}). This can be dissaggregated on a spatial resolution down to each individual parcel of land, or on a county by county basis. Future wind energy can generate at the same hourly capacity factor that occurred in 2018, however with capacity expansion.
 
 Losses from electricity transmission and distribution are assumed to be 7\%, with no grid expansion costs currently represented in the model. The maximum share of variable renewable energy including wind, solar and wave energy is constrained at 75\% by 2030 and 100\% is allowed by 2050. 
 
@@ -440,7 +425,7 @@ Losses from electricity transmission and distribution are assumed to be 7\%, wit
 %Xiufeng can you provide xls please? 
 
 \subsubsection{Carbon Capture and Storage, Carbon Dioxide Removal, and Negative Emissions technologies}
-It is well documented in the literature that residual emissions are likely to remain in the future (net) zero carbon energy system from ``hard-to-decarbonise" sectors \citep{Rogelj2018}. Carbon Capture and Storage (CCS), Carbon Dioxide Removal technologies (CDR), and Negative Emission Technologies (NETS) are currently seen within the literature as critical future technologies to capture the last marginal residual emissions to bring the energy system to net-zero CO2 or even net-negative CO2 by mid-century. With this in mind, TIM has carbon capture and storage (CCS) technology options available from 2030, including retrofit options on existing coal, peat and gas power plants. Bioenergy carbon capture and storage (BECCS) is defined available in TIM from 2030 and provides net negative CO2 capture and allows negative emissions electricity generation. Direct air carbon capture and storage (DACCS) is also defined as a backstop technology but will be appropriately calibrated to best practice approaches in the future technology database (SubRES) \citep{Realmonte2019}. CCS is also available in some ``hard-to-abate" industrial sectors such as cement production.
+It is well documented in the literature that residual emissions are likely to remain in the future (net) zero carbon energy system from ``hard-to-decarbonise" sectors \citep{Rogelj2018}. Carbon Capture and Storage (CCS), Carbon Dioxide Removal technologies (CDR), and Negative Emission Technologies (NETS) are currently seen within the literature as critical future technologies to capture the last marginal residual emissions to bring the energy system to net-zero CO2 or even net-negative CO2 by mid-century. With this in mind, TIM has carbon capture and storage (CCS) technology options available from 2030, including retrofit options on existing coal, peat and gas power plants. Bioenergy carbon capture and storage (BECCS) is available in TIM from 2030 and provides net negative CO2 capture and allows negative emissions electricity generation. Direct air carbon capture and storage (DACCS) is also defined as a backstop technology.
 
 \subsubsection{User constraints}
 User constraints applied to the Power sector in TIM largely pertain to the calibration of the near-term shutdown of coal and peat power plants before their economic life-time ends as a result of policy decisions. 
@@ -449,9 +434,9 @@ User constraints applied to the Power sector in TIM largely pertain to the calib
 \label{ss:transport}
 
 \subsubsection{Overview}
-The transport sector comprehensively describes the end-use transport technologies, and freight and mobility demands on a regional basis. This sector is divided into 26 counties across Ireland. To represent region-specific transport characteristics, some main parameters (vehicle fleet, transport infrastructure, fuel consumption, mileage, occupancy rate, load factor) are differentiated on a county level. Transport demand is split to three main categories: passenger, freight, and others. The passenger and freight demands are expressed as activity demands, and others are defined as a final energy demand (PJ). These final energy demands further split into aviation (international and domestic), navigation, fuel tourism and unspecified, aligned with the SEAI Energy Balance \citep{SEAI2019}. ``Fuel tourism" refers to cross-border consumers and a portion of demand is used by unspecified modes. 
+The transport sector comprehensively describes the end-use transport technologies, and freight and mobility demands on a regional basis. This sector is divided into 26 counties across Ireland. To represent region-specific transport characteristics, some main parameters (vehicle fleet, transport infrastructure, fuel consumption, mileage, occupancy rate, load factor) are differentiated on a county level. Transport demand is split to three main categories: passenger, freight, and others. The passenger and freight demands are expressed as activity demands, and others are defined as a final energy demand (PJ). These final energy demands further split into aviation (international and domestic), navigation, fuel tourism and unspecified, aligned with the energy balance \citep{SEAI2019}. ``Fuel tourism" refers to cross-border consumers and a portion of demand is used by unspecified modes. 
 
-The passenger transport demands are expressed in billion-passenger kilometres (Bpkm). As shown in Table \ref{passenger transport demand}, the total passenger demand is divided into three classes of distance range including short-range (less than 5km), medium-range (5-30 km), and long-range (more than 30km) \citep{NTA2018}. Moreover, four transport modes satisfy travel demands including 1. public services (bus, train, taxi), 2. private cars, 3. two-wheelers, and 4. active modes (walk and bike). For simplification, non-motorised transport is only used for short-range trips, 2-wheeler are used for short- and medium-range travels, urban bus and school bus are used for short- and medium range travels, Intercity bus and heavy train are used for long-range trips, and light rail can only use for the short- and medium-range trips in Dublin county. As shown in Fig. \ref{fig:TRA-TIM}, demand for each mode can be met with a different set of technologies based on cost-optimisation and user constraints. The base year is calibrated based on the actual number of vehicles and the corresponding vehicle activities. Table \ref{vehicle stock} shows the characteristics on a national basis. 
+The passenger transport demands are expressed in billion-passenger kilometres (Bpkm). As shown in Table \ref{passenger transport demand}, the total passenger demand is divided into three classes of distance range including short-range (less than 5km), medium-range (5-30 km), and long-range (more than 30km) \citep{NTA2018}. Four transport modes satisfy travel demands including 1. public services (bus, train, taxi), 2. private cars, 3. two-wheelers, and 4. active modes (walk and bike). Non-motorised transport is only used for short-range trips, 2-wheeler are used for short- and medium-range travels, urban bus and school bus are used for short- and medium range travels, Intercity bus and heavy train are used for long-range trips, and light rail can only be used for the short- and medium-range trips in Dublin county. As shown in Fig. \ref{fig:TRA-TIM}, demand for each mode can be met with a different set of technologies based on cost-optimisation and user constraints. The base year is calibrated based on the actual number of vehicles and the corresponding vehicle activities. Table \ref{vehicle stock} shows vehicle characteristics on the national basis. 
 
 \begin{table}[h!]
  \centering
@@ -481,8 +466,7 @@ The passenger transport demands are expressed in billion-passenger kilometres (B
  \label{passenger transport demand}
 \end{table}
 
-
-The inland freight demands are expressed in billion-tonne kilometres (Btkm). It comprises two main modes: goods trucks and train. The definition of light and heavy goods vehicles varies in different studies. In this model, they are disaggregated by three unladen weight bands: light-duty trucks (below 5 tonnes), medium-duty trucks (5-10 tonnes) and heavy-duty trucks (over 10 tonnes) \citep{CentralStatisticsOffice2020d,CentralStatisticsOffice2020e,CentralStatisticsOffice2020f}. Table \ref{ton-km} shows the freight demand in the base year. 
+The inland freight demand is expressed in billion-tonne kilometres (Btkm). It comprises two main modes: goods trucks and train. The definition of light and heavy goods vehicles varies in different studies. In this model, they are disaggregated by three unladen weight bands: light-duty trucks (below 5 tonnes), medium-duty trucks (5-10 tonnes) and heavy-duty trucks (over 10 tonnes) \citep{CentralStatisticsOffice2020d,CentralStatisticsOffice2020e,CentralStatisticsOffice2020f}. Table \ref{ton-km} shows freight demand in the base year. 
 
 \begin{table}[ht]
  \centering
@@ -493,11 +477,8 @@ The inland freight demands are expressed in billion-tonne kilometres (Btkm). It 
  Classification & Unladen weight & Demand (mtkm) & Share\\ 
  \hline
  Light-duty trucks & 0-5 tonne & 292 & 2.5\% \\
- 
  Medium-duty trucks & 5-10 tonne & 1140 & 9.8\% \\
- 
  Heavy-duty trucks & over 10 tonne &	10106 & 86.9\% \\
- 
  Train & - &	89 & 0.8\% \\
  
  \multicolumn{2}{l}{Total Freight demand} & 11627 & 100\% \\ \hline
@@ -553,30 +534,32 @@ The inland freight demands are expressed in billion-tonne kilometres (Btkm). It 
 \subsubsection{Future transport demand projections}
 \subparagraph{Passenger kilometres: Private Cars}
 Future passenger car transport demand is projected based on future population growth and a growing rate of car ownership, which is in turn determined by income growth. Car ownership usually follows an S-shaped function which has three periods: slow growth during low income levels, rapid increase as income levels rise quickly and finally a saturation period. Gompertz statistical model has been found to best fit the historical relationship car ownership and income levels, although other functions have also been used in previous studies \citep{Lian2018}. The basic Gompertz function is shown in Equation \ref{gompz_func}.
-\begin{equation}
-\label{gompz_func}
+\\
+\begin{equation} \label{gompz_func}
  y=\alpha*e^{-\beta*e^{-\gamma x}}
 \end{equation}
-here $y$ is the car per adult, $\alpha$ is saturation level of car ownership, $x$ is an economic indicator (income per adult in this case) and $\beta$,$\gamma$ are parameters that are estimated using historical data obtained from CSO. 
+\\
+where $y$ is the car per adult, $\alpha$ is saturation level of car ownership, $x$ is an economic indicator (income per adult in this case) and $\beta$,$\gamma$ are parameters that are estimated using historical data obtained from CSO. 
 
-Projection of future car ownership levels is based on change in income levels. The saturation level of car ownership in this study is 875 per 1000 adults \citep{AECOMIrelandLimited2019}. Car ownership (car per adult) is projected to rise from 0.56 in 2018 to 0.69 in 2050, an increase of 23\%. Passenger kilometres are then derived using car ownership as a proxy and assuming an occupancy level of 1.492 and kilometres per car to remain constant at about 17300 per year. Total passenger kilometres from private cars is projected to increase by 42\% in 2050 from 2018 levels with a Compound Annual Growth Rate (CAGR) of 1.1\%. The growth rate of passenger kilometres from private cars was 1.35\% between 2008 and 2018. 
+Projection of future car ownership levels is based on change in income levels. The saturation level of car ownership is assumed at 875 per 1000 adults \citep{AECOMIrelandLimited2019}. Car ownership (car per adult) is projected to rise from 0.56 in 2018 to 0.69 in 2050, an increase of 23\%. Passenger kilometres are then derived using car ownership as a proxy and assuming an occupancy level of 1.492 and kilometres per car to remain constant at about 17300 per year. Total passenger kilometres from private cars in 2050 is projected to increase by 42\% from the 2018 level with a Compound Annual Growth Rate (CAGR) of 1.1\%. The growth rate of passenger kilometres from private cars was 1.35\% between 2008 and 2018. 
 
 \subparagraph{Passenger kilometres: Other modes of transport}
-Other modes of transport represent a much smaller share of mobility demand than that of private cars. Passenger kilometres of large public service vehicles (PSVs) are projected using population as a driver in a log function and assuming average occupancy of 27.5. Large PSV passenger kilometres are expected to increase by 24.2\% in 2050 as compared to that in 2018 with a CAGR of 0.7\%. Passenger kilometres of other modes such as luas, train, small PSVs, motorcycles and active modes such as walking, cycling are projected using population and year as the drivers. The passenger kilometres are expected to increase by 60\% with a CAGR of 1.5\%. 
+Other modes of transport represent a much smaller share of mobility demand compared to private cars. Passenger kilometres of large public service vehicles (PSVs) are projected using population as a driver in a log function and assuming average occupancy of 27.5. Large PSV passenger kilometres are expected to increase by 24.2\% in 2050 as compared to that in 2018 with a CAGR of 0.7\%. Passenger kilometres of other modes (luas, train, small PSVs, and motorcycles) and active modes (walking and cycling) are projected using population as a driver. The passenger kilometres are expected to increase by 60\% with a CAGR of 1.5\%. 
 
 \subparagraph{International Aviation fuel demand}
-International aviation fuel demand is projected using number of passengers as the driver. The number of aviation passengers is forecast using damped Holt Winters function based on historical time-series data that is obtained from CSO \citep{Dantas2017,Grubb2001}. The number of passengers is expected to increase by 45.5\% in 2050 as compared to 2018. The historical fuel demand for aviation and number of aviation passengers are then used as an input for a linear regression model to project the future demand for aviation fuel. The fuel demand increases by 37\% in 2050 relative to 2018 with a CAGR of 1\%. 
+International aviation fuel demand is projected using number of passengers as a driver. The number of aviation passengers is projected using damped Holt Winters function based on historical time-series data obtained from CSO \citep{Dantas2017,Grubb2001}. The number of passengers in 2050 is expected to increase by 45.5\% compared to 2018. The historical fuel demand for aviation and number of aviation passengers are then used as input for a linear regression model to project the future demand for aviation fuel. The fuel demand in 2050 increases by 37\% relative to 2018 with a CAGR of 1\%. 
 
 \subparagraph{Other transport fuel demand}
-Demand for freight is projected using growth rates available in \citep{AECOMIrelandLimited2019}. The growth in tonne kilometres of freight is expected to increase by 1.18 times in 2050 from 2018 level with a CAGR of 2.5\%. Navigation fuel demand is projected using GDP as the explanatory variable. Fuel demand for navigation is expected to increase 2.85 times in 2050 as compared to 2018 with a CAGR of 3.3\%. Fuel tourism is assumed to be constant at 11 PJ. 
+Demand for freight is projected using growth rates from \citet {AECOMIrelandLimited2019}. The growth in tonne kilometres of freight is expected to increase by 1.18 times in 2050 from 2018 level with a CAGR of 2.5\%. Navigation fuel demand is projected using GDP as the explanatory variable. Fuel demand for navigation in 2050 is expected to increase 2.85 times compared to 2018 with a CAGR of 3.3\%. Fuel tourism is assumed to remain constant at 11 PJ. 
 
 \subsubsection{Future technology options}
 
 Common vehicle technologies and future options that are likely to become available for future investment shape technology database for the transportation sector in TIM. They are categorised in five major groups \citep{Aryanpur2015}:
+
 \begin{enumerate}
  \item Internal Combustion Engines (ICEs), consists of spark ignition engines fuelled by gasoline, bioethanol, CNG, BioCNG, hydrogen and dual-fuel engines (running either on gasoline or CNG/BioCNG, each one taking 50\% of the distance travelled), and compression ignition engines powered by diesel and biodiesel. 
 \item Hybrid Electric Vehicles (HEVs) are equipped with an ICE, which provides the main power, and a small electric motor to support the ICE and to recuperate the braking energy. 
-\item Plug-in Hybrid Electric Vehicles (PHEVs) have a similar powertrain to HEVs. But their batteries can be charged from the grid for driving tens of miles solely on electrical power. We assume the maximum distance that would be driven on electric mode is 50\% in the base year and it can increase to 80 percent over the study period. 
+\item Plug-in Hybrid Electric Vehicles (PHEVs) have a similar powertrain to HEVs. Their batteries can be charged from the grid for driving tens of miles solely on electrical power. We assume the maximum distance driven on electric mode is 50\% in the base year and it can increase to 80\% over time. 
 \item Battery Electric Vehicles (BEVs) solely rely on batteries, which provide the total motive power of the vehicle. The batteries are charged from electricity grid. 
 \item Fuel Cell Vehicles (FCVs) are electrochemical devices that produce electricity through a reaction between hydrogen and oxygen. The electricity drives a vehicle’s electric motor. Conventional fuel tank is replaced with a pressurised hydrogen storage tank in FCVs. 
 \end{enumerate}
@@ -587,7 +570,7 @@ All these technologies compete to meet the mobility demand over the planning hor
 
 Different fuels are supplied to the transport sector via four separated modules including supply, power, bio-refineries, and hydrogen modules. In other words, these connections integrate the transport sector with the entire energy system.
 
-TIMES models usually use a simplified constant lifetime for different vehicles and thus, the vehicles are retired at the end of the lifetime. However, a detailed analysis of technologies’ retirement profile in Ireland shows that this simplified representation is far from reality. The actual profile shows a low decay in the beginning years and a long tail in the distribution over long-time. To improve the retirement profile both for existing and new vehicles, TIM is equipped with realistic representation of the survival profile of car technologies. The survival rates are from Irish CarSTOCK model \citep{daly2011modelling, Mulholland2018}. 
+TIMES models usually use a simplified constant lifetime for different vehicles and thus, the vehicles are retired at the end of that lifetime. However, a detailed analysis of technology retirement profiles in Ireland shows that this simplified representation is far from reality. An actual profile shows a low decay in the beginning years and a long tail in the distribution over long-time. To improve the retirement profile both for existing and new vehicles, TIM is equipped with realistic representation of the survival profile of car technologies. The survival rates are from Irish CarSTOCK model \citep{daly2011modelling, Mulholland2018}. 
 
 \subsubsection{User constraints}
 
@@ -606,31 +589,8 @@ A set of constraints limits fuel and modal shares in transport sector as follows
 \subsection{Residential sector}
 \label{ss:residential}
 \subsubsection{Energy service demands and projections}
-% Energy service demands in the residential sector are driven by the size of the housing stock by type (apartment, attached or detached), which in turn is driven by population growth and the occupancy rate, the average number of people per dwelling. The occupancy rate is expected to fall to 2.12 in 2051 \citep{PropertyIndustryIreland2019}, from 2.75 in 2016 (CSO). Intermediate values are estimated using Equation \ref{eq:OR}.
-% \begin{equation}
-% \label{eq:OR}
-%  OR= a+b*log(\Delta t)
-% \end{equation}
-% here, $OR$ is the occupancy rate, $\Delta t$ is difference between years, parameters $a$ \& $b$ are estimated using historical values. 
 
-% The growth rate of the housing stock in the period to 2030 is obtained from the ESRI's macroeconomic estimates \citep{Yakut2020}. 
-% A multiple linear regression is calculated to project future housing stock based on population size and occupancy rate beyond 2030. The total housing stock is expected to increase by 79\% in 2050 relative to 2018 to accommodate the growing population and declining occupancy rates. The share of apartments changes from 12\% in 2018 to 24\% in 2050, while the shares of attached and detached dwellings decline by 4\% and 8\% respectively.
-
-% Table generated by Excel2LaTeX from sheet 'Sheet1'
-% \begin{table}[htbp]
-%  \centering
-%  \footnotesize
-%  \caption{Number of dwellings by type ('000)}
-%  \begin{tabular}{rrrr}
-%  \hline
-%  \multicolumn{1}{l}{Year} & \multicolumn{1}{l}{Apartment} & \multicolumn{1}{l}{Attached} & \multicolumn{1}{l}{Detached} \\ \hline
-%  2018 & 207 & 766 & 724 \\
-%  2030 & 359 & 928 & 842 \\
-%  2050 & 741 & 1244 & 1048 \\ \hline
-%  \end{tabular}%
-%  \label{tab:house}%
-% \end{table}%
-The residential stock projections up to 2040 are taken from ESRI's housing demand estimates \citep{Bergin2020}. The stock is expected to increase by 40\% from 2018 level with a CAGR of 2\%. This results in an average of 27,600 new houses per annum between between 2021-2040. Beyond 2040, population is used as a driver to project housing stock. The total housing stock obtained in 2050 is 2.57 million which implies 8\% increase from 2040. 
+The residential stock projections up to 2040 are taken from \citet{Bergin2020} housing demand estimates. The stock is expected to increase by 40\% from 2018 level with a CAGR of 2\%. This results in an average of 27,600 new houses per annum between between 2021-2040. Beyond 2040, population is used as a driver to project housing stock. The total housing stock obtained in 2050 is 2.57 million dwellings which implies 8\% increase from 2040. 
 
 % Table generated by Excel2LaTeX'
 \begin{table}[htbp]
@@ -649,7 +609,7 @@ The residential stock projections up to 2040 are taken from ESRI's housing deman
 \end{table}%
 
 
-Fig. \ref{fig:TIM_RES} shows the Reference Energy System (RES) diagram for the residential sector. Energy service demands are disaggregated between archetype and non-archetype demands. ``Archetype demands" are energy service demands which depend on the house type, namely the dwelling type and BER rating. 
+Fig. \ref{fig:TIM_RES} shows the RES diagram for the residential sector. Energy service demands are disaggregated between archetype and non-archetype demands. ``Archetype demands" are energy service demands which depend on the house type, namely the dwelling type and Building Energy Rating (BER) rating. 
  
 \begin{figure}[hb!]
  \centering
@@ -658,13 +618,13 @@ Fig. \ref{fig:TIM_RES} shows the Reference Energy System (RES) diagram for the r
  \label{fig:TIM_RES}
 \end{figure}
 
-The base-year residential energy demand by fuel is calibrated to the SEAI 2018 Energy Balance \citep{SEAI2019}.
+The base-year residential energy demand by fuel is calibrated to the \citet{SEAI2019} energy balance.
 
 Archetype energy service demands are particularly dependent on the type of building. The four energy service demands which are modelled based on archetype are: space heating, water heating, pump \& fans and lighting. The residential building stock by type is explicitly modelled in TIM in three archetypes: detached, attached and apartments. 
 
-The Archetype energy service demand data are sourced from the SEAI Building Energy Rating (BER) database \citep{SustainableEnergyAuthorityofIreland}, which contains the raw data of 906,048 BER surveys. The BER database was filtered before use, to remove outliers and any nonsensical values. The filters were based upon \citet{Dineen2015}, \citet{Uidhir2020a} and group discussions within the National Modelling Network Ireland reducing the total records to 815,246.
+The Archetype energy service demand data are sourced from \citet{SustainableEnergyAuthorityofIreland} BER database, which contains the raw data of 906,048 BER surveys. The BER database was filtered before use to remove outliers and any nonsensical values. The filters were based upon \citet{Dineen2015}, \citet{Uidhir2020a} and group discussions within the National Modelling Network Ireland reducing the total records to 815,246.
 
-The filtered BER database is then projected onto the total dwelling stock, using CSO data \citep{CSO2020E1008, CSO2020E1055} to calculate the total number BER ratings per archetype in the dwelling stock, as shown in Table \ref{Residential Dwelling Stock}. 
+The filtered BER database is projected onto the total dwelling stock, using data from \citet{CSO2020E1008, CSO2020E1055} to calculate the total number BER ratings per archetype in the dwelling stock, as shown in Table \ref{Residential Dwelling Stock}. 
 
 \begin{table}[ht]
  \centering
@@ -688,7 +648,7 @@ The filtered BER database is then projected onto the total dwelling stock, using
  \label{Residential Dwelling Stock}
 \end{table}
 
-The BER assumes all buildings are heated to between 18\textdegree C (non-living areas, ie. bedroom, bathrooms) to 21\textdegree C (living areas, ie. sitting room, kitchen). This assumption is based upon IS EN 13,790 calculations. To reflect actual energy use based upon internal temperatures in the Irish residential sector, the Archetype Dwelling Energy Model (ArDEM) \citep{Dineen2015} was used to provide simulated annual energy consumption. ArDEM modifies the expected space heating energy consumption of each archetype and BER rating to the actual space heating energy consumption by adjusting internal temperatures in the building stock, a similar approach was used by \citet{Uidhir2020}.
+BER assumes all buildings are heated to between 18\textdegree C for non-living areas (e.g. bedroom, bathrooms) to 21\textdegree C for living areas (e.g. sitting room, kitchen). This assumption is based on ISO 13790 calculations. To reflect actual energy use based upon internal temperatures in the Irish residential sector, the Archetype Dwelling Energy Model (ArDEM) \citep{Dineen2015} was used to provide simulated annual energy consumption. ArDEM modifies the expected space heating energy consumption of each archetype and BER rating to the actual space heating energy consumption by adjusting internal temperatures in the building stock, a similar approach was used by \citet{Uidhir2020}.
 
 The alternative internal temperatures assumptions in TIM are outlined in Table \ref{Internal Temperature Assumptions}. 
 
@@ -715,18 +675,18 @@ The alternative internal temperatures assumptions in TIM are outlined in Table \
 \end{table}
 
 % Start this text below the table?? %
-After the base year, the change in the number of new dwellings per archetype drives demand, as previously outlined in section \ref{ss:model_proj}. All new dwellings mimic the energy intensity of the average base year A-rated dwelling for that archetype. This is due to directive (EU) 2018/844, which requires all new residential dwellings to equate to at least a A2 BER Rating by 2020. 
+After the base year, the change in the number of new dwellings per archetype drives demand, as previously outlined in section \ref{ss:model_proj}. All new dwellings mimic the energy intensity of the average base year A-rated dwelling for that archetype. This is due to directive (EU) 2018/844, which requires all new residential dwellings to equate to at least a A2 BER by 2020. 
 
 The non-archetype energy service demands are: cooking, refrigeration, cloth washing, cloth drying, dish washing and electrical appliances. The non-archetype energy service demands are not dependent on the age, type or BER rating of the future housing type. These demands are projected to grow at the same rate as the growth in the total housing stock. 
 
-Non-Archetype energy demand data was obtained from the SEAI Energy in the Residential Sector Report \citep{SEAISustainableAuthorityofIreland2018}. This data was cross-checked with the JRC-IDEES (Integrated Database of the European Energy System ) database. The process involved cross-checking the share of residential energy service demands in TIM, against a database which had no input in to the model.
+Non-Archetype energy demand data was obtained from \citet{SEAISustainableAuthorityofIreland2018}. This data was cross-checked with the JRC-IDEES (Integrated Database of the European Energy System ) database. The process involved cross-checking the share of residential energy service demands in TIM, against a database which had no input in to the model.
 
 \subsubsection{Future technology options}
 The TIM residential sector has two main mitigation options - switching heat technologies and fuels, and retrofitting existing dwellings to improve the thermal efficiency and uplift BER ratings. 
 
-While Ireland has ambitious retrofitting targets for 2030, data on the cost and energy savings for retrofitting is limited, particularly for deep retrofits. The expected costs and heat energy saving of retrofitting from one BER rating to another requires further investigation. The retrofit cost data is based upon \citep{AECOMDECLG2013} and \citep{Ali2020} and the expected energy saving is based upon \citep{Collins2017b}. For this reason, the model uses a simplistic retrofitting options. There are two options for each archetype: shallow retrofit, which reduces dwelling space heating energy demand by 10-34\% and deep retrofit, which improves space heating energy efficiency by at least 35\%. 
+While Ireland has ambitious retrofitting targets for 2030, data on the cost and energy savings for retrofitting is limited, particularly for deep retrofits. The expected costs and heat energy saving of retrofitting from one BER rating to another requires further investigation. The retrofit cost data is based upon \citet{AECOMDECLG2013} and \citet{Ali2020} and the expected energy saving is based upon \citet{Collins2017b}. For this reason, the model uses a simplistic retrofitting options. There are two options for each archetype: shallow retrofit, which reduces dwelling space heating energy demand by 10-34\%, and deep retrofit, which improves space heating energy efficiency by at least 35\%. 
 
-The cost and expected heat energy savings per archetype by BER improvement is outlined in Table \ref{Retrofit Expected Savings}. The model currently implements the weighted average value; fully disaggregated retrofit is planned for implementation in the next model version.
+The cost and expected heat energy savings per archetype by BER improvement is outlined in Table \ref{Retrofit Expected Savings}. The model currently implements a weighted average value, but a fully disaggregated retrofit could be implemented in a future model version.
 
 \begin{table}[ht]
  \centering
@@ -758,8 +718,8 @@ The cost and expected heat energy savings per archetype by BER improvement is ou
  \label{Retrofit Expected Savings}
 \end{table}
 
-The cost and efficiencies of new space heating and water heating technologies is sourced from the Danish Energy Agency (DEA) database \citep{DEA2020}. The cost and efficiency of lighting, pumps \& fans and non-archetype demands came from a range of sources including
-\citep{SEAISustainableAuthorityofIreland2018} and the ecotopten database \citep{ecotopten}. Ecotopten collects data of household appliances covering around 90\% of the white goods market in the EU.
+The cost and efficiencies of new space heating and water heating technologies is sourced from \citet{DEA2020}. The cost and efficiency of lighting, pumps \& fans and non-archetype demands came from a range of sources including
+\citet{SEAISustainableAuthorityofIreland2018} and \citet{ecotopten}.
 
 \subsubsection{User constraints}
 \begin{itemize}
@@ -779,11 +739,9 @@ The cost and efficiencies of new space heating and water heating technologies is
 
 \subsection{Industry}
 \label{ss:industry}
-The industrial sector is modelled using a ``top-down" methodology where energy demand is projected based on an assumed future economic growth. Fourteen subsectors are represented and are based on the SEAI's energy balance \citep{SEAI2019}. Baseline shares of energy carriers in the final energy consumption by subsector are assumed constant into the future and are based on the 2018 values \citep{SEAI2019}. 
+The industrial sector is modelled using a ``top-down" methodology where energy demand is projected based on an assumed future economic growth. Fourteen subsectors are represented and are based on \citet{SEAI2019} energy balance. Baseline shares of energy carriers in the final energy consumption by subsector are assumed constant into the future and are based on the 2018 values \citep{SEAI2019}. 
 
-%Energy demand for each industrial subsector is projected using Gross Value Added (GVA) for each corresponding NACE category \citep{Yakut2020}. Historical energy consumption is obtained from SEAI's energy balance \citep{SEAI2019}. The total energy demand from industry is projected to increase by 65\% in 2050 from 2018 level. The energy intensity of the industrial sector is expected to decline by 40\% between 2018 and 2050 with a CAGR of -2\%, reflecting historical trends. 
-
-Energy demand for the industrial sector is predicted using Gross Value Added (GVA) per capita for each NACE category and population \citep{Yakut2020}. Historical energy consumption is obtained from SEAI's energy balance \citep{SEAI2019}. The total energy demand from industry is projected to increase by 47\% in 2050 from 2018 level. Cement demand upto 2025 is projected using the Department of finance's stability program update which provides forecasts for the growth in modified investment \cite{April2020}. In 2019, 65\% of the modified investment was in building and construction. A linear regression of the log of the index for output of the cement sector on the log of investment in building and construction at constant price is calculated. This results in an 18.6\% increase in cement demand in 2025 from 2018 level. Beyond 2025, growth in cement demand is assumed to be the same as the growth in GNI*. This leads to a further increase by 17.8\% between 2025 and 2050 at a CAGR of 0.7\%.   The energy intensity of the industrial sector is expected to decline by 46.5\% between 2018 and 2050 with a CAGR of -2\%, reflecting historical trends. 
+Energy demand for the industrial sector is projected using GVA per capita for each NACE category and population \citep{Yakut2020}. Historical energy consumption is obtained from \citet{SEAI2019} energy balance. The total energy demand from industry in 2050 is projected to increase by 47\% from the 2018 level. Cement demand up to 2025 is projected using \cite{April2020} stability program update which provides forecasts for the growth in modified investment. In 2019, 65\% of the modified investment was in building and construction. Calculating a linear regression of the log of the index for output of the cement sector on the log of investment in building and construction at constant price results in an 18.6\% increase in cement demand in 2025 from 2018 level. Beyond 2025, growth in cement demand is assumed to be the same as the growth in GNI*. This leads to a further increase by 17.8\% between 2025 and 2050 at a CAGR of 0.7\%. The energy intensity of the industry sector is expected to decline by 46.5\% between 2018 and 2050 with a CAGR of -2\%, reflecting historical trends. 
 
 Fuel switching is the only mitigation option available for combustion emissions from industry in the model. It is controlled through maximum predefined shares which are defined per year and subsector. Table \ref{Maximum fuel switching share in Industry} illustrates assumed maximum fuel switching shares which are possible across all the subsectors. 
 
@@ -805,7 +763,7 @@ Fuel switching is the only mitigation option available for combustion emissions 
 \end{table}%
 
 \subsubsection{Process emissions}
-Among the industrial processes, the cement industry has the largest share of process emissions, which is accounted for in the model. Historical data of cement production and emissions is obtained from the National Inventory Submissions \citep{NIR2020E91:online}. Process emissions increased by 87\% between 1990 and 2018 with a CAGR of 2.3\%. The kilotonnes of cement required is projected using number of new dwellings and the energy consumption of the corresponding industrial sector in a linear model. The amount of cement needed in 2050 is projected to double relative to 2018 with a CAGR of 2.2\%. The demand for cement is then used to project process emission, which is expected to increase by 96\% between 2018 and 2050 with a CAGR of 2.1\%. 
+Among the industrial processes, the cement industry has the largest share of process emissions, which is accounted for in the model. Historical data of cement production and emissions is obtained from the National Inventory Submissions \citep{NIR2020E91:online}. Process emissions increased by 87\% between 1990 and 2018 with a CAGR of 2.3\%. The cement demand is projected using the number of new dwellings and the energy consumption of the corresponding industrial sector in a linear model. The amount of cement needed in 2050 is projected to double relative to 2018 with a CAGR of 2.2\%. The demand for cement is then used to project process emission, which is expected to increase by 96\% between 2018 and 2050 with a CAGR of 2.1\%. 
 
 % Table generated by Excel2LaTeX
 \begin{table}[htbp]
@@ -816,7 +774,7 @@ Among the industrial processes, the cement industry has the largest share of pro
  \hline
  Process emissions (kt/PJ) & \multicolumn{2}{c}{Reference Case} & \multicolumn{2}{c}{with CCS} \\
  & 2018 & 2050 & 2018 & 2050 \\ \hline
- \makecell{Other non-metallic mineral \\ products demand process} & 117 & 155 & 109 & 144 \\ \hline
+ \makecell{Other non-metallic mineral \\ products demand process} & 117 & 155 & 8 & 11 \\ \hline
  \end{tabular}%
  \label{table: process emissions}%
 \end{table}%
@@ -840,10 +798,6 @@ Public lighting units are projected based on the Project Ireland 2040, whereby f
 \label{ss:agriculture}
 The current version of the agriculture sector in TIM comes from the Irish TIMES model and is documented in \citet{Chiodi2016}. It includes representation of 12 energy service demands; half of them belong to the livestock and half to the tillage sector. Land availability and water consumption are explicitly represented and accounted for in the sector, however no specific constraints are set. Future energy service demands in the agriculture sector are assumed to be unchanged from the 2018 level.
 
-%\section{Model application}
-%\label{s:model_appl}
-
-
 \section{Discussion \& conclusion}
 \label{s:discussion}
 This section discusses the strengths, limitations and development priorities for the TIMES-Ireland model, using the framework proposed by \citet{Pye2020} and \citet{DeCarolis2017}, which outline best practice for ESOM development and priorities for new developments and applications of ESOMs for deep decarbonisation challenges.
@@ -851,9 +805,9 @@ This section discusses the strengths, limitations and development priorities for
 \subsection{Analytical advancements}
 The following is a summary of the main analytical advancements of TIM, explained in more detail throughout the text. 
 \begin{itemize}
-\item The power sector has a flexible time-slice configuration with resolution possible up to the hourly level, which is necessary to model the power system under very high shares of variable renewables in deep decarbonisation scenarios, including power storage. 
-\item The power sector also makes use of new TIMES features, modelling dispatch, unit commitment and capacity expansion.
-\item The model as a whole has been developed with flexible regional definitions, with parts of the transport and power sectors detailed at the county level. 
+\item The model has a flexible time-slice configuration with resolution possible up to the hourly level, which is necessary to e.g. model the power system under very high shares of variable renewables in deep decarbonisation scenarios, including power storage. 
+\item The model also makes use of new TIMES features in the power sector, modelling dispatch, unit commitment and capacity expansion.
+\item The model has been developed with flexible regional definitions, with transport and power sectors detailed at the county level. 
 \item Energy service demands are driven by a consistent set of population and macro-economic indicators, consistent with a national CGE model, and also disaggregated in sufficient detail to allow alternative demand scenarios, such as transport mode shifting, lower housing demand requirements etc.
 \item The development process strives to achieve best practice in software development, including version control, transparency (with open source and open data), quality assurance, documentation and wide stakeholder consultation. 
 \end{itemize}
@@ -861,9 +815,9 @@ The following is a summary of the main analytical advancements of TIM, explained
 \subsection{Modelling for policy insight}
 The main purpose of the model is to meet the policy need to inform detailed sectoral pathways which can meet very ambitious decarbonisation targets. This subsection discusses TIM's strengths and weaknesses in this regard. 
 
-Firstly, the integrated whole system approach offer ``macro systems" perspective .. The temporal and spatial flexibility resolves the tension between the requirements for granularity for certain model functionalities, and the requirement for data and model tractability, and fast solving speed. Integration with key national data sources and other models is a further strength of TIM. 
+Firstly, the integrated whole system approach offer ``macro systems" perspective. The temporal and spatial flexibility resolves the tension between the requirements for granularity for certain model functionalities, and the requirement for data and model tractability, and fast solving speed. Integration with key national data sources and other models is a further strength of TIM. 
 
-Secondly, an appropriately wide mitigation option space is required to meet deep decarbonisation challenges. Strengths of TIM include the rich depiction of important demand sectors, namely transport and residential, which are characterised to enable scenario variants of alternative demands. For example, splitting passenger transport demand into long-, medium- and short-distance demand allows for switching to active and public transport demands . Similarly, the archetypal model underpinning the residential sector allows for lowering building floor area demand and internal temperatures, which can be key scenario variants. These scenario variants are endogenous, though there is increasing literature on endogenising behaviour in TIMES models. Several options for shifting to more efficient uses of energy, for example, are endogenous. However, the aggregate nature of the Industry and Services sectors limits the potential analysis of demand reduction in these sectors and is an area of future model development priority.
+Secondly, an appropriately wide mitigation option space is required to meet deep decarbonisation challenges. Strengths of TIM include the rich depiction of important demand sectors, namely transport and residential, which are characterised to enable scenario variants of alternative demands. For example, splitting passenger transport demand into long-, medium- and short-distance demand allows for switching to active and public transport demands . Similarly, the archetypal model underpinning the residential sector allows for lowering building floor area demand and internal temperatures, which can be key scenario variants. These scenario variants are exogenous, though there is increasing literature on endogenising behaviour in TIMES models. Several options for shifting to more efficient uses of energy, for example, are endogenous. However, the aggregate nature of the Industry sector limits the potential analysis of demand reduction in this sector and is an area of future model development priority.
 
 Another area for future model improvements is to explore carbon dioxide removal (CDR) options in more detail. At the global level, modelled pathways meeting the Paris Agreement rely on large-scale deployment of CDR options including biomass with carbon capture and storage (BECCS) \citep{IPCC2018}. BECCS is currently modelled within TIM, but options like Direct Air Capture (DAC)\citep{Realmonte2019} are currently not.
 
@@ -873,24 +827,22 @@ A focus on the practice of model development and application is key. Robust quan
 
 It is also important to communicate what the model can and can't do. For example, while TIM is a ''cost-optimal" model, it does not capture many of the societal costs or benefits that the energy system imposes. For example, higher renewable energy shares may represent a higher overall investment and operation cost over the project lifetime, these may offer significant societal benefits in terms of lower air pollution, reducing the fossil fuel import bill and providing high-quality employment. Similarly, the distributional effects of the costs are not captured in the model, therefore considerations of a ''just transition" are a challenge within TIM currently. 
 
-
 \subsection{Future improvements}
-TIM will undergo continuous and iterative improvements and developments. In the near-term, the following is the priority list for future development:
+TIM will undergo continuous and iterative improvements and developments. In the near-term, the following is the priority list for future development.
 \begin{itemize}
  \item Modelling gas supply at hourly resolution - currently modelled at a seasonal level, which may unintentionally allow for energy storage capacity.
- \item Similarly, electricity interconnectors with the UK and France can be modelled at the same time resolution as the power sector, taking into account capacity constraints on top of annual trade constraints.
+ \item Similarly, electricity inter-connectors with the UK and France can be modelled at the same time resolution as the power sector, taking into account capacity constraints on top of annual trade constraints.
  \item Modelling hydrogen production routes other than from renewables (green hydrogen), such as blue, brown and grey hydrogen production options. 
  \item A review and update of bioenergy conversion options, including an update of domestic bioenergy potentials. 
  \item A review and update of future low-carbon technology costs.
  \item Developing further the Agri-TIMES module, first developed by \citet{Chiodi2016}, in order to model agriculture, livestock and land-use emissions and mitigation options explicitly, including competition for land-use.
- \item A more detailed bottom-up focus on the Industry and Services sectors, which are currently modelled in an aggregated top-down fashion. 
+ \item A more detailed bottom-up focus on the Industry sector, which is currently modelled in an aggregated top-down fashion, and disaggregation of the Services sector.
  \item Developing a ``Business as usual"/``With existing policy measures" case, which includes current policies and measures and hurdle rates to represent end-use technology uptake.
 \end{itemize}
 
-
 \conclusions  %% \conclusions[modified heading if necessary]
 \label{s:conclusion}
-This paper presents the TIMES-Ireland Model (TIM), an energy systems optimisation model which is a significant step forward both in terms of analytical heft, open and best-practice development approach and in its contribution to national evidence-based policy development. TIM has been developed to help inform very ambitious decarbonisation objectives and to inform future carbon budgets, on the path to net-zero GHG emissions by 2050. 
+This paper presents the TIMES-Ireland Model, an energy systems optimisation model which is a significant step forward both in terms of analytical heft, open and best-practice development approach and in its contribution to national evidence-based policy development. TIM has been developed to help inform very ambitious decarbonisation objectives and to inform future carbon budgets, on the path to net-zero GHG emissions by 2050. 
 
 The model was developed from the legacy model, Irish TIMES, which has had a long history of contributing the the evidence base for Irish energy policy and for pushing the state-of-the-art in ESOM development. TIM also benefits from ongoing collaborations and interactions with other national models and data sources, including LEAP-Ireland, the ESRI's I3E model and SEAI databases. The model also benefits from the continuous development of the TIMES model generator within the ETSAP community.
 
@@ -902,9 +854,7 @@ Continuous, iterative and open model development is essential to ensure that the
 %%\codeavailability{TEXT} %% use this section when having only software code available
 
 
-\dataavailability{
-TIMES code is available [zenodo doi]...
-Data will be available through github and published in zenodo.} %% use this section when having only data sets available
+\dataavailability{TIMES-Ireland Model will be available through github and published on zenodo.} %% use this section when having only data sets available
 
 
 %%\codedataavailability{TEXT} %% use this section when having data sets and software code available
@@ -1218,16 +1168,16 @@ PWR Storage: Pumped Storage HYD Existing Turlough Hill 4 & 0.75 & 0.16 & 150 & &
 
 %% Please add \clearpage between each table and/or figure. Further guidelines on figures and tables can be found below.
 
-\authorcontribution{TEXT} %% this section is mandatory
+\authorcontribution{OB came up with the idea of the paper and conceptualised it together with HD and JG. HD led preparation of the manuscript with contributions from JG, VA, AG, JM, XY and OB. All authors contributed to model creation, data analysis and model validation. OB and AS reviewed and edited the manuscript before the original submission.} %% this section is mandatory
 
-\competinginterests{TEXT} %% this section is mandatory even if you declare that no competing interests are present
+\competinginterests{The authors declare that they have no conflict of interest.} %% this section is mandatory even if you declare that no competing interests are present
 
-\disclaimer{TEXT} %% optional section
+%%\disclaimer{TEXT} %% optional section
 
 \begin{acknowledgements}
 This work is being undertaken as part of a number of research projects undertaken at the SFI MaREI Centre at University College Cork, including CAPACITY, funded by the Department of Environment, Climate and Communications and the SFI-funded CHIMERA project\footnote{CHIMERA is supported by a research grant from Science Foundation Ireland (SFI) and the National Natural Science Foundation of China (NSFC) under the SFI-NSFC Partnership Programme, grant no. 17/NSFC/5181 and supported by MaREI, the SFI Research Centre for Energy, Climate, and Marine [Grant No: 12/RC/2302\_P2], https://www.marei.ie/project/chimera/}.
 
-The authors wish to acknowledge the contribution of the following people: Alessandro Chiodi, Paul Deane, Maurizio Gargiulo, Gerald Lyons, Brian O'Gallachoir, Fionn Rogan, Andrew Smith.
+The authors wish to acknowledge the contribution of the following people: Alessandro Chiodi, Paul Deane, Maurizio Gargiulo, Gerald Lyons, Brian O'Gallachoir, Fionn Rogan.
 \end{acknowledgements}
 
 
