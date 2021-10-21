@@ -570,17 +570,17 @@ All these technologies compete to meet the mobility demand over the planning hor
 
 Different fuels are supplied to the transport sector via four separated modules including supply, power, bio-refineries, and hydrogen modules. In other words, these connections integrate the transport sector with the entire energy system.
 
-TIMES models usually use a simplified constant lifetime for different vehicles and thus, the vehicles are retired at the end of that lifetime. However, a detailed analysis of technology retirement profiles in Ireland shows that this simplified representation is far from reality. An actual profile shows a low decay in the beginning years and a long tail in the distribution over long-time. To improve the retirement profile both for existing and new vehicles, TIM is equipped with realistic representation of the survival profile of car technologies. The survival rates are from Irish CarSTOCK model \citep{daly2011modelling, Mulholland2018}. 
+TIMES models usually use a simplified constant lifetime for different vehicles and thus, the vehicles are retired at the end of that lifetime. However, a detailed analysis of technology retirement profiles in Ireland shows that this simplified representation is far from reality \citep{Mulholland2018}. An actual profile shows a low decay in the beginning years and a long tail in the distribution over long-time. To improve the retirement profile both for existing and new vehicles, TIM is equipped with realistic representation of the survival profile of car technologies. The survival rates are from Irish CarSTOCK model \citep{daly2011modelling, Mulholland2018}. 
 
 \subsubsection{User constraints}
 
 A set of constraints limits fuel and modal shares in transport sector as follows: 
 \begin{itemize}
- \item Maximum biodiesel share in passenger and freight transport demand is 4.1\% in the base year
- \item Maximum bioethanol share in passenger and freight transport demand is 3.2\% in the base year
+ \item Maximum biodiesel share in passenger and freight transport demand is 4.1\% in the base year.
+ \item Maximum bioethanol share in passenger and freight transport demand is 3.2\% in the base year.
  \item Modal share of passenger and freight transport as stated in Table \ref{passenger transport demand} and Table \ref{ton-km}, respectively. 
  \item Maximum growth rate in new vehicle sales for advanced powertrains (HEVs, PHEVs, BEVs and FCVs) is 30\% per year, which is enforced once the market share of a vehicle type reaches 10\%.
- \item The blend limit for biofuels is 10\% for the regular ICEs without any modifications (i.e. 10\% biodiesel/bioethanol with 90\% fossil-based fuels). 
+ \item The blend limit for biofuels is 10-12\% for the regular ICEs without any modifications (i.e. 10\% bioethanol and 12\% biodiesel with 90\% and 88\% gasoline and diesel, respectively). 
  \item Total biofuel supply for the transport sector is allowed to double each decade, reflecting the rate of growth between 2010 and 2020 \citep{NORA2019}. 
 \end{itemize}
 
@@ -784,13 +784,11 @@ Among the industrial processes, the cement industry has the largest share of pro
 \label{ss:services}
 The service sector in TIM comprises public and private services. It includes a representation of the following energy services: space heating, space cooling, water heating, cooking, refrigeration, building lighting and other appliances. Data centres electricity demand and public lighting are also represented.
 
-%A combination of GVA, population and employment levels is used to project energy demand in the service sector according to the NACE categories (except for data centres) available in the SEAI's energy balance \citep{SEAI2019}. Energy demand from commercial and public services is expected to increase by 86\% in 2050. 
-
 Future fuel switching and technology-based efficiency options in the Services sector are represented explicitly. However given a lack of sufficient building-level data to enable a detailed analysis, public and private services are modelled in an aggregated fashion (i.e. the building stock is not divided in categories). This is an area identified as a priority area for future model development. 
 
 The end-use demand services in the service sector include million meter square of area for public and private sector buildings, data centre demand and public lighting units. The area is projected assuming the same growth as in GNI*. The total area is projected to increase by 61.8\% by 2050 from 2018 level with a CAGR of 1.5\%. 
 
-Electricity demand for data centres is obtained from EirGrid, i.e. their ``steady evolution" scenario. \citep{EirGridT57:online}. The electricity demand for data centres is expected to increase by 6 times in 2030 from 2018 level. We assume no growth in data centre demand after 2030 since permission requests for new/expanding existing capacities are not available yet. Further, post-2030 demand is even more uncertain given (i) the potential for exponential data usage growth and further data centres applications vs (ii) technology improvements and whether data centres fully utilise their contracted import capacity.  
+Electricity demand for data centres is obtained from EirGrid, i.e. their ``steady evolution" scenario \citep{EirGridT57:online}. The demand is expected to increase by 6 times in 2030 from 2018 level. We assume no growth in data centre demand after 2030 since permission requests for new/expanding existing capacities are not available yet. Further, post-2030 demand is even more uncertain given (i) the potential for exponential data usage growth and further data centres applications vs (ii) technology improvements and whether data centres fully utilise their contracted import capacity. Electricity consumption of data centres for cooling and their potential to supply district heat from the excess heat they generate are represented using the methodology described in \citet{Petrovic2020}. 
 
 Public lighting units are projected based on the Project Ireland 2040, whereby five major cities of Ireland, Dublin, Cork, Limerick, Galway and Waterford are expected to grow by 50\% in 2040 \citep{GovernmentofIreland2018}. This results in a 12.5\% increase in public lighting units in Ireland by 2040 from 2018 level, with a CAGR of 1\%. Beyond 2040, the units are projected to increase by 1\% per annum until 2050.
 
@@ -1168,7 +1166,7 @@ PWR Storage: Pumped Storage HYD Existing Turlough Hill 4 & 0.75 & 0.16 & 150 & &
 
 %% Please add \clearpage between each table and/or figure. Further guidelines on figures and tables can be found below.
 
-\authorcontribution{OB came up with the idea of the paper and conceptualised it together with HD and JG. HD led preparation of the manuscript with contributions from JG, VA, AG, JM, XY and OB. All authors contributed to model creation, data analysis and model validation. OB and AS reviewed and edited the manuscript before the original submission.} %% this section is mandatory
+\authorcontribution{OB conceptualised the idea together with HD and JG. HD led preparation of the manuscript with contributions from JG, VA, AG, JM, XY and OB. All authors contributed to model creation, data analysis and model validation. OB and AS reviewed and edited the manuscript before the original submission.} %% this section is mandatory
 
 \competinginterests{The authors declare that they have no conflict of interest.} %% this section is mandatory even if you declare that no competing interests are present
 
