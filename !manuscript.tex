@@ -311,7 +311,7 @@ TIM has been developed with the goal of achieving ``best practice" standards in 
 
 TIM is freely available, which is a prerequisite for transparency, repeatable research, model maintenance and enhancement and verification of results \citep{Pfenninger2018}. 
 
-Web-based dashboards\footnote{https://tim-review1.netlify.app/results/} have been extensively used in the model development process, both for internal model diagnostics and for external engagement and review. 
+Web-based dashboards\footnote{https://tim-review1.netlify.app/results/} have been extensively used in the model development process, both for internal model diagnostics and for external engagement and review. The first TIM scenario results archive has also been published on Zenodo \citep{HannahDaly2021}.
 
 TIM has been co-developed with the LEAP-Ireland model \citep{MacUidhir2020}, which is a bottom-up simulation model of the Irish energy system which simulates the impact of different policy measures and targets on overall GHG emissions in Ireland, with a particularly granular representation of transport and residential heat demand. Underlying data for the relevant sectors are shared between TIM and LEAP using a Data Repository and shared coding convention dictionary to improve the consistency between the models, give more robust analytical insights for policy and to share and exchange expertise between the modelling teams. This also facilitates multi-model approaches to energy systems modelling, which can make use of harmonised hybrid frameworks coupling simulation and optimisation simultaneously \citep{rogan2014leaps}.
 
@@ -617,7 +617,7 @@ Fig. \ref{fig:TIM_RES} shows the RES diagram for the residential sector. Energy 
  
 \begin{figure}[hb!]
  \centering
- \includegraphics[scale=3.2]{figures/TIM_Residential_RES.jpg} 
+ \includegraphics[scale=0.55]{figures/TIM_Residential_RES.png} 
  \caption{Residential Reference Energy System}
  \label{fig:TIM_RES}
 \end{figure}
@@ -727,16 +727,25 @@ The cost and efficiencies of new space heating and water heating technologies is
 
 \subsubsection{User constraints}
 \begin{itemize}
- \item The natural gas grid is currently connected to 39\% of apartments, 52\% of attached dwellings and 12\% of detached dwellings. It is assumed that the total share of dwellings connected to the gas grid can grow by 50\% in each category. 
-\item Maximum 80\% retrofits in existing buildings.
-\item Maximum fuel share in cooking for Gas and LPG is 40\% and 10\% respectively.
-\item Maximum 10\% solar input to dual fuel heating technology
-\item Maximum 30\% gas input into gas hybrid heating pumps
-
-% THESE ARE NOT ADDED IN THIS ITERATION OF THE MODEL 
-%\item maximum decrease constraint in fuel is 10\% / year for electricity, gas, kerosene, LPG and wood. While Solar has a maximum increase constraint of 10\% /year
-% (For Future iteration):
-%\item It is assumed that any existing dwelling which switches to a heat pump has to undergo a retrofit 
+ \item One space and water heating system per household ( stoves excluded ), this user constraint is applied to represent individual heating systems and calibrate results
+ \item Maximum 60\% of existing buildings to be retrofitted by 2030, and 95\% by 2070, the maximum value is interpolated between 2030 and 2070. This is user constraint is applied to align with maximum available labour and was applied during the model development.
+ \item A prerequisite retrofitting requirement for electrical heat pump installation is applied to each archetype. Table \ref{tab:HeatPumpConstraint} shows the percentage of dwellings which requires a shallow or deep retrofit before an electrical heat pump can be installed (  A ``heat pump ready" dwelling must be at least a B2 energy rating). This user constraint was applied because of the lack of data regrading operation of electrical heat pumps in less than B2 rated dwellings, without this constraint heat pumps are installed in poorly rated dwellings and run at high performance, this constraint aligns with known heat pump performance data.   
+ \begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Prerequisite Heat Pump Requirement}
+    \begin{tabular}{r|rrr}
+    \hline
+    \multicolumn{1}{l}{Requirement} & \multicolumn{1}{l}{Apartment} & \multicolumn{1}{l}{Attached } & \multicolumn{1}{l}{Detached} \\ \hline
+    No Retrofit  & 24.5\%   & 14.3\%   & 12\% \\
+    Shallow Retrofit  & 28.5\%   & 34.7\%  & 36.8\% \\
+    Deep Retrofit  & 47\%   & 51\%  & 51.2\% \\
+    \end{tabular}%
+  \label{tab:HeatPumpConstraint}%
+\end{table}
+\item Maximum fuel share in cooking for natural gas and LPG is 40\% and 10\% respectively. Base year fuel share for natural gas is 32\% and LPG is 1.5\%. This user constraint was applied in advance of the model development to align with the increasing market share of electrical induction hobs.
+\item Maximum 10\% solar input to dual fuel heating technology. This constraint was applied based on technological constraints.
+\item Maximum 30\% natural gas input to gas hybrid heating pumps. This constraint was applied based on technological constraints.
 \end{itemize}
 
 
@@ -1179,7 +1188,9 @@ PWR Storage: Pumped Storage HYD Existing Turlough Hill 4 & 0.75 & 0.16 & 150 & &
 \begin{acknowledgements}
 This work is being undertaken as part of a number of research projects undertaken at the SFI MaREI Centre at University College Cork, including CAPACITY, funded by the Department of Environment, Climate and Communications and the SFI-funded CHIMERA project\footnote{CHIMERA is supported by a research grant from Science Foundation Ireland (SFI) and the National Natural Science Foundation of China (NSFC) under the SFI-NSFC Partnership Programme, grant no. 17/NSFC/5181 and supported by MaREI, the SFI Research Centre for Energy, Climate, and Marine [Grant No: 12/RC/2302\_P2], https://www.marei.ie/project/chimera/}.
 
-The authors wish to acknowledge the contribution of the following people: Alessandro Chiodi, Paul Deane, Maurizio Gargiulo, Gerald Lyons, Brian O'Gallachoir, Fionn Rogan.
+The authors wish to acknowledge the contribution of the following people: Alessandro Chiodi, Paul Deane, Maurizio Gargiulo, Gerald Lyons, Brian \'{O} Gallach\'{o}ir, Fionn Rogan.
+
+The authors would also like to thank the following experts for their feedback during the expert review process: Andrew Kelly, Sarah Ni Ruairc, Joseph Cummins, Andrew Moloney, Marie Bourke, Ilkka Keppo, John Curtis, Gerry Duggan, John Fitzgerald, Luke O'Call White, Tadhg O'Mahony, Andrew Murphy, as well as individuals at UCD, DFIN, and EirGrid.
 \end{acknowledgements}
 
 
