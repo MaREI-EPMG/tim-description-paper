@@ -88,7 +88,7 @@
 % \Author[affil]{given_name}{surname}
 
 \Author[1,2]{Olexandr}{Balyk}
-\Author[1,2]{James}{Glynn}
+\Author[3,1,2]{James}{Glynn}
 \Author[1,2]{Vahid}{Aryanpur}
 \Author[1,2]{Ankita}{Gaur}
 \Author[1,2]{Jason}{McGuire}
@@ -100,6 +100,8 @@
 \affil[1]{Energy Policy and Modelling Group, SFI MaREI Centre for Energy, Climate and Marine, Environmental Research Institute, University College Cork, Ireland}
 
 \affil[2]{School of Engineering, University College Cork, Ireland}
+
+\affil[3]{Center on Global Energy Policy, School of International and Public Affairs, Columbia University, USA}
 
 %% The [] brackets identify the author with the corresponding affiliation. 1, 2, 3, etc. should be inserted.
 
@@ -151,7 +153,7 @@ Ireland faces a number of challenges in meeting these objectives. Firstly, a ver
 
 Energy system models have long been used to inform decarbonisation policies both in Ireland and other countries. Integrated and dynamic energy systems models have a number of advantages over single-sector or static approaches. Current energy systems are the result of complex country-dependent, multi-sector developments. The complex dynamics (incorporating technologies, fuel prices, infrastructures and capacity constraints) of the entire energy system can be analysed through this modelling approach to better inform policy choices. A key strength is to approach energy as a system rather than as a set of discrete non-interactive elements. This has the advantage of providing insights into the most important substitution options that are linked to the system as a whole, which cannot be understood when analysing a single technology, commodity or sector. A single focus on the electricity sector, for example, risks excluding possible unforeseen step changes in electricity demand, because of, perhaps, the electrification of transport or of heating. 
 
-TIM is the successor to the Irish TIMES model \citep{EnvironmentalProtectionAgency2020}, which has a long (more than 10-year) history of providing analytical input to Irish energy policy development, including acting as the basis for Ireland’s first Low-Carbon Roadmap in 2015 \citep{Deane2013} and for developing energy pathways consistent with the Paris Agreement \citep{Glynn2019}. TIM is a new model and has been developed to better inform increased national climate mitigation ambition, to take into account the changing energy technology landscape, and to take advantage of new advances in energy systems optimisation modelling techniques, which are described in the remainder of this paper.
+TIM is the successor to the Irish TIMES model \citep{EnvironmentalProtectionAgency2020}, which has a long (more than 10-year) history of providing analytical input to Irish energy policy development, including acting as the basis for Ireland’s first Low-Carbon Roadmap in 2015 \citep{Deane2013} and for developing energy pathways consistent with the Paris Agreement \citep{Glynn2019}, to which Ireland is a signatory. TIM is a new model and has been developed to better inform increased national climate mitigation ambition, to take into account the changing energy technology landscape, and to take advantage of new advances in energy systems optimisation modelling techniques, which are described in the remainder of this paper.
 
 Internationally, TIMES models are used in a number of countries to understand and plan for long-term energy transitions, including in Denmark \citep{Balyk2019} and the United Kingdom \citep{fais2016impact,daly2015indirect}. 
 
@@ -173,7 +175,7 @@ The TIMES-Ireland Model produces energy system pathways for energy supply and de
 \label{ss:times_code}
 TIMES (The Integrated MARKAL-EFOM System) is a bottom-up optimisation model generator for energy-environment systems analysis at various levels of spatial, temporal and sectoral resolutions \citep{Loulou2016a,Loulou2016}. The TIMES code, written in GAMS and available under an open source licence \citep{IEA-ETSAP2020a} is developed and maintained by the Energy Technology Systems Analysis Programme (ETSAP)\footnote{https://iea-etsap.org/}, a Technology Collaboration Programme (TCP) of the International Energy Agency (IEA), established in 1976. TIMES models can have single or several regions, and typically are rich in technology detail, used for medium- to long- terms energy system analysis and planning at a regional, national or global scale. 
 
-TIMES is a linear optimisation, techno-economic, partial-equilibrium model generator which assumes perfectly competitive markets and perfect foresight. Model variants enable myopic foresight, general equilibrium, stochastic programming and a variety of multi-objective function options. The standard objective function maximises the net total surplus (the sum of producers’ and consumers’ surpluses) which, in a perfect market with perfect foresight, equates to maximising the net present value (NPV) of the whole energy system, maximising societal welfare. It calculates the energy system specification which minimises discounted total energy system costs over the model time horizon, which is the sum of investments, fixed and variable costs, fuel import costs and export revenues for all the modelled processes, less potential salvage values of investments whole lifetime goes beyond the model time horizon. 
+TIMES is a linear optimisation, techno-economic, partial-equilibrium model generator which assumes perfectly competitive markets and perfect foresight. Model variants enable myopic foresight, general equilibrium, stochastic programming and a variety of multi-objective function options. The standard objective function maximises the net total surplus (the sum of producers’ and consumers’ surpluses) which, in a perfect market with perfect foresight, equates to maximising the net present value (NPV) of the whole energy system, maximising societal welfare. Profits, taxes and subsidies are internal transfers that do not change the NPV. It calculates the energy system specification which minimises discounted total energy system costs over the model time horizon, which is the sum of investments, fixed and variable costs, fuel import costs and export revenues for all the modelled processes, less potential salvage values of investments whole lifetime goes beyond the model time horizon. 
 
 The user inputs the following to the model generator:
 \begin{itemize}
@@ -274,10 +276,10 @@ Table \ref{tab:ESD_list} lists the energy service demands in TIM along with thei
     Transport equipment manufacture  & GVA per capita, Population & 0.17  & 0.04  & PJ \\
     Other manufacturing  & GVA per capita, Population & 4.25  & 6.12  & PJ \\
     Construction & GVA per capita, Population & 4.02  & 5.90  & PJ \\
-    Transport Demand: Short-range passenger travels & Income, population & 14.56 & 21.07 & BPKMS \\
-    Transport Demand: Medium-range passenger travels & Income, population & 31.28 & 45.29 & BPKMS \\
-    Transport Demand: Long-range passenger travels & Income, population & 27.13 & 38.97 & BPKMS \\
-    Transport Demand: Goods vehicle for freight & Growth rate \citep{AECOMIrelandLimited2019} & 11.54 & 25.14 & BTKMS \\
+    Transport Demand: Short-range passenger travels & Income, population & 14.56 & 21.07 & Bpkm \\
+    Transport Demand: Medium-range passenger travels & Income, population & 31.28 & 45.29 & Bpkm \\
+    Transport Demand: Long-range passenger travels & Income, population & 27.13 & 38.97 & Bpkm \\
+    Transport Demand: Goods vehicle for freight & Growth rate \citep{AECOMIrelandLimited2019} & 11.54 & 25.14 & Btkm \\
     Transport Demand: Turism fuel  &       & 7.72  & 0.00  & PJ \\
     Transport Demand: Navigation fuel  & GDP   & 3.51  & 10.04 & PJ \\
     Transport Demand: Unspecified fuel &       & 21.78 & 0.00  & PJ \\
@@ -347,10 +349,10 @@ Bioenergy potentials are calibrated to \citet{SEAI2015} both in terms of sustain
 Some agriculture sector commodities (i.e. bioenergy, land availability and herd types) are declared in the supply sector.
 
 \subsubsection{Refineries}
-The Whitegate refinery is calibrated to import crude oil at international prices and converts crude oil to refined products limited by upper bounds of output shares such that the output has flexible upper shares of 22.9\% gasoline, 8.1\% kerosene, 40.9\% diesel and 34.4\% heavy fuel oil. The refinery is constrained to stay at current capacity, has a lifespan of 50 years, and the production costs are differentiated by production (flow) costs for each output fuel.
+Ireland has only one oil refinery: Whitegate, in County Cork. It is calibrated to import crude oil at international prices and converts crude oil to refined products limited by upper bounds of output shares such that the output has flexible upper shares of 22.9\% gasoline, 8.1\% kerosene, 40.9\% diesel and 34.4\% heavy fuel oil. The refinery is constrained to stay at current capacity, has a lifespan of 50 years, and the production costs are differentiated by production (flow) costs for each output fuel.
 
 \subsubsection{Electricity Inter-connectors}
-Existing electricity inter-connectors are calibrated such that there is a price differential between annual average price for import and export of electricity to the UK of 30\%. The 2018 export and import quantities of electricity are calibrated as per historical data. The future activity is constrained using upper bounds, given that TIM does not model the UK electricity market, other than through predefined price signal. This constrain can be relaxed, but is used to explore domestic needs for system flexibility, security, system services and storage.
+Existing electricity inter-connectors to the UK are calibrated such that exports are priced 30\% lower than imports. The 2018 export and import quantities of electricity are calibrated as per historical data. The future activity is constrained using upper bounds, given that TIM does not model the UK electricity market, other than through predefined price signal. This constrain can be relaxed, but is used to explore domestic needs for system flexibility, security, system services and storage.
 
 \subsubsection{Biorefineries}
 Future bio-refinery technologies are defined in the supply sector future technology (SubRES) database. The following technologies are defined: 1) ethanol production from wheat, woody biomass and grass; 2) bio-diesel production from OSR, woody biomass, industrial food waste, RVO and tallow; 3) wood pellets production from biomass; and 4) biogas production from grass, woody biomass, municipal waste, industrial food waste and animal wastes. All bio-refining technologies are defined in terms of start year, efficiency, investment costs, availability factor, and the operation and maintenance costs.
@@ -391,7 +393,7 @@ Losses from electricity transmission and distribution are assumed to be 7\%, wit
  \caption{Onshore wind connection cost }
  \begin{tabular}{cc}
  \hline 
- Capacity (GW) & Connection Cost (Euro/kw)\\ 
+ Capacity (GW) & Connection Cost (EUR/kw)\\ 
  \hline
  0-8.1 & 25 \\
  
@@ -541,7 +543,7 @@ Future passenger car transport demand is projected based on future population gr
 \\
 where $y$ is the car per adult, $\alpha$ is saturation level of car ownership, $x$ is an economic indicator (income per adult in this case) and $\beta$,$\gamma$ are parameters that are estimated using historical data obtained from CSO. 
 
-Projection of future car ownership levels is based on change in income levels. The saturation level of car ownership is assumed at 875 per 1000 adults \citep{AECOMIrelandLimited2019}. Car ownership (car per adult) is projected to rise from 0.56 in 2018 to 0.69 in 2050, an increase of 23\%. Passenger kilometres are then derived using car ownership as a proxy and assuming an occupancy level of 1.492 and kilometres per car to remain constant at about 17300 per year. Total passenger kilometres from private cars in 2050 is projected to increase by 42\% from the 2018 level with a Compound Annual Growth Rate (CAGR) of 1.1\%. The growth rate of passenger kilometres from private cars was 1.35\% between 2008 and 2018. 
+Projection of future car ownership levels is based on change in income levels. The saturation level of car ownership is assumed at 875 per 1000 adults \citep{AECOMIrelandLimited2019}. Car ownership (cars per adult) is projected to rise from 0.56 in 2018 to 0.69 in 2050, an increase of 23\%. Passenger kilometres are then derived using car ownership as a proxy and assuming an occupancy level of 1.492 and kilometres per car to remain constant at about 17300 per year. Total passenger kilometres from private cars in 2050 is projected to increase by 42\% from the 2018 level with a Compound Annual Growth Rate (CAGR) of 1.1\%. The growth rate of passenger kilometres from private cars was 1.35\% between 2008 and 2018. 
 
 \subparagraph{Passenger kilometres: Other modes of transport}
 Other modes of transport represent a much smaller share of mobility demand compared to private cars. Passenger kilometres of large public service vehicles (PSVs) are projected using population as a driver in a log function and assuming average occupancy of 27.5. Large PSV passenger kilometres are expected to increase by 24.2\% in 2050 as compared to that in 2018 with a CAGR of 0.7\%. Passenger kilometres of other modes (luas, train, small PSVs, and motorcycles) and active modes (walking and cycling) are projected using population as a driver. The passenger kilometres are expected to increase by 60\% with a CAGR of 1.5\%. 
@@ -559,7 +561,7 @@ Common vehicle technologies and future options that are likely to become availab
 \begin{enumerate}
  \item Internal Combustion Engines (ICEs), consists of spark ignition engines fuelled by gasoline, bioethanol, CNG, BioCNG, hydrogen and dual-fuel engines (running either on gasoline or CNG/BioCNG, each one taking 50\% of the distance travelled), and compression ignition engines powered by diesel and biodiesel. 
 \item Hybrid Electric Vehicles (HEVs) are equipped with an ICE, which provides the main power, and a small electric motor to support the ICE and to recuperate the braking energy. 
-\item Plug-in Hybrid Electric Vehicles (PHEVs) have a similar powertrain to HEVs. Their batteries can be charged from the grid for driving tens of miles solely on electrical power. We assume the maximum distance driven on electric mode is 50\% in the base year and it can increase to 80\% over time. 
+\item Plug-in Hybrid Electric Vehicles (PHEVs) have a similar powertrain to HEVs. Their batteries can be charged from the grid for driving tens of km solely on electrical power. We assume the maximum distance driven on electric mode is 50\% in the base year and it can increase to 80\% over time. 
 \item Battery Electric Vehicles (BEVs) solely rely on batteries, which provide the total motive power of the vehicle. The batteries are charged from electricity grid. 
 \item Fuel Cell Vehicles (FCVs) are electrochemical devices that produce electricity through a reaction between hydrogen and oxygen. The electricity drives a vehicle’s electric motor. Conventional fuel tank is replaced with a pressurised hydrogen storage tank in FCVs. 
 \end{enumerate}
@@ -695,24 +697,24 @@ The cost and expected heat energy savings per archetype by BER improvement is ou
  \begin{tabular}{ccccccc}
  \hline
  BER & \multicolumn{2}{c}{Apartment} & \multicolumn{2}{c}{Attached} & \multicolumn{2}{c}{Detached} \\ 
- Rating & Cost & Savings & Cost & Savings & Cost & Savings \\
+ Rating & Cost, EUR & Savings & Cost, EUR & Savings & Cost, EUR & Savings \\
  \hline
  \multicolumn{7}{c}{Deep Retrofit} \\
  \hline
- C to A & €27,381.6 & 73\% & €30,424 & 73\% & €33,466.4 & 73\% \\
- D to B	& €11,533.5 & 59\% & €12,815 & 60\% & €14,096.5 & 60\% \\
- E to B & €18,273.6 & 70\% & €20,304 & 69\% & €22,334.4 & 69\% \\
- F to B & €19,958.4 & 76\% & €22,176 & 76\% & €24,393.6 & 76\% \\
- G to B & €19,958.4 & 81\% & €22,176 & 81\% & €24,393.6 & 81\% \\
+ C to A & 27,381.6 & 73\% & 30,424 & 73\% & 33,466.4 & 73\% \\
+ D to B	& 11,533.5 & 59\% & 12,815 & 60\% & 14,096.5 & 60\% \\
+ E to B & 18,273.6 & 70\% & 20,304 & 69\% & 22,334.4 & 69\% \\
+ F to B & 19,958.4 & 76\% & 22,176 & 76\% & 24,393.6 & 76\% \\
+ G to B & 19,958.4 & 81\% & 22,176 & 81\% & 24,393.6 & 81\% \\
  \hline
  \multicolumn{7}{c}{Shallow Retrofit} \\[0.5ex]
  \hline
- B to A & €18,957.6 & 55\% & €21,064 & 55\% & €23,170.4 & 54\% \\
- C to B & €11,533.5 & 41\% & €9,007.5 & 41\% & €14,096.5 & 40\% \\
- D to C & €7,478.1 & 31\% & €7,536.3 & 32\% & €9,139.9 & 32\% \\
- E to D & €11,848.5 & 26\% & €12,682.5 & 24\% & €14,240.8 & 24\% \\
- F to E & €7,794 & 21\% & €8,660 & 22\% & €9,526 & 21\% \\
- G to F & €2,200 & 20\% & €2,128 & 20\% & €3,200 & 20\% \\ \hline
+ B to A & 18,957.6 & 55\% & 21,064 & 55\% & 23,170.4 & 54\% \\
+ C to B & 11,533.5 & 41\% & 9,007.5 & 41\% & 14,096.5 & 40\% \\
+ D to C & 7,478.1 & 31\% & 7,536.3 & 32\% & 9,139.9 & 32\% \\
+ E to D & 11,848.5 & 26\% & 12,682.5 & 24\% & 14,240.8 & 24\% \\
+ F to E & 7,794 & 21\% & 8,660 & 22\% & 9,526 & 21\% \\
+ G to F & 2,200 & 20\% & 2,128 & 20\% & 3,200 & 20\% \\ \hline
  \end{tabular}
  
  \label{Retrofit Expected Savings}
@@ -788,7 +790,7 @@ Future fuel switching and technology-based efficiency options in the Services se
 
 The end-use demand services in the service sector include million meter square of area for public and private sector buildings, data centre demand and public lighting units. The area is projected assuming the same growth as in GNI*. The total area is projected to increase by 61.8\% by 2050 from 2018 level with a CAGR of 1.5\%. 
 
-Electricity demand for data centres is obtained from EirGrid, i.e. their ``steady evolution" scenario \citep{EirGridT57:online}. The demand is expected to increase by 6 times in 2030 from 2018 level. We assume no growth in data centre demand after 2030 since permission requests for new/expanding existing capacities are not available yet. Further, post-2030 demand is even more uncertain given (i) the potential for exponential data usage growth and further data centres applications vs (ii) technology improvements and whether data centres fully utilise their contracted import capacity. Electricity consumption of data centres for cooling and their potential to supply district heat from the excess heat they generate are represented using the methodology described in \citet{Petrovic2020}. 
+Electricity demand for data centres is obtained from EirGrid's ``steady evolution'' scenario \citep{EirGridT57:online}. The demand is expected to increase by 6 times in 2030 from 2018 level. We assume no growth in data centre demand after 2030 since permission requests for new/expanding existing capacities are not available yet. Further, post-2030 demand is even more uncertain given (i) the potential for exponential data usage growth and further data centres applications vs (ii) technology improvements and whether data centres fully utilise their contracted import capacity. Electricity consumption of data centres for cooling, and their potential to supply district heat from the excess heat they generate, are represented using the methodology described in \citet{Petrovic2020}. 
 
 Public lighting units are projected based on the Project Ireland 2040, whereby five major cities of Ireland, Dublin, Cork, Limerick, Galway and Waterford are expected to grow by 50\% in 2040 \citep{GovernmentofIreland2018}. This results in a 12.5\% increase in public lighting units in Ireland by 2040 from 2018 level, with a CAGR of 1\%. Beyond 2040, the units are projected to increase by 1\% per annum until 2050.
 
@@ -883,7 +885,7 @@ Continuous, iterative and open model development is essential to ensure that the
 \hline 
 Technology Description & 2018 & 2019 & 2025 & 2030 & 2035 & 2040 & *Source/Ratio \\
 
- & €/GJ & €/GJ & €/GJ & €/GJ & €/GJ & €/GJ & \\
+ & EUR/GJ & EUR/GJ & EUR/GJ & EUR/GJ & EUR/GJ & EUR/GJ & \\
 \hline 
 Crude Oil & 10.1 & 9.9 & 11.1 & 11.9 & 12.7 & 13.3 & WEO2019/2020 \\
 Natural Gas - UK & 6.1 & 5.7 & 6.2 & 9.4 & 11.0 & 12.9 & WEO2019/2020 \\
@@ -914,7 +916,7 @@ Oil for Non-Energy uses & 10.1 & 9.9 & 11.1 & 11.9 & 12.7 & 13.3 & \\ \hline
 \hline
 Bioenergy Import Costs & 2015 & 2020 & 2025 & 2030 & 2040 & 2050 \\
 
-Technology Description & €/GJ & €/GJ & €/GJ & €/GJ & €/GJ & €/GJ \\
+Technology Description & EUR/GJ & EUR/GJ & EUR/GJ & EUR/GJ & EUR/GJ & EUR/GJ \\
 \hline 
 Import of Ethanol 1st generation - Step 1 & 18.18 & 17.58 & 16.60 & 15.88 & & \\
 Import of Ethanol 1st generation - Step 2 & 18.92 & 19.08 & 18.92 & 19.13 & 20.39 & 21.40 \\
@@ -946,7 +948,7 @@ Import of Wood Chip - Step 4 & 6.38 & 5.40 & 4.99 & 5.04 & & \\ \hline
 \hline
 Bioenergy Import Delivery Costs & \multicolumn{1}{l}{2020} & \multicolumn{1}{l}{2030} & \multicolumn{1}{l}{2040} & \multicolumn{1}{l}{2050} & \multicolumn{1}{l}{Notes} \\
 
-Technology Description & \multicolumn{1}{l}{€/GJ} & \multicolumn{1}{l}{€/GJ} & \multicolumn{1}{l}{€/GJ} & \multicolumn{1}{l}{€/GJ} & \multicolumn{1}{l}{} \\
+Technology Description & \multicolumn{1}{l}{EUR/GJ} & \multicolumn{1}{l}{EUR/GJ} & \multicolumn{1}{l}{EUR/GJ} & \multicolumn{1}{l}{EUR/GJ} & \multicolumn{1}{l}{} \\
 \hline 
 Import of Wood Pellets - Step 1 & 4.32 & 4.45 & 4.59 & 4.69 & \\
 Import of Wood Pellets - Step 2 & 4.32 & 4.45 & 4.59 & 4.69 & \\
@@ -1088,7 +1090,7 @@ PWR Storage: Pumped Storage HYD Existing Turlough Hill 4 & 0.75 & 0.16 & 150 & &
  \hline
  \multicolumn{2}{c}{Description} & \multicolumn{2}{c}{2020} & \multicolumn{2}{c}{2030} & \multicolumn{2}{c}{2040} & \multicolumn{2}{c}{2050} \\
  
- Archetype & Technology & k€ & $\eta$ & k€ & $\eta$ & k€ & $\eta$ & k€ & $\eta$ \\
+ Archetype & Technology & kEUR & $\eta$ & kEUR & $\eta$ & kEUR & $\eta$ & kEUR & $\eta$ \\
  \hline
  \multirow{3}{*}{Apartment}&Gas Boiler & 2.79 & 81\% & 2.79 & 81\% & 2.79 & 81\% & 2.79 & 81\% \\
  & Oil Boiler & 3.63 & 81\% & 3.63 & 81\% & 3.63 & 81\% & 3.63 & 81\% \\
