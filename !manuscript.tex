@@ -727,9 +727,9 @@ The cost and efficiencies of new space heating and water heating technologies is
 
 \subsubsection{User constraints}
 \begin{itemize}
- \item One space and water heating system per household ( stoves excluded ), this user constraint is applied to represent individual heating systems and calibrate results
- \item Maximum 60\% of existing buildings to be retrofitted by 2030, and 95\% by 2070, the maximum value is interpolated between 2030 and 2070. This is user constraint is applied to align with maximum available labour and was applied during the model development.
- \item A prerequisite retrofitting requirement for electrical heat pump installation is applied to each archetype. Table \ref{tab:HeatPumpConstraint} shows the percentage of dwellings which requires a shallow or deep retrofit before an electrical heat pump can be installed (  A ``heat pump ready" dwelling must be at least a B2 energy rating). This user constraint was applied because of the lack of data regrading operation of electrical heat pumps in less than B2 rated dwellings, without this constraint heat pumps are installed in poorly rated dwellings and run at high performance, this constraint aligns with known heat pump performance data.   
+ \item One space and water heating system per household (stoves excluded). This user constraint is applied to represent individual heating systems and calibrate results.
+ \item Maximum 60\% of existing buildings to be retrofitted by 2030, and 95\% by 2070, the maximum value is interpolated between 2030 and 2050. This user constraint is applied to align with maximum available labour.
+ \item A prerequisite retrofitting requirement for electrical heat pump installation is applied to each archetype. Table \ref{tab:HeatPumpConstraint} shows the percentage of dwellings which requires a shallow or deep retrofit before an electrical heat pump can be installed (A ``heat pump ready" dwelling must be at least a B2 energy rating). This user constraint is applied because of the lack of data regrading operation of electrical heat pumps in less than B2 rated dwellings, without this constraint heat pumps would be installed in poorly rated dwellings and run at high performance. The constraint aligns with known heat pump performance data.
  \begin{table}[htbp]
   \centering
   \footnotesize
@@ -743,9 +743,7 @@ The cost and efficiencies of new space heating and water heating technologies is
     \end{tabular}%
   \label{tab:HeatPumpConstraint}%
 \end{table}
-\item Maximum fuel share in cooking for natural gas and LPG is 40\% and 10\% respectively. Base year fuel share for natural gas is 32\% and LPG is 1.5\%. This user constraint was applied in advance of the model development to align with the increasing market share of electrical induction hobs.
-\item Maximum 10\% solar input to dual fuel heating technology. This constraint was applied based on technological constraints.
-\item Maximum 30\% natural gas input to gas hybrid heating pumps. This constraint was applied based on technological constraints.
+\item Maximum fuel share in cooking for natural gas and LPG is 40\% and 10\% respectively. Base year fuel share for natural gas is 32\% and LPG is 1.5\%. This user constraint is applied to align with the increasing market share of electrical induction hobs.
 \end{itemize}
 
 
