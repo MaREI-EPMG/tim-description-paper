@@ -88,12 +88,12 @@
 % \Author[affil]{given_name}{surname}
 
 \Author[1,2]{Olexandr}{Balyk}
-\Author[3,1,2]{James}{Glynn}
+\Author[1,2,3]{James}{Glynn}
 \Author[1,2]{Vahid}{Aryanpur}
 \Author[1,2]{Ankita}{Gaur}
 \Author[1,2]{Jason}{McGuire}
 \Author[1,2]{Andrew}{Smith}
-\Author[1,2]{Xiufeng}{Yue}
+\Author[1,2,4]{Xiufeng}{Yue}
 \Author[1,2]{Hannah}{Daly}
 
 
@@ -102,6 +102,8 @@
 \affil[2]{School of Engineering, University College Cork, Ireland}
 
 \affil[3]{Center on Global Energy Policy, School of International and Public Affairs, Columbia University, USA}
+
+\affil[4]{Dalian University of Technology, China} 
 
 %% The [] brackets identify the author with the corresponding affiliation. 1, 2, 3, etc. should be inserted.
 
@@ -367,7 +369,7 @@ Hydrogen production is modelled in the future, disaggregating centralised and de
 Ireland has a high share of variable renewable electricity for a relatively isolated grid, with 32.5\% of electricity generation in 2019 coming from onshore wind energy. Achieving the 2020 RES-E target has encouraged strong growth in onshore wind, while increasing the non-synchronous penetration of renewables to 70\% by 2030 including offshore wind development is a key policy objective over the next decade as Ireland moves towards a net zero carbon electricity system. 
 
 \subsubsection{Existing Dispatchable Grid}
-The existing 61 generation unit fleet is calibrated to the base year of 2018 from the Commission for Energy Regulation (CRU) I-SEM validated PLEXOS model \citep{Geffert2018}. Each existing generation unit can be explicitly modelled with unit commitment. This model configuration includes the generation unit capacity, the fuel type of each generation unit, the start up costs (from cold, warm and hot), the efficiency curve of the generation unit to include startup and shutdown phases, startup and shutdown times (cold, warm and hot), the ramp rates, minimum load, efficiency at minimum load, minimum up-time and minimum down-time, the unit lifespan, the unit annual availability, and the start year of the unit \citep{Geffert2018}. The near-term generation unit pipeline is calibrated to \citet{EirGridadSONI2019,EirGrid&SONI2020} to account for early closures of units before their economic lifespan, which largely takes into account coal and peat based plants during the next decade. We have not forced on new capacity of future planned power plants from \citet{EirGrid&SONI2020} in TIM, which includes recent battery storage installations. These recent and planned units can be forced on via a scenario file. 
+The existing 61 generation unit fleet is calibrated to the base year of 2018 from the Commission for Energy Regulation (CRU) I-SEM validated PLEXOS model \citep{Geffert2018}. Each existing generation unit can be explicitly modelled with unit commitment within TIM. This model configuration includes the generation unit capacity, the fuel type of each generation unit, the start up costs (from cold, warm and hot), the efficiency curve of the generation unit to include startup and shutdown phases, startup and shutdown times (cold, warm and hot), the ramp rates, minimum load, efficiency at minimum load, minimum up-time and minimum down-time, the unit lifespan, the unit annual availability, and the start year of the unit \citep{Geffert2018}. The near-term generation unit pipeline is calibrated to \citet{EirGridadSONI2019,EirGrid&SONI2020} to account for early closures of units before their economic lifespan, which largely takes into account coal and peat based plants during the next decade. We have not forced on new capacity of future planned power plants from \citet{EirGrid&SONI2020} in TIM, which includes recent battery storage installations. These recent and planned units can be forced on via a scenario file. 
 
 The existing 302 Onshore and 1 Offshore Wind farms within the Irish Wind Energy Association database currently operate as a single aggregated generation pool governed by historical hourly availability factors for wind generation from 2018.
 
@@ -393,7 +395,7 @@ Losses from electricity transmission and distribution are assumed to be 7\%, wit
  \caption{Onshore wind connection cost }
  \begin{tabular}{cc}
  \hline 
- Capacity (GW) & Connection Cost (EUR/kw)\\ 
+ Capacity (GW) & Connection Cost (EUR/kW)\\ 
  \hline
  0-8.1 & 25 \\
  
@@ -427,7 +429,7 @@ Losses from electricity transmission and distribution are assumed to be 7\%, wit
 %Xiufeng can you provide xls please? 
 
 \subsubsection{Carbon Capture and Storage, Carbon Dioxide Removal, and Negative Emissions technologies}
-It is well documented in the literature that residual emissions are likely to remain in the future (net) zero carbon energy system from ``hard-to-decarbonise" sectors \citep{Rogelj2018}. Carbon Capture and Storage (CCS), Carbon Dioxide Removal technologies (CDR), and Negative Emission Technologies (NETS) are currently seen within the literature as critical future technologies to capture the last marginal residual emissions to bring the energy system to net-zero CO2 or even net-negative CO2 by mid-century. With this in mind, TIM has carbon capture and storage (CCS) technology options available from 2030, including retrofit options on existing coal, peat and gas power plants. Bioenergy carbon capture and storage (BECCS) is available in TIM from 2030 and provides net negative CO2 capture and allows negative emissions electricity generation. Direct air carbon capture and storage (DACCS) is also defined as a backstop technology.
+It is well documented in the literature that residual emissions are likely to remain in the future (net) zero carbon energy system from ``hard-to-decarbonise" sectors \citep{Rogelj2018}. Carbon Capture and Storage (CCS), Carbon Dioxide Removal technologies (CDR), and Negative Emission Technologies (NETS) are currently seen within the literature as critical future technologies to capture the last marginal residual emissions to bring the energy system to net-zero CO2 or even net-negative CO2 by mid-century. With this in mind, TIM has carbon capture and storage (CCS) technology options available from 2030, including retrofit options on existing coal, peat and gas power plants. Bioenergy carbon capture and storage (BECCS) is available in TIM from 2030 and provides net negative CO2 capture and allows negative emissions electricity generation. Direct air carbon capture and storage (DACCS) is also defined as a backstop technology i.e., it has a static unit cost of 2000 EUR/tCO2 and an unlimited capacity. This caps the marginal abatement cost of the model at a price that does not exclude any of the plausible mitigation measures.
 
 \subsubsection{User constraints}
 User constraints applied to the Power sector in TIM largely pertain to the calibration of the near-term shutdown of coal and peat power plants before their economic life-time ends as a result of policy decisions. 
@@ -438,7 +440,7 @@ User constraints applied to the Power sector in TIM largely pertain to the calib
 \subsubsection{Overview}
 The transport sector comprehensively describes the end-use transport technologies, and freight and mobility demands on a regional basis. This sector is divided into 26 counties across Ireland. To represent region-specific transport characteristics, some main parameters (vehicle fleet, transport infrastructure, fuel consumption, mileage, occupancy rate, load factor) are differentiated on a county level. Transport demand is split to three main categories: passenger, freight, and others. The passenger and freight demands are expressed as activity demands, and others are defined as a final energy demand (PJ). These final energy demands further split into aviation (international and domestic), navigation, fuel tourism and unspecified, aligned with the energy balance \citep{SEAI2019}. ``Fuel tourism" refers to cross-border consumers and a portion of demand is used by unspecified modes. 
 
-The passenger transport demands are expressed in billion-passenger kilometres (Bpkm). As shown in Table \ref{passenger transport demand}, the total passenger demand is divided into three classes of distance range including short-range (less than 5km), medium-range (5-30 km), and long-range (more than 30km) \citep{NTA2018}. Four transport modes satisfy travel demands including 1. public services (bus, train, taxi), 2. private cars, 3. two-wheelers, and 4. active modes (walk and bike). Non-motorised transport is only used for short-range trips, 2-wheeler are used for short- and medium-range travels, urban bus and school bus are used for short- and medium range travels, Intercity bus and heavy train are used for long-range trips, and light rail can only be used for the short- and medium-range trips in Dublin county. As shown in Fig. \ref{fig:TRA-TIM}, demand for each mode can be met with a different set of technologies based on cost-optimisation and user constraints. The base year is calibrated based on the actual number of vehicles and the corresponding vehicle activities. Table \ref{vehicle stock} shows vehicle characteristics on the national basis. 
+The passenger transport demands are expressed in billion-passenger-kilometres (Bpkm). As shown in Table \ref{passenger transport demand}, the total passenger demand is divided into three classes of distance range including short-range (less than 5km), medium-range (5-30 km), and long-range (more than 30km) \citep{NTA2018}. Four transport modes satisfy travel demands including 1. public services (bus, train, taxi), 2. private cars, 3. powered two-wheelers (PTW), and 4. active modes (walk and bike). Non-motorised transport is only used for short-range trips, PTW are used for short- and medium-range travels, urban bus and school bus are used for short- and medium range travels, Intercity bus and heavy train are used for long-range trips, and light rail can only be used for the short- and medium-range trips in Dublin county. As shown in Fig. \ref{fig:TRA-TIM}, demand for each mode can be met with a different set of technologies based on cost-optimisation and user constraints. The base year is calibrated based on the actual number of vehicles and the corresponding vehicle activities. Table \ref{vehicle stock} shows vehicle characteristics on the national basis. 
 
 \begin{table}[h!]
  \centering
@@ -453,9 +455,9 @@ The passenger transport demands are expressed in billion-passenger kilometres (B
  & Heavy train &	NA & NA &	8.4\% \\
  & Taxi &	1.7\% &	2.2\% &	1.3\% \\
  \hline
- Private & Cars	& 51.5\% &	83.3\%	& 74.2\% \\
+ Private & Car	& 51.5\% &	83.3\%	& 74.2\% \\
  \hline
- 2-wheeler & Motorcycle & 0.1\% &	0.3\%	& NA \\
+ Powered two-wheelers & 0.1\% &	0.3\%	& NA \\
  \hline
  Active & Bike &	5.4\% & 	NA & 	NA \\
  
@@ -468,7 +470,7 @@ The passenger transport demands are expressed in billion-passenger kilometres (B
  \label{passenger transport demand}
 \end{table}
 
-The inland freight demand is expressed in billion-tonne kilometres (Btkm). It comprises two main modes: goods trucks and train. The definition of light and heavy goods vehicles varies in different studies. In this model, they are disaggregated by three unladen weight bands: light-duty trucks (below 5 tonnes), medium-duty trucks (5-10 tonnes) and heavy-duty trucks (over 10 tonnes) \citep{CentralStatisticsOffice2020d,CentralStatisticsOffice2020e,CentralStatisticsOffice2020f}. Table \ref{ton-km} shows freight demand in the base year. 
+The inland freight demand is expressed in billion tonne-kilometres (Btkm). It comprises two main modes: goods trucks and train. The definition of light and heavy goods vehicles varies in different studies. In this model, they are disaggregated by three unladen weight bands: light-duty trucks (below 5 tonnes), medium-duty trucks (5-10 tonnes) and heavy-duty trucks (over 10 tonnes) \citep{CentralStatisticsOffice2020d,CentralStatisticsOffice2020e,CentralStatisticsOffice2020f}. Table \ref{ton-km} shows freight demand in the base year in million tonne-kilometres (Mtkm). 
 
 \begin{table}[ht]
  \centering
@@ -476,7 +478,7 @@ The inland freight demand is expressed in billion-tonne kilometres (Btkm). It co
  \caption{Freight demand in 2018 \citep{ CentralStatisticsOffice2020d, CentralStatisticsOffice2020e, CentralStatisticsOffice2020f}}
  \begin{tabular}{llll}
  \hline 
- Classification & Unladen weight & Demand (mtkm) & Share\\ 
+ Classification & Unladen weight & Demand (Mtkm) & Share\\ 
  \hline
  Light-duty trucks & 0-5 tonne & 292 & 2.5\% \\
  Medium-duty trucks & 5-10 tonne & 1140 & 9.8\% \\
@@ -534,8 +536,8 @@ The inland freight demand is expressed in billion-tonne kilometres (Btkm). It co
 \end{table}
 
 \subsubsection{Future transport demand projections}
-\subparagraph{Passenger kilometres: Private Cars}
-Future passenger car transport demand is projected based on future population growth and a growing rate of car ownership, which is in turn determined by income growth. Car ownership usually follows an S-shaped function which has three periods: slow growth during low income levels, rapid increase as income levels rise quickly and finally a saturation period. Gompertz statistical model has been found to best fit the historical relationship car ownership and income levels, although other functions have also been used in previous studies \citep{Lian2018}. The basic Gompertz function is shown in Equation \ref{gompz_func}.
+\subparagraph{Passenger-kilometres: Private Cars}
+Future passenger car transport demand is projected based on future population growth and a growing rate of car ownership, which is in turn determined by income growth. Car ownership usually follows an S-shaped function which has three periods: slow growth during low income levels, rapid increase as income levels rise quickly and finally a saturation period. Gompertz statistical model has been found to best fit the historical relationship between car ownership and income levels, although other functions have also been used in previous studies \citep{Lian2018}. The basic Gompertz function is shown in Equation \ref{gompz_func}.
 \\
 \begin{equation} \label{gompz_func}
  y=\alpha*e^{-\beta*e^{-\gamma x}}
@@ -543,16 +545,16 @@ Future passenger car transport demand is projected based on future population gr
 \\
 where $y$ is the car per adult, $\alpha$ is saturation level of car ownership, $x$ is an economic indicator (income per adult in this case) and $\beta$,$\gamma$ are parameters that are estimated using historical data obtained from CSO. 
 
-Projection of future car ownership levels is based on change in income levels. The saturation level of car ownership is assumed at 875 per 1000 adults \citep{AECOMIrelandLimited2019}. Car ownership (cars per adult) is projected to rise from 0.56 in 2018 to 0.69 in 2050, an increase of 23\%. Passenger kilometres are then derived using car ownership as a proxy and assuming an occupancy level of 1.492 and kilometres per car to remain constant at about 17300 per year. Total passenger kilometres from private cars in 2050 is projected to increase by 42\% from the 2018 level with a Compound Annual Growth Rate (CAGR) of 1.1\%. The growth rate of passenger kilometres from private cars was 1.35\% between 2008 and 2018. 
+Projection of future car ownership levels is based on change in income levels. The saturation level of car ownership is assumed at 875 per 1000 adults \citep{AECOMIrelandLimited2019}. Car ownership (cars per adult) is projected to rise from 0.56 in 2018 to 0.69 in 2050, an increase of 23\%. Passenger-kilometres are then derived using car ownership as a proxy and assuming an occupancy level of 1.492 and kilometres per car to remain constant at about 17300 per year. Total passenger-kilometres from private cars in 2050 is projected to increase by 42\% from the 2018 level with a Compound Annual Growth Rate (CAGR) of 1.1\%. The growth rate of passenger-kilometres from private cars was 1.35\% between 2008 and 2018. 
 
-\subparagraph{Passenger kilometres: Other modes of transport}
-Other modes of transport represent a much smaller share of mobility demand compared to private cars. Passenger kilometres of large public service vehicles (PSVs) are projected using population as a driver in a log function and assuming average occupancy of 27.5. Large PSV passenger kilometres are expected to increase by 24.2\% in 2050 as compared to that in 2018 with a CAGR of 0.7\%. Passenger kilometres of other modes (luas, train, small PSVs, and motorcycles) and active modes (walking and cycling) are projected using population as a driver. The passenger kilometres are expected to increase by 60\% with a CAGR of 1.5\%. 
+\subparagraph{Passenger-kilometres: Other modes of transport}
+Other modes of transport represent a much smaller share of mobility demand compared to private cars. Passenger-kilometres of large public service vehicles (PSVs) are projected using population as a driver in a log function and assuming average occupancy of 27.5. Large PSV passenger-kilometres are expected to increase by 24.2\% in 2050 as compared to that in 2018 with a CAGR of 0.7\%. Passenger-kilometres of other modes (luas, train, small PSVs, and motorcycles) and active modes (walking and cycling) are projected using population as a driver. The passenger-kilometres are expected to increase by 60\% with a CAGR of 1.5\%. 
 
 \subparagraph{International Aviation fuel demand}
 International aviation fuel demand is projected using number of passengers as a driver. The number of aviation passengers is projected using damped Holt Winters function based on historical time-series data obtained from CSO \citep{Dantas2017,Grubb2001}. The number of passengers in 2050 is expected to increase by 45.5\% compared to 2018. The historical fuel demand for aviation and number of aviation passengers are then used as input for a linear regression model to project the future demand for aviation fuel. The fuel demand in 2050 increases by 37\% relative to 2018 with a CAGR of 1\%. 
 
 \subparagraph{Other transport fuel demand}
-Demand for freight is projected using growth rates from \citet {AECOMIrelandLimited2019}. The growth in tonne kilometres of freight is expected to increase by 1.18 times in 2050 from 2018 level with a CAGR of 2.5\%. Navigation fuel demand is projected using GDP as the explanatory variable. Fuel demand for navigation in 2050 is expected to increase 2.85 times compared to 2018 with a CAGR of 3.3\%. Fuel tourism is assumed to remain constant at 11 PJ. 
+Demand for freight is projected using growth rates from \citet {AECOMIrelandLimited2019}. The growth in tonne-kilometres of freight is expected to increase by 1.18 times in 2050 from 2018 level with a CAGR of 2.5\%. Navigation fuel demand is projected using GDP as the explanatory variable. Fuel demand for navigation in 2050 is expected to increase 2.85 times compared to 2018 with a CAGR of 3.3\%. Fuel tourism is assumed to remain constant at 11 PJ. 
 
 \subsubsection{Future technology options}
 
@@ -819,7 +821,7 @@ Firstly, the integrated whole system approach offer ``macro systems" perspective
 
 Secondly, an appropriately wide mitigation option space is required to meet deep decarbonisation challenges. Strengths of TIM include the rich depiction of important demand sectors, namely transport and residential, which are characterised to enable scenario variants of alternative demands. For example, splitting passenger transport demand into long-, medium- and short-distance demand allows for switching to active and public transport demands . Similarly, the archetypal model underpinning the residential sector allows for lowering building floor area demand and internal temperatures, which can be key scenario variants. These scenario variants are exogenous, though there is increasing literature on endogenising behaviour in TIMES models. Several options for shifting to more efficient uses of energy, for example, are endogenous. However, the aggregate nature of the Industry sector limits the potential analysis of demand reduction in this sector and is an area of future model development priority.
 
-Another area for future model improvements is to explore carbon dioxide removal (CDR) options in more detail. At the global level, modelled pathways meeting the Paris Agreement rely on large-scale deployment of CDR options including biomass with carbon capture and storage (BECCS) \citep{IPCC2018}. BECCS is currently modelled within TIM, but options like Direct Air Capture (DAC)\citep{Realmonte2019} are currently not.
+Another area for future model improvements is to explore carbon dioxide removal (CDR) options in more detail. At the global level, modelled pathways meeting the Paris Agreement rely on large-scale deployment of CDR options including biomass with carbon capture and storage (BECCS) \citep{IPCC2018}. BECCS is currently modelled within TIM, but options like Direct Air Capture (DAC) \citep{Realmonte2019} are currently represented in an oversimplified manner; as real-world trials provide operational performance data, we will be able to improve the representation of DAC in TIM.
 
 Another limitation of TIM is the sole focus on energy and process emissions. Agriculture and land-use are very significant emitters in Ireland, and future energy system decarbonisation trajectories will require a focus on the overlaps with other emitters. This is required firstly to understand bioenergy and waste potentials, and to take into account future gains from the circular economy, and also competition between energy crops, agriculture and reforestation.
 
