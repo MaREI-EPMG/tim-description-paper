@@ -440,7 +440,7 @@ User constraints applied to the Power sector in TIM largely pertain to the calib
 \subsubsection{Overview}
 The transport sector comprehensively describes the end-use transport technologies, and freight and mobility demands on a regional basis. This sector is divided into 26 counties across Ireland. To represent region-specific transport characteristics, some main parameters (vehicle fleet, transport infrastructure, fuel consumption, mileage, occupancy rate, load factor) are differentiated on a county level. Transport demand is split to three main categories: passenger, freight, and others. The passenger and freight demands are expressed as activity demands, and others are defined as a final energy demand (PJ). These final energy demands further split into aviation (international and domestic), navigation, fuel tourism and unspecified, aligned with the energy balance \citep{SEAI2019}. ``Fuel tourism" refers to cross-border consumers and a portion of demand is used by unspecified modes. 
 
-The passenger transport demands are expressed in billion-passenger-kilometres (Bpkm). As shown in Table \ref{passenger transport demand}, the total passenger demand is divided into three classes of distance range including short-range (less than 5km), medium-range (5-30 km), and long-range (more than 30km) \citep{NTA2018}. Four transport modes satisfy travel demands including 1. public services (bus, train, taxi), 2. private cars, 3. powered two-wheelers (PTW), and 4. active modes (walk and bike). Non-motorised transport is only used for short-range trips, PTW are used for short- and medium-range travels, urban bus and school bus are used for short- and medium range travels, Intercity bus and heavy train are used for long-range trips, and light rail can only be used for the short- and medium-range trips in Dublin county. As shown in Fig. \ref{fig:TRA-TIM}, demand for each mode can be met with a different set of technologies based on cost-optimisation and user constraints. The base year is calibrated based on the actual number of vehicles and the corresponding vehicle activities. Table \ref{vehicle stock} shows vehicle characteristics on the national basis. 
+The passenger transport demands are expressed in billion-passenger-kilometres (Bpkm). As shown in Table \ref{passenger transport demand}, the total passenger demand is divided into three classes of distance range including short-range (less than 5km), medium-range (5-30 km), and long-range (more than 30km) \citep{NTA2018}. Four transport modes satisfy travel demands: public services (bus, train, taxi), private cars, powered two-wheelers (PTW) and active modes (walk and bike). Non-motorised transport is only used for short-range trips, PTW are used for short- and medium-range travels, urban bus and school bus are used for short- and medium range travels, Intercity bus and heavy train are used for long-range trips, and light rail can only be used for the short- and medium-range trips in Dublin county. As shown in Fig. \ref{fig:TRA-TIM}, demand for each mode can be met with a different set of technologies based on cost-optimisation and user constraints. The base year is calibrated based on the actual number of vehicles and the corresponding vehicle activities. Modal shares, presented in Table \ref{passenger transport demand}, are assumed to be constant throughout the modelling horizon. Total future passenger demand is obtained as a sum of mode-specific demand projections, described in subsections \ref{sp:pkm private cars} and \ref{sp:pkm other}. Table \ref{vehicle stock} shows vehicle characteristics on the national basis. 
 
 \begin{table}[h!]
  \centering
@@ -469,7 +469,7 @@ The passenger transport demands are expressed in billion-passenger-kilometres (B
  \label{passenger transport demand}
 \end{table}
 
-The inland freight demand is expressed in billion tonne-kilometres (Btkm). It comprises two main modes: goods trucks and train. The definition of light and heavy goods vehicles varies in different studies. In this model, they are disaggregated by three unladen weight bands: light-duty trucks (below 5 tonnes), medium-duty trucks (5-10 tonnes) and heavy-duty trucks (over 10 tonnes) \citep{CentralStatisticsOffice2020d,CentralStatisticsOffice2020e,CentralStatisticsOffice2020f}. Table \ref{ton-km} shows freight demand in the base year in million tonne-kilometres (Mtkm). 
+The inland freight demand is expressed in billion tonne-kilometres (Btkm). It comprises two main modes: goods trucks and train. The definition of light and heavy goods vehicles varies in different studies. In this model, they are disaggregated by three unladen weight bands: light-duty trucks (below 5 tonnes), medium-duty trucks (5-10 tonnes) and heavy-duty trucks (over 10 tonnes) \citep{CentralStatisticsOffice2020d,CentralStatisticsOffice2020e,CentralStatisticsOffice2020f}. Table \ref{ton-km} shows freight demand in the base year in million tonne-kilometres (Mtkm); the modal shares are assumed constant throughout the modelling horizon. 
 
 \begin{table}[ht]
  \centering
@@ -536,6 +536,7 @@ The inland freight demand is expressed in billion tonne-kilometres (Btkm). It co
 
 \subsubsection{Future transport demand projections}
 \subparagraph{Passenger-kilometres: Private Cars}
+\label{sp:pkm private cars}
 Future passenger car transport demand is projected based on future population growth and a growing rate of car ownership, which is in turn determined by income growth. Car ownership usually follows an S-shaped function which has three periods: slow growth during low income levels, rapid increase as income levels rise quickly and finally a saturation period. Gompertz statistical model has been found to best fit the historical relationship between car ownership and income levels, although other functions have also been used in previous studies \citep{Lian2018}. The basic Gompertz function is shown in Equation \ref{gompz_func}.
 \\
 \begin{equation} \label{gompz_func}
@@ -547,6 +548,7 @@ where $y$ is the car per adult, $\alpha$ is saturation level of car ownership, $
 Projection of future car ownership levels is based on change in income levels. The saturation level of car ownership is assumed at 875 per 1000 adults \citep{AECOMIrelandLimited2019}. Car ownership (cars per adult) is projected to rise from 0.56 in 2018 to 0.69 in 2050, an increase of 23\%. Passenger-kilometres are then derived using car ownership as a proxy and assuming an occupancy level of 1.492 and kilometres per car to remain constant at about 17300 per year. Total passenger-kilometres from private cars in 2050 is projected to increase by 42\% from the 2018 level with a Compound Annual Growth Rate (CAGR) of 1.1\%. The growth rate of passenger-kilometres from private cars was 1.35\% between 2008 and 2018. 
 
 \subparagraph{Passenger-kilometres: Other modes of transport}
+\label{sp:pkm other}
 Other modes of transport represent a much smaller share of mobility demand compared to private cars. Passenger-kilometres of large public service vehicles (PSVs) are projected using population as a driver in a log function and assuming average occupancy of 27.5. Large PSV passenger-kilometres are expected to increase by 24.2\% in 2050 as compared to that in 2018 with a CAGR of 0.7\%. Passenger-kilometres of other modes (luas, train, small PSVs, and motorcycles) and active modes (walking and cycling) are projected using population as a driver. The passenger-kilometres are expected to increase by 60\% with a CAGR of 1.5\%. 
 
 \subparagraph{International Aviation fuel demand}
@@ -567,9 +569,9 @@ Common vehicle technologies and future options that are likely to become availab
 \item Fuel Cell Vehicles (FCVs) are electrochemical devices that produce electricity through a reaction between hydrogen and oxygen. The electricity drives a vehicle’s electric motor. Conventional fuel tanks are replaced with pressurised hydrogen storage tanks in FCVs. 
 \end{enumerate}
 
-Table \ref{vehicle-purchase} shows the techno-economic characteristics of future passenger transport vehicles \citep{Mulholland2017,Helgeson2020}. Maintenance costs are assumed to remain constant. However, in some scenarios vehicle purchase price parity between BEVs and ICEs is expected in the period 2025-2030. 
+Table \ref{vehicle-purchase} shows the techno-economic characteristics of future passenger transport vehicles \citep{Mulholland2017,Helgeson2020}. Maintenance costs are assumed to remain constant. Vehicle purchase price parity between BEVs and ICEs is expected in the period 2025-2030. 
 
-All these technologies compete to meet the mobility demand over the planning horizon. The model structure allows competition among stock replacement and fuel substitution within a mode. Modal shift may be simulated within each travel distance band. 
+All these technologies compete to meet the mobility demand over the planning horizon. The model structure allows competition among stock replacement and fuel substitution within a mode. Modal shift may be simulated within each travel distance band by defining scenario-specific shares for the different modes (e.g. see Table \ref{passenger transport demand}). 
 
 Different fuels are supplied to the transport sector via four separated modules including supply, power, bio-refineries, and hydrogen modules. In other words, these connections integrate the transport sector with the entire energy system.
 
@@ -581,7 +583,6 @@ A set of constraints limits fuel and modal shares in transport sector as follows
 \begin{itemize}
  \item Maximum biodiesel share in passenger and freight transport demand is 4.1\% in the base year.
  \item Maximum bioethanol share in passenger and freight transport demand is 3.2\% in the base year.
- \item Modal share of passenger and freight transport as stated in Table \ref{passenger transport demand} and Table \ref{ton-km}, respectively. 
  \item Maximum growth rate in new vehicle sales for advanced powertrains (HEVs, PHEVs, BEVs and FCVs) is 16\% per year, which is enforced once the sales of a vehicle type reaches 15\% of the total vehicle sales in the base year.
  \item The blend limit for biofuels is 10-12\% for the regular ICEs without any modifications (i.e. 10\% bioethanol and 12\% biodiesel with 90\% and 88\% gasoline and diesel, respectively). 
  \item Total biofuel supply for the transport sector is allowed to double each decade, reflecting the rate of growth between 2010 and 2020 \citep{NORA2019}. 
