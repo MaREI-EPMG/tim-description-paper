@@ -156,7 +156,6 @@ Other energy system models in Ireland which are used to inform long-term pathway
 
 TIM is a significant step forward in national energy systems modelling capacity. A number of features better enable this model to capture long-term energy systems transitions, enabling it to better inform very ambitious decarbonisation targets. These features are described in detail throughout the paper and are summarised in the Discussion (Section \ref{s:discussion}).
 
-
 The rest of the paper is structured as follows: Section \ref{S:model_desc} gives a general description of the model, including a ``plain English" description of the model (\ref{ss:model_plain}), an outline of the TIMES methodology and model generator (\ref{ss:times_code}), an overview of the system (\ref{ss:system_overview}), the temporal and regional characteristics (\ref{ss:time_geo}), underlying demand drivers (\ref{ss:model_proj}), and the model development approach (\ref{ss:model_dev}). Section \ref{s:sectors} describes the model sectors (Supply, Power, Transport, Residential, Industry, Services and Agriculture). Section \ref{s:discussion} discusses model strengths, weaknesses and priority areas for future development. Finally, Appendix~\ref{s:Appendix-data} includes additional techno-economic assumptions for future technologies. 
 
 \section{Model description}
@@ -303,11 +302,6 @@ Table \ref{tab:ESD_list} lists the energy service demands in TIM along with thei
 \subsection{Development approach}
 \label{ss:model_dev}
 
-%Git and related toolbox. 
-%- web app
-%- open data, open source
-%- version control (cite papers if possible)
-
 TIM has been developed with the goal of achieving ``best practice" standards in software development and open modelling convention. A git-centred model development process has been an integral part of the model development approach to enable version control and model management. Along with improvements in management, quality assurance and transparency this brings, it also allows developers and researchers from different projects to branch research versions of the model, to explore innovations and new developments, while keeping a secure and stable main version of the model for policy application. At the same time, individual projects and researchers can input their improvements and developments to the core model, to enable continuous improvements. 
 
 TIM is freely available, which is a prerequisite for transparency, repeatable research, model maintenance and enhancement and verification of results \citep{Pfenninger2018}. 
@@ -317,8 +311,6 @@ Web-based dashboards\footnote{https://tim-review1.netlify.app/results/} have bee
 TIM has been co-developed with the LEAP-Ireland model \citep{MacUidhir2020}, which is a bottom-up simulation model of the Irish energy system which simulates the impact of different policy measures and targets on overall GHG emissions in Ireland, with a particularly granular representation of transport and residential heat demand. Underlying data for the relevant sectors are shared between TIM and LEAP using a Data Repository and shared coding convention dictionary to improve the consistency between the models, give more robust analytical insights for policy and to share and exchange expertise between the modelling teams. This also facilitates multi-model approaches to energy systems modelling, which can make use of harmonised hybrid frameworks coupling simulation and optimisation simultaneously \citep{rogan2014leaps}.
 
 TIM has also been developed to enable soft-linking with the Ireland Environment, Energy and Economy (I3E) macroeconomic model developed at the Economic and Social Research Institute (ESRI) \citep{Yakut2020}. I3E is a single-country, multi-sector (NACE) inter-temporal computable general equilibrium (CGE) model focusing on environmental and energy accounts in Ireland. While COre Structural MOdel for Ireland (COSMO) focuses on the influence of monetary and fiscal policy on economic activity in Ireland, I3E supplements the macroeconomic outlook from COSMO with environmental and energy disaggregation. I3E retrieves economic growth rates and population estimates from COSMO. TIM derives macroeconomic drivers coupled to the output variables of I3E, enabling scenario variants based on alternative monetary, fiscal and macroeconomic futures, as well as rapid energy system outlook updates aligned with the update cycle of the macroeconomic outlooks from the ESRI.
-
-%TIM has also been developed to enable wide stakeholder review, feedback and iterative policy insight. %Will write this for the paper - after the review process. 
 
 \section{Sectors}
 \label{s:sectors}
@@ -420,14 +412,6 @@ Losses from electricity transmission and distribution are assumed to be 7\%, wit
  \caption{Wind energy potential locations}
  \label{fig:wind-onshore-potential}
 \end{figure}
-
-%\begin{figure}[H]
-% \centering
-% \includegraphics[scale=1]{stepwise-connectioncost.png} 
-% \caption{Connection cost of new onshore wind}
-% \label{fig:wind-conn}
-%\end{figure}
-%Xiufeng can you provide xls please? 
 
 \subsubsection{Carbon Capture and Storage, Carbon Dioxide Removal, and Negative Emissions technologies}
 It is well documented in the literature that residual emissions are likely to remain in the future (net) zero carbon energy system from ``hard-to-decarbonise" sectors \citep{Rogelj2018}. Carbon Capture and Storage (CCS), Carbon Dioxide Removal technologies (CDR), and Negative Emission Technologies (NETS) are currently seen within the literature as critical future technologies to capture the last marginal residual emissions to bring the energy system to net-zero CO2 or even net-negative CO2 by mid-century. With this in mind, TIM has carbon capture and storage (CCS) technology options available from 2030, including retrofit options on existing coal, peat and gas power plants. Bioenergy carbon capture and storage (BECCS) is available in TIM from 2030 and provides net negative CO2 capture and allows negative emissions electricity generation. Direct air carbon capture and storage (DACCS) is also defined as a backstop technology i.e., it has a static unit cost of 2000 EUR/tCO2 and an unlimited capacity. This caps the marginal abatement cost of the model at a price that does not exclude any of the plausible mitigation measures.
@@ -679,7 +663,6 @@ The alternative internal temperatures assumptions in TIM are outlined in Table \
  \label{Internal Temperature Assumptions}
 \end{table}
 
-% Start this text below the table?? %
 After the base year, the change in the number of new dwellings per archetype drives demand, as previously outlined in section \ref{ss:model_proj}. All new dwellings mimic the energy intensity of the average base year A-rated dwelling for that archetype. This is due to directive (EU) 2018/844, which requires all new residential dwellings to equate to at least a A2 BER by 2020. 
 
 The non-archetype energy service demands are: cooking, refrigeration, cloth washing, cloth drying, dish washing and electrical appliances. The non-archetype energy service demands are not dependent on the age, type or BER rating of the future housing type. These demands are projected to grow at the same rate as the growth in the total housing stock. 
@@ -731,6 +714,7 @@ The cost and efficiencies of new space heating and water heating technologies is
  \item One space and water heating system per household (stoves excluded). This user constraint is applied to represent individual heating systems and calibrate results.
  \item Maximum 60\% of existing buildings to be retrofitted by 2030, and 95\% by 2070, the maximum value is interpolated between 2030 and 2050. This user constraint is applied to align with maximum available labour.
  \item A prerequisite retrofitting requirement for electrical heat pump installation is applied to each archetype. Table \ref{tab:HeatPumpConstraint} shows the percentage of dwellings which require a shallow or deep retrofit before an electrical heat pump can be installed (A ``heat pump ready" dwelling must be at least a B2 energy rating). This user constraint is applied because of the lack of data regarding operation of electrical heat pumps in less than B2 rated dwellings, without this constraint heat pumps would be installed in poorly rated dwellings and run at high performance. The constraint aligns with known heat pump performance data.
+ 
  \begin{table}[htbp]
   \centering
   \footnotesize
@@ -746,8 +730,6 @@ The cost and efficiencies of new space heating and water heating technologies is
 \end{table}
 \item Maximum fuel share in cooking for natural gas and LPG is 40\% and 10\% respectively. Base year fuel share for natural gas is 32\% and LPG is 1.5\%. This user constraint is applied to align with the increasing market share of electrical induction hobs.
 \end{itemize}
-
-
 
 \subsection{Industry}
 \label{ss:industry}
